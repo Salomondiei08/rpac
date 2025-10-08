@@ -1,16 +1,23 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/solar-hero.jpg';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import heroImage from "@/assets/solar-hero.jpg";
 
 const Hero = () => {
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="accueil"
+      aria-labelledby="hero-heading"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Solar panels"
+          alt="Installation de panneaux solaires captant la lumière du soleil"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
       </div>
@@ -26,13 +33,19 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="animate-fade-up">
-          <p className="text-primary-foreground/90 mb-6 text-lg">Votre partenaire en énergie solaire</p>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-4 leading-tight">
-            L'énergie solaire,{' '}
+          <p className="text-primary-foreground/90 mb-6 text-lg">
+            Votre partenaire en énergie solaire
+          </p>
+          <h1
+            id="hero-heading"
+            className="text-5xl md:text-7xl font-bold text-primary-foreground mb-4 leading-tight"
+          >
+            L'énergie solaire,{" "}
             <span className="text-accent">accessible à tous</span>
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-3xl mx-auto">
-            Avec Mienssa Energy, éclairez votre avenir et contribuez à un monde plus durable
+            Avec Mienssa Energy, éclairez votre avenir et contribuez à un monde
+            plus durable
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
