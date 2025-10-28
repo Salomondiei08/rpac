@@ -2,11 +2,11 @@ import { Helmet } from "react-helmet-async";
 
 // Global default SEO + JSON-LD schema
 const SEO = () => {
-  const siteName = "Mienssa Energy";
-  const title = `${siteName} - L'énergie solaire accessible à tous`;
+  const siteName = "Association Partenariats Canada-Afrique";
+  const title = `${siteName} - Bâtir des partenariats transformateurs`;
   const description =
-    "Mienssa Energy, votre partenaire en énergie solaire. Installation de panneaux solaires, kits solaires sur-mesure et maintenance en Côte d'Ivoire.";
-  const url = "https://www.mienssa-energy.com"; // Placeholder; replace with real domain
+    "L’Association Partenariats Canada-Afrique rassemble institutions, entreprises et acteurs de la société civile pour co-construire des initiatives de diplomatie économique, d’innovation et de gouvernance inclusive sur le continent africain.";
+  const url = "https://www.partenariatsca.org"; // Placeholder; replace with real domaine
   const image =
     "https://storage.googleapis.com/gpt-engineer-file-uploads/fWGee95WDThbZaV7NtGh9rbUFT03/social-images/social-1759892605022-D‚clinaison 1.png";
 
@@ -16,16 +16,13 @@ const SEO = () => {
     name: siteName,
     url,
     logo: image,
-    sameAs: [
-      "https://www.facebook.com/", // Replace with actual
-      "https://www.linkedin.com/", // Replace with actual
-    ],
+    sameAs: ["https://www.linkedin.com/", "https://twitter.com/"],
     description,
     address: {
       "@type": "PostalAddress",
-      addressCountry: "CI",
-      addressLocality: "Abidjan",
-      streetAddress: "Cocody",
+      addressCountry: "CA",
+      addressLocality: "Montréal",
+      streetAddress: "125 rue Sherbrooke Ouest",
     },
   };
 

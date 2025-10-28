@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,20 +17,23 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { label: "Accueil", href: "#accueil" },
-    { label: "Solutions", href: "#solutions" },
-    { label: "À propos", href: "#apropos" },
-    { label: "Contact", href: "#contact" },
+    { label: "Accueil", to: "/" },
+    { label: "À propos", to: "/a-propos" },
+    { label: "Nos activités", to: "/nos-activites" },
+    { label: "Ressources", to: "/nos-activites#ressources" },
   ];
 
   const topMode = !isScrolled;
+  const isTransparentHome =
+    location.pathname === "/" && location.hash.length === 0 && topMode;
+
   return (
     <nav
       aria-label="Navigation principale"
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+        isTransparentHome
+          ? "bg-transparent"
+          : "bg-background/95 backdrop-blur-md shadow-md"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -36,11 +41,15 @@ const Navbar = () => {
           <div className="flex items-center space-x-2">
             <div
               className={`w-10 h-10 ${
-                topMode ? "bg-white/15 ring-1 ring-white/30" : "bg-accent"
+                isTransparentHome
+                  ? "bg-white/15 ring-1 ring-white/30"
+                  : "bg-accent/20 ring-1 ring-accent/30"
               } backdrop-blur-sm rounded-lg flex items-center justify-center transition-colors`}
             >
               <svg
-                className={`w-6 h-6 ${topMode ? "text-white" : "text-primary"}`}
+                className={`w-6 h-6 ${
+                  isTransparentHome ? "text-white" : "text-primary"
+                }`}
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -50,45 +59,57 @@ const Navbar = () => {
             </div>
             <span
               className={`text-xl font-bold ${
-                topMode ? "text-white drop-shadow-sm" : "text-primary"
+                isTransparentHome ? "text-white drop-shadow-sm" : "text-primary"
               }`}
             >
-              Mienssa energy
+              Partenariats Canada-Afrique
             </span>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8" role="menubar">
-            {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={`transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm ${
-                  topMode
-                    ? "text-white/90 hover:text-white"
-                    : "text-foreground hover:text-accent"
-                }`}
-                role="menuitem"
-              >
-                {item.label}
-              </a>
-            ))}
+            {menuItems.map((item) => {
+              const baseClasses =
+                "transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm";
+              return (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `${baseClasses} ${
+                      isTransparentHome
+                        ? isActive
+                          ? "text-white"
+                          : "text-white/80 hover:text-white"
+                        : isActive
+                          ? "text-accent"
+                          : "text-foreground hover:text-accent"
+                    }`
+                  }
+                  role="menuitem"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              );
+            })}
             <Button
-              variant={topMode ? "secondary" : "default"}
-              className={`${
-                topMode
+              variant={isTransparentHome ? "secondary" : "default"}
+              className={`font-semibold ${
+                isTransparentHome
                   ? "bg-white/90 text-primary hover:bg-white shadow-sm"
                   : "bg-primary hover:bg-primary/90"
-              } font-semibold`}
+              }`}
+              asChild
             >
-              Besoin d'aide ?
+              <NavLink to="/adhesion-contact">Devenir membre</NavLink>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className={`md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm ${
-              topMode ? "text-white" : "text-foreground"
+              isTransparentHome ? "text-white" : "text-foreground"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
@@ -107,21 +128,22 @@ const Navbar = () => {
             role="menu"
           >
             {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
+              <NavLink
+                key={item.to}
+                to={item.to}
                 className="block text-foreground hover:text-accent transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
                 role="menuitem"
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
             <Button
               variant="default"
               className="w-full bg-primary hover:bg-primary/90"
+              asChild
             >
-              Besoin d'aide ?
+              <NavLink to="/adhesion-contact">Devenir membre</NavLink>
             </Button>
           </div>
         )}

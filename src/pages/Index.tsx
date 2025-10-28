@@ -1,9 +1,7 @@
 import Hero from "@/components/Hero";
-import Solutions from "@/components/Solutions";
-import SolarKits from "@/components/SolarKits";
-import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
+import ProgramsHighlights from "@/components/home/ProgramsHighlights";
+import RecentEvents from "@/components/home/RecentEvents";
+import NewsHighlights from "@/components/home/NewsHighlights";
 
 const Index = () => {
   return (
@@ -16,11 +14,9 @@ const Index = () => {
         Aller au contenu
       </a>
       <Hero />
-      <Solutions />
-      <SolarKits />
-      <About />
-      <Testimonials />
-      <Contact />
+      <ProgramsHighlights />
+      <RecentEvents />
+      <NewsHighlights />
     </>
   );
 };

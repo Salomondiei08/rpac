@@ -1,96 +1,163 @@
+import { NavLink } from "react-router-dom";
+import { Linkedin, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+
+const partnerLogos = [
+  {
+    name: "Alliance Canada-Afrique",
+    href: "https://example.org",
+  },
+  {
+    name: "Chambre de commerce Panafricaine",
+    href: "https://example.org",
+  },
+  {
+    name: "Réseau des Villes Durables",
+    href: "https://example.org",
+  },
+  {
+    name: "Institut de la Gouvernance Inclusive",
+    href: "https://example.org",
+  },
+];
+
+const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
+  { label: "Twitter", href: "https://twitter.com", icon: Twitter },
+  { label: "YouTube", href: "https://youtube.com", icon: Youtube },
+];
+
 const Footer = () => {
   return (
-    <footer
-      className="bg-primary text-primary-foreground py-12"
-      aria-labelledby="footer-heading"
-    >
-      <div className="container mx-auto px-4">
-        <h2 id="footer-heading" className="sr-only">
-          Pied de page
-        </h2>
-        <div className="grid md:grid-cols-4 gap-8 mb-8" role="presentation">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2L2 7v10c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5zm0 2.2l8 4v8.3c0 4.4-3.1 8.6-8 9.5-4.9-.9-8-5.1-8-9.5V8.2l8-4z" />
+    <footer className="bg-primary text-primary-foreground pt-16" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">
+        Pied de page
+      </h2>
+      <section className="border-b border-primary-foreground/15">
+        <div className="container mx-auto px-4 pb-12">
+          <div className="flex gap-6 overflow-x-auto" aria-label="Partenaires de l’association">
+            {partnerLogos.concat(partnerLogos).map((partner, index) => (
+              <a
+                key={`${partner.name}-${index}`}
+                href={partner.href}
+                className="flex-none w-64 rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 px-6 py-4 text-primary-foreground/90 hover:bg-primary-foreground/15 transition-colors"
+              >
+                <div className="text-sm uppercase tracking-wide opacity-70">Partenaire</div>
+                <div className="text-lg font-semibold">{partner.name}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 py-12">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-2xl bg-primary-foreground/10 flex items-center justify-center">
+                <svg className="w-7 h-7 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2 2 7v10c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5zm0 2.2 8 4v8.3c0 4.4-3.1 8.6-8 9.5-4.9-.9-8-5.1-8-9.5V8.2l8-4z" />
                   <circle cx="12" cy="12" r="3" />
                 </svg>
               </div>
-              <span className="text-xl font-bold">Mienssa energy</span>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-primary-foreground/70">Association</p>
+                <p className="text-lg font-semibold">Partenariats Canada-Afrique</p>
+              </div>
             </div>
-            <p className="text-primary-foreground/80 text-sm">
-              Votre partenaire de confiance pour l'énergie solaire en Côte
-              d'Ivoire
+            <p className="text-sm text-primary-foreground/80 leading-relaxed">
+              Nous catalysons les collaborations entre institutions, entreprises et communautés pour bâtir des
+              partenariats transformateurs sur l’ensemble du continent africain.
             </p>
           </div>
 
-          <div aria-labelledby="nav-footer-heading">
-            <h3 className="font-bold mb-4">Navigation</h3>
+          <div className="lg:col-span-3 space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide">Navigation</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <a
-                  href="#accueil"
-                  className="hover:text-accent transition-colors"
-                >
+                <NavLink to="/" className="hover:text-accent transition-colors">
                   Accueil
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#solutions"
-                  className="hover:text-accent transition-colors"
-                >
-                  Solutions
-                </a>
-              </li>
-              <li>
-                <a href="#kits" className="hover:text-accent transition-colors">
-                  Nos Kits
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#apropos"
-                  className="hover:text-accent transition-colors"
-                >
+                <NavLink to="/a-propos" className="hover:text-accent transition-colors">
                   À propos
-                </a>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/nos-activites" className="hover:text-accent transition-colors">
+                  Nos activités
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/nos-activites#ressources" className="hover:text-accent transition-colors">
+                  Publications & rapports
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/adhesion-contact" className="hover:text-accent transition-colors">
+                  Adhésion & contact
+                </NavLink>
               </li>
             </ul>
           </div>
 
-          <div aria-labelledby="services-footer-heading">
-            <h3 className="font-bold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li>Installation solaire</li>
-              <li>Maintenance</li>
-              <li>Consultation</li>
-              <li>Support technique</li>
+          <div className="lg:col-span-3 space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide">Contact rapide</h3>
+            <ul className="space-y-3 text-sm text-primary-foreground/80">
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 mt-1" aria-hidden="true" />
+                contact@partenariatsca.org
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 mt-1" aria-hidden="true" />
+                +1 (514) 555-9087
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-1" aria-hidden="true" />
+                Maison des Associations, 125 rue Sherbrooke Ouest, Montréal, QC
+              </li>
             </ul>
           </div>
 
-          <div aria-labelledby="contact-footer-heading">
-            <h3 className="font-bold mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li>+225 07 08 40 80 84</li>
-              <li>contact@mienssa-energy.com</li>
-              <li>Abidjan Cocody, Côte d'Ivoire</li>
-            </ul>
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide">Réseaux sociaux</h3>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full border border-primary-foreground/25 flex items-center justify-center hover:bg-primary-foreground/10 transition-colors"
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <social.icon className="w-5 h-5" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+            <p className="text-xs text-primary-foreground/70">
+              Inscrivez-vous à notre lettre d’information pour recevoir les dernières actualités.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>
-            &copy; {new Date().getFullYear()} Mienssa Energy. Tous droits
-            réservés.
-          </p>
+      <section className="bg-primary/95 border-t border-primary-foreground/15">
+        <div className="container mx-auto px-4 py-6 text-sm text-primary-foreground/70 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <p>&copy; {new Date().getFullYear()} Association Partenariats Canada-Afrique. Tous droits réservés.</p>
+          <div className="flex flex-wrap gap-4">
+            <NavLink to="/mentions-legales" className="hover:text-accent transition-colors">
+              Mentions légales
+            </NavLink>
+            <NavLink to="/politique-confidentialite" className="hover:text-accent transition-colors">
+              Politique de confidentialité
+            </NavLink>
+            <NavLink to="/adhesion-contact" className="hover:text-accent transition-colors">
+              Nous contacter
+            </NavLink>
+          </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 };

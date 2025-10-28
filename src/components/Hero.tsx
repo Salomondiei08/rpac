@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users } from "lucide-react";
 import heroImage from "@/assets/solar-hero.jpg";
 
 const Hero = () => {
@@ -7,13 +7,12 @@ const Hero = () => {
     <section
       id="accueil"
       aria-labelledby="hero-heading"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Installation de panneaux solaires captant la lumière du soleil"
+          alt="Représentants de l'association réunis autour d'une table de travail"
           className="w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -22,59 +21,48 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
       </div>
 
-      {/* Floating Icons */}
-      <div className="absolute top-20 right-10 text-accent/20 animate-pulse">
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="5" />
-          <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
-        </svg>
+      <div className="absolute top-20 right-8 hidden md:block text-accent/20 animate-pulse">
+        <Users className="w-16 h-16" aria-hidden="true" />
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="animate-fade-up">
-          <p className="text-primary-foreground/90 mb-6 text-lg">
-            Votre partenaire en énergie solaire
-          </p>
+      <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
+        <div className="max-w-3xl space-y-6 animate-fade-up">
+          <div className="inline-flex items-center gap-2 bg-accent/20 text-accent-foreground/90 rounded-full px-4 py-2 text-sm font-semibold">
+            <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
+            Alliance panafricaine pour des partenariats durables
+          </div>
           <h1
             id="hero-heading"
-            className="text-5xl md:text-7xl font-bold text-primary-foreground mb-4 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight"
           >
-            L'énergie solaire,{" "}
-            <span className="text-accent">accessible à tous</span>
+            Bâtir des{" "}
+            <span className="text-accent">partenariats transformateurs</span>
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-3xl mx-auto">
-            Avec Mienssa Energy, éclairez votre avenir et contribuez à un monde
-            plus durable
+          <p className="text-lg sm:text-xl text-primary-foreground/90">
+            L’Association des Partenariats Canada-Afrique réunit décideurs,
+            entreprises et acteurs de la société civile pour co-créer des
+            solutions inclusives sur l’ensemble du continent africain.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 group"
               asChild
             >
-              <a href="#kits">
-                Découvrez nos kits
+              <a href="/nos-activites">
+                Explorer nos initiatives
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
             <Button
               size="lg"
-              className="bg-white text-primary font-semibold hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-accent text-lg px-8 py-6 shadow-sm"
+              variant="secondary"
+              className="text-primary font-semibold text-lg px-8 py-6"
               asChild
             >
-              <a href="#contact" className="flex items-center justify-center">
-                Contactez-nous
-              </a>
+              <a href="/adhesion-contact">Rejoindre l’association</a>
             </Button>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2" />
         </div>
       </div>
     </section>
