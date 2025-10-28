@@ -60,11 +60,12 @@ const Hero = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6"
+              className="bg-white text-primary font-semibold hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-accent text-lg px-8 py-6 shadow-sm"
               asChild
             >
-              <a href="#contact">Contactez-nous</a>
+              <a href="#contact" className="flex items-center justify-center">
+                Contactez-nous
+              </a>
             </Button>
           </div>
         </div>

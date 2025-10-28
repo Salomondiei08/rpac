@@ -46,20 +46,22 @@ const Testimonials = () => {
         </div>
         <ul className="grid md:grid-cols-3 gap-8" role="list">
           {testimonials.map((testimonial, index) => (
-            <li key={index}>
+            <li key={index} className="h-full">
               <Card
-                className="border-none shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-300 relative overflow-hidden"
+                className="h-full flex flex-col border-none shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-300 relative overflow-hidden"
                 aria-label={`Témoignage de ${testimonial.name}`}
               >
-                <CardContent className="p-8">
-                  <Quote
-                    className="w-10 h-10 text-accent/20 mb-4"
-                    aria-hidden="true"
-                  />
-                  <blockquote className="text-muted-foreground mb-6 leading-relaxed italic">
-                    <p>"{testimonial.text}"</p>
-                  </blockquote>
-                  <div className="flex items-center gap-4">
+                <CardContent className="p-8 flex flex-col flex-1">
+                  <div className="flex-1">
+                    <Quote
+                      className="w-10 h-10 text-accent/30 mb-4"
+                      aria-hidden="true"
+                    />
+                    <blockquote className="text-muted-foreground mb-6 leading-relaxed italic">
+                      <p>"{testimonial.text}"</p>
+                    </blockquote>
+                  </div>
+                  <div className="flex items-center gap-4 mt-auto pt-2">
                     <img
                       src={testimonial.image}
                       alt={`Photo de ${testimonial.name}`}
