@@ -49,7 +49,7 @@ const Hero = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 group"
               asChild
             >
-              <a href="/nos-activites">
+              <a href="/programmes">
                 Explorer nos initiatives
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>

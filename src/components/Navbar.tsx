@@ -1,4 +1,9 @@
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect,
+  type FocusEvent,
+  type MouseEvent as ReactMouseEvent,
+} from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -6,6 +11,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isActivitiesOpen, setIsActivitiesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -16,12 +22,42 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsActivitiesOpen(false);
+  }, [location.pathname, location.hash]);
+
   const menuItems = [
     { label: "Accueil", to: "/" },
     { label: "À propos", to: "/a-propos" },
-    { label: "Nos activités", to: "/nos-activites" },
-    { label: "Ressources", to: "/nos-activites#ressources" },
+  ] as const;
+
+  const activitiesItems = [
+    { label: "Nos Programmes", to: "/programmes" },
+    { label: "Événements / Agenda", to: "/agenda" },
+    { label: "Galerie multimédia", to: "/galerie" },
   ];
+
+  const isActivitiesRoute = activitiesItems.some((item) =>
+    location.pathname.startsWith(item.to),
+  );
+
+  const handleActivitiesBlur = (
+    event: FocusEvent<HTMLDivElement, Element>,
+  ) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setIsActivitiesOpen(false);
+    }
+  };
+
+  const handleActivitiesMouseLeave = (
+    event: ReactMouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    if (event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      return;
+    }
+    setIsActivitiesOpen(false);
+  };
 
   const topMode = !isScrolled;
   const isTransparentHome =
@@ -93,6 +129,46 @@ const Navbar = () => {
                 </NavLink>
               );
             })}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsActivitiesOpen(true)}
+              onMouseLeave={handleActivitiesMouseLeave}
+              onFocusCapture={() => setIsActivitiesOpen(true)}
+              onBlurCapture={handleActivitiesBlur}
+            >
+              <button
+                type="button"
+                className={`transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-2 py-1 ${
+                  isTransparentHome
+                    ? isActivitiesRoute
+                      ? "text-white"
+                      : "text-white/80 hover:text-white"
+                    : isActivitiesRoute
+                      ? "text-accent"
+                      : "text-foreground hover:text-accent"
+                }`}
+                aria-haspopup="true"
+                aria-expanded={isActivitiesOpen}
+                onClick={() => setIsActivitiesOpen((prev) => !prev)}
+              >
+                Nos activités
+              </button>
+              {isActivitiesOpen && (
+                <div className="absolute left-0 top-full pt-3">
+                  <div className="min-w-[220px] rounded-xl border border-border/60 bg-background shadow-[var(--shadow-card)] p-2">
+                    {activitiesItems.map((item) => (
+                      <NavLink
+                        key={item.to}
+                        to={item.to}
+                        className="block rounded-lg px-3 py-2 text-sm transition-colors hover:bg-muted/60"
+                      >
+                        {item.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             <Button
               variant={isTransparentHome ? "secondary" : "default"}
               className={`font-semibold ${
@@ -138,6 +214,23 @@ const Navbar = () => {
                 {item.label}
               </NavLink>
             ))}
+            <div>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground/80">
+                Nos activités
+              </p>
+              <div className="mt-2 space-y-2">
+                {activitiesItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className="block rounded-lg px-3 py-2 text-foreground hover:text-accent hover:bg-muted/60 transition-colors font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
             <Button
               variant="default"
               className="w-full bg-primary hover:bg-primary/90"

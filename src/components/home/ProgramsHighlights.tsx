@@ -8,7 +8,7 @@ const highlights = [
       "Huit axes structurants qui font avancer la diplomatie économique, l’innovation et les partenariats inclusifs entre le Canada et l’Afrique.",
     icon: LineChart,
     cta: "Découvrir nos programmes",
-    href: "/nos-activites#programmes",
+    href: "/programmes",
   },
   {
     title: "Événements récents",
@@ -16,7 +16,7 @@ const highlights = [
       "Forums économiques, rencontres sectorielles, rassemblements de décideurs : suivez les moments forts de notre agenda continental.",
     icon: Globe2,
     cta: "Consulter l’agenda",
-    href: "/nos-activites#agenda",
+    href: "/agenda",
   },
   {
     title: "Actualités clés",
@@ -24,7 +24,7 @@ const highlights = [
       "Analyses, publications et retours d’expérience pour éclairer les grandes transformations en Afrique francophone et anglophone.",
     icon: Handshake,
     cta: "Lire les actualités",
-    href: "/nos-activites#ressources",
+    href: "/galerie",
   },
 ];
 

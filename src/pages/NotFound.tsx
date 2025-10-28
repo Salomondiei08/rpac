@@ -30,7 +30,7 @@ const NotFound = () => {
             <NavLink to="/">Retour à l’accueil</NavLink>
           </Button>
           <Button variant="outline" asChild>
-            <NavLink to="/nos-activites">Voir nos activités</NavLink>
+            <NavLink to="/programmes">Voir nos activités</NavLink>
           </Button>
         </div>
       </div>

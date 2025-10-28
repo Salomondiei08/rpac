@@ -43,7 +43,7 @@ const RecentEvents = () => {
             </p>
           </div>
           <a
-            href="/nos-activites#agenda"
+            href="/agenda"
             className="hidden md:inline-flex items-center gap-2 text-accent font-semibold"
           >
             Consulter l’agenda complet
@@ -72,7 +72,7 @@ const RecentEvents = () => {
               </h3>
               <p className="text-muted-foreground flex-1">{event.description}</p>
               <a
-                href="/nos-activites#agenda"
+                href="/agenda"
                 className="text-accent font-medium"
               >
                 Voir le compte-rendu

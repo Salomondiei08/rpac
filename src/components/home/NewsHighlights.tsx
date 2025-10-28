@@ -6,21 +6,21 @@ const news = [
     date: "Février 2024",
     excerpt:
       "Le partenariat tripartite Canada – Maroc – Kenya ouvre la voie à de nouveaux financements pour les projets urbains durables.",
-    href: "/nos-activites#ressources",
+    href: "/galerie",
   },
   {
     title: "Publication du rapport 2023 sur l’Agenda 2063 en action",
     date: "Janvier 2024",
     excerpt:
       "Une analyse prospective de nos projets pilotes et recommandations pour accélérer la mise en œuvre continentale.",
-    href: "/nos-activites#ressources",
+    href: "/galerie",
   },
   {
     title: "Lancement du réseau des femmes leaders en innovation sociale",
     date: "Décembre 2023",
     excerpt:
       "Plus de 80 entrepreneures et dirigeantes réunies pour partager des solutions sur l’inclusion économique.",
-    href: "/nos-activites#ressources",
+    href: "/galerie",
   },
 ];
 
