@@ -23,31 +23,34 @@ const ProfileCard = ({
   socials = [],
 }: ProfileCardProps) => {
   return (
-    <Card className="h-full border-none shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300">
-      <CardContent className="p-6 flex flex-col gap-4">
-        <div className="flex items-center gap-4">
+    <Card className="h-full border border-border/40 bg-card/95 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300">
+      <CardContent className="flex h-full flex-col items-center gap-5 px-8 py-10 text-center">
+        <div className="relative">
+          <span className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-primary/0 blur-xl" aria-hidden="true" />
           <img
             src={image}
             alt={`Portrait de ${name}`}
-            className="w-20 h-20 rounded-2xl object-cover"
+            className="relative h-32 w-32 rounded-full border-4 border-background object-cover shadow-lg"
             loading="lazy"
             decoding="async"
           />
-          <div>
-            <h3 className="text-lg font-semibold text-primary">{name}</h3>
-            <p className="text-sm text-muted-foreground">{title}</p>
-          </div>
+        </div>
+        <div className="space-y-1">
+          <h3 className="text-xl font-semibold text-primary leading-tight">{name}</h3>
+          <p className="text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground/80">
+            {title}
+          </p>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">
           {bio}
         </p>
         {socials.length > 0 && (
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex items-center justify-center gap-3 pt-2">
             {socials.map((social) => (
               <a
                 key={social.href}
                 href={social.href}
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-border/60 text-muted-foreground hover:text-accent hover:border-accent transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/50 text-muted-foreground hover:border-secondary hover:text-secondary transition-colors"
                 aria-label={`${social.label} de ${name}`}
                 target="_blank"
                 rel="noopener noreferrer"

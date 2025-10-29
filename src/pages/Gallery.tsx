@@ -60,77 +60,72 @@ const resources = [
 const Gallery = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
-        <div className="container mx-auto px-4 space-y-6 text-center md:text-left">
+      <section className="relative mt-[-80px] overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground md:mt-[-96px]">
+        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
-            className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
+            className="mx-auto bg-white/15 text-primary-foreground md:mx-0"
           >
             Nos activités
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
-            Galerie multimédia & ressources, pour revivre nos temps forts et
-            approfondir nos travaux.
+          <h1 className="mx-auto max-w-4xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl md:mx-0">
+            Galerie multimédia & ressources, pour revivre nos temps forts et approfondir nos travaux.
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90 mx-auto md:mx-0">
-            Photos, vidéos, publications et rapports : explorez les contenus
-            produits avec nos partenaires et membres partout en Afrique et au
-            Canada.
+          <p className="mx-auto max-w-3xl text-base text-primary-foreground/90 sm:text-lg lg:text-xl md:mx-0">
+            Photos, vidéos, publications et rapports : explorez les contenus produits avec nos partenaires et membres partout en Afrique et au Canada.
           </p>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16 space-y-10">
-        <header className="space-y-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-primary">Galerie multimédia</h2>
-          <p className="text-muted-foreground">
-            Revivez nos moments forts à travers une collection de photos et de
-            vidéos produites avec nos partenaires et membres.
-          </p>
-        </header>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {galleryItems.map((item) => (
-            <div
-              key={item.title}
-              className="relative rounded-3xl overflow-hidden group shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all"
-            >
-              <img
-                src={item.src}
-                alt={item.title}
-                className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-              <div className="absolute bottom-4 left-4 right-4 text-primary-foreground space-y-2">
-                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-wide">
-                  {item.type === "video" ? (
-                    <>
-                      <PlayCircle className="w-4 h-4" /> Vidéo
-                    </>
-                  ) : (
-                    <>
-                      <Camera className="w-4 h-4" /> Photo
-                    </>
-                  )}
-                </span>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-muted/20 py-16">
-        <div className="container mx-auto px-4 space-y-10">
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl space-y-12 px-6">
           <header className="max-w-3xl space-y-4">
-            <h2 className="text-3xl font-bold text-primary">
-              Publications & rapports
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Accédez à nos documents de référence, rapports annuels, notes
-              stratégiques et ressources méthodologiques.
+            <h2 className="text-3xl font-bold text-primary">Galerie multimédia</h2>
+            <p className="text-muted-foreground">
+              Revivez nos moments forts à travers une collection de photos et de vidéos produites avec nos partenaires et membres.
+            </p>
+          </header>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {galleryItems.map((item) => (
+              <div
+                key={item.title}
+                className="group relative overflow-hidden rounded-3xl shadow-[var(--shadow-card)] transition-all hover:shadow-[var(--shadow-hover)]"
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="h-60 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+                <div className="absolute bottom-4 left-4 right-4 space-y-2 text-primary-foreground">
+                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-wide">
+                    {item.type === "video" ? (
+                      <>
+                        <PlayCircle className="h-4 w-4" /> Vidéo
+                      </>
+                    ) : (
+                      <>
+                        <Camera className="h-4 w-4" /> Photo
+                      </>
+                    )}
+                  </span>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-muted/20 py-24">
+        <div className="mx-auto max-w-6xl space-y-12 px-6">
+          <header className="max-w-3xl space-y-4">
+            <h2 className="text-3xl font-bold text-primary">Publications & rapports</h2>
+            <p className="text-lg text-muted-foreground">
+              Accédez à nos documents de référence, rapports annuels, notes stratégiques et ressources méthodologiques.
             </p>
           </header>
 
@@ -146,13 +141,13 @@ const Gallery = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {resource.description}
                   </p>
                   <div className="flex items-center justify-between text-sm text-muted-foreground/80">
                     <span>{resource.file}</span>
                     <Button variant="outline" size="sm">
-                      <Download className="w-4 h-4 mr-2" />
+                      <Download className="mr-2 h-4 w-4" />
                       Télécharger
                     </Button>
                   </div>

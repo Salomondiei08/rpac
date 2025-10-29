@@ -29,17 +29,17 @@ const NewsHighlights = () => {
     <section
       id="actualites"
       aria-labelledby="news-heading"
-      className="py-16 bg-muted/20"
+      className="bg-muted/20 py-24"
     >
-      <div className="container mx-auto px-4">
-        <div className="mb-10 text-center space-y-2">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-12 space-y-3 text-center">
           <h2
             id="news-heading"
             className="text-3xl md:text-4xl font-bold text-primary"
           >
             Actualités importantes
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Suivez nos annonces institutionnelles, nos rapports d’impact et les
             grandes décisions prises avec nos partenaires sur le continent.
           </p>

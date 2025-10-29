@@ -57,7 +57,7 @@ const Programs = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
-        <div className="container mx-auto px-4 space-y-6 text-center md:text-left">
+        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
@@ -92,8 +92,9 @@ const Programs = () => {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16 space-y-10">
-        <header className="space-y-4 max-w-3xl">
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl space-y-12 px-6">
+          <header className="space-y-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-primary">Nos programmes</h2>
           <p className="text-muted-foreground">
             Chaque programme s’appuie sur un comité de pilotage et un réseau de
@@ -102,38 +103,39 @@ const Programs = () => {
           </p>
         </header>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {programs.map((program) => (
-            <Card
-              key={program.title}
-              className="border border-border/60 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300"
-            >
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">
-                  {program.title}
-                </CardTitle>
-                {program.subtitle && (
-                  <p className="text-sm text-accent font-medium">
-                    {program.subtitle}
+          <div className="grid gap-8 md:grid-cols-2">
+            {programs.map((program) => (
+              <Card
+                key={program.title}
+                className="border border-border/60 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300"
+              >
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary">
+                    {program.title}
+                  </CardTitle>
+                  {program.subtitle && (
+                    <p className="text-sm text-accent font-medium">
+                      {program.subtitle}
+                    </p>
+                  )}
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {program.description}
                   </p>
-                )}
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  {program.description}
-                </p>
-                <ul className="flex flex-wrap gap-2">
-                  {program.focus.map((item) => (
-                    <li key={item}>
-                      <Badge variant="outline" className="border-accent text-accent">
-                        {item}
-                      </Badge>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+                  <ul className="flex flex-wrap gap-2">
+                    {program.focus.map((item) => (
+                      <li key={item}>
+                        <Badge variant="outline" className="border-accent text-accent">
+                          {item}
+                        </Badge>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
     </div>

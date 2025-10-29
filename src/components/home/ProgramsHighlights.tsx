@@ -32,10 +32,10 @@ const ProgramsHighlights = () => {
   return (
     <section
       aria-labelledby="highlights-heading"
-      className="py-16 bg-muted/30"
+      className="bg-muted/30 py-24"
     >
-      <div className="container mx-auto px-4 space-y-12">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+      <div className="mx-auto max-w-6xl space-y-12 px-6">
+        <div className="mx-auto max-w-3xl space-y-4 text-center">
           <h2
             id="highlights-heading"
             className="text-3xl md:text-4xl font-bold text-primary"

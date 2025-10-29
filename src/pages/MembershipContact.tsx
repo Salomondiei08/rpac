@@ -50,7 +50,7 @@ const MembershipContact = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
-        <div className="container mx-auto px-4 space-y-6 text-center md:text-left">
+        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
@@ -69,250 +69,216 @@ const MembershipContact = () => {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16 space-y-12">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <Card className="border border-border/60 shadow-[var(--shadow-card)]">
-            <CardHeader>
-              <CardTitle className="text-2xl text-primary">
-                Formulaire d’adhésion
-              </CardTitle>
-              <CardDescription>
-                Un membre de notre équipe prendra contact avec vous sous 5 jours ouvrables
-                pour finaliser votre adhésion.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="grid gap-6 md:grid-cols-2" noValidate>
-                <div className="space-y-2 md:col-span-2">
-                  <Label htmlFor="organisation">Nom de l’organisation</Label>
-                  <Input
-                    id="organisation"
-                    name="organisation"
-                    placeholder="Nom complet de votre organisation"
-                    autoComplete="organization"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="contact-name">Nom complet</Label>
-                  <Input
-                    id="contact-name"
-                    name="contact-name"
-                    placeholder="Votre nom et prénom"
-                    autoComplete="name"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="role">Fonction</Label>
-                  <Input
-                    id="role"
-                    name="role"
-                    placeholder="Ex. Directrice des partenariats"
-                    autoComplete="organization-title"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Adresse courriel</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="vous@organisation.org"
-                    autoComplete="email"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Téléphone</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="+1 514 000 0000"
-                    autoComplete="tel"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label>Type d’adhésion</Label>
-                  <Select defaultValue="organisation">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Sélectionnez un type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="organisation">Organisation</SelectItem>
-                      <SelectItem value="entreprise">Entreprise</SelectItem>
-                      <SelectItem value="institution">Institution publique</SelectItem>
-                      <SelectItem value="individuel">Membre individuel</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <Label>Zone d’intervention</Label>
-                  <Select defaultValue="multi">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Sélectionnez une zone" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="multi">Multi-régional</SelectItem>
-                      <SelectItem value="nord">Afrique du Nord</SelectItem>
-                      <SelectItem value="ouest">Afrique de l’Ouest</SelectItem>
-                      <SelectItem value="centre">Afrique centrale</SelectItem>
-                      <SelectItem value="est">Afrique de l’Est</SelectItem>
-                      <SelectItem value="sud">Afrique australe</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <Label>Motivations principales</Label>
-                  <RadioGroup defaultValue="partenariats" className="grid gap-2 md:grid-cols-2">
-                    <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
-                      <RadioGroupItem value="partenariats" id="partenariats" />
-                      <Label htmlFor="partenariats" className="font-medium leading-tight">
-                        Développer des partenariats stratégiques
-                      </Label>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
-                      <RadioGroupItem value="influence" id="influence" />
-                      <Label htmlFor="influence" className="font-medium leading-tight">
-                        Participer à nos dialogues de haut niveau
-                      </Label>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
-                      <RadioGroupItem value="programmes" id="programmes" />
-                      <Label htmlFor="programmes" className="font-medium leading-tight">
-                        Contribuer aux programmes et groupes d’experts
-                      </Label>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
-                      <RadioGroupItem value="reseau" id="reseau" />
-                      <Label htmlFor="reseau" className="font-medium leading-tight">
-                        Accéder à notre réseau panafricain
-                      </Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <Label htmlFor="message">Message / besoins spécifiques</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Précisez vos projets, attentes ou besoins en accompagnement."
-                    rows={6}
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <Button type="submit" className="w-full md:w-auto">
-                    <Send className="w-4 h-4 mr-2" />
-                    Soumettre ma candidature
-                  </Button>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
-
-          <div className="space-y-6">
+      <section className="py-24">
+        <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
             <Card className="border border-border/60 shadow-[var(--shadow-card)]">
               <CardHeader>
-                <CardTitle className="text-lg text-primary">
-                  Avantages de l’adhésion
+                <CardTitle className="text-2xl text-primary">
+                  Formulaire d’adhésion
                 </CardTitle>
+                <CardDescription>
+                  Un membre de notre équipe prendra contact avec vous sous 5 jours ouvrables pour finaliser votre adhésion.
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm text-muted-foreground">
-                <p className="flex items-start gap-3">
-                  <Users className="w-4 h-4 mt-1 text-accent" />
-                  Accès prioritaire à nos programmes, groupes d’experts et webinaires privés.
-                </p>
-                <p className="flex items-start gap-3">
-                  <Wallet className="w-4 h-4 mt-1 text-accent" />
-                  Opportunités d’investissement et de financement en partenariat avec nos membres.
-                </p>
-                <p className="flex items-start gap-3">
-                  <Building className="w-4 h-4 mt-1 text-accent" />
-                  Accompagnement personnalisé pour vos missions économiques ou institutionnelles.
-                </p>
+              <CardContent>
+                <form className="grid gap-6 md:grid-cols-2" noValidate>
+                  <div className="space-y-2 md:col-span-2">
+                    <Label htmlFor="organisation">Nom de l’organisation</Label>
+                    <Input
+                      id="organisation"
+                      name="organisation"
+                      placeholder="Nom complet de votre organisation"
+                      autoComplete="organization"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="contact-name">Nom complet</Label>
+                    <Input
+                      id="contact-name"
+                      name="contact-name"
+                      placeholder="Votre nom et prénom"
+                      autoComplete="name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="role">Fonction</Label>
+                    <Input
+                      id="role"
+                      name="role"
+                      placeholder="Ex. Directrice des partenariats"
+                      autoComplete="organization-title"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Adresse courriel</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="vous@organisation.org"
+                      autoComplete="email"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Téléphone</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+1 514 000 0000"
+                      autoComplete="tel"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Type d’adhésion</Label>
+                    <Select defaultValue="organisation">
+                      <SelectTrigger>
+                        <SelectValue placeholder="Sélectionnez un type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="organisation">Organisation</SelectItem>
+                        <SelectItem value="entreprise">Entreprise</SelectItem>
+                        <SelectItem value="institution">Institution publique</SelectItem>
+                        <SelectItem value="individuel">Membre individuel</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Zone d’intervention</Label>
+                    <Select defaultValue="multi">
+                      <SelectTrigger>
+                        <SelectValue placeholder="Sélectionnez une zone" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="multi">Multi-régional</SelectItem>
+                        <SelectItem value="nord">Afrique du Nord</SelectItem>
+                        <SelectItem value="ouest">Afrique de l’Ouest</SelectItem>
+                        <SelectItem value="centre">Afrique centrale</SelectItem>
+                        <SelectItem value="est">Afrique de l’Est</SelectItem>
+                        <SelectItem value="sud">Afrique australe</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2 md:col-span-2">
+                    <Label>Motivations principales</Label>
+                    <RadioGroup defaultValue="partenariats" className="grid gap-2 md:grid-cols-2">
+                      <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
+                        <RadioGroupItem value="partenariats" id="partenariats" />
+                        <Label htmlFor="partenariats" className="font-medium leading-tight">
+                          Développer des partenariats stratégiques
+                        </Label>
+                      </div>
+                      <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
+                        <RadioGroupItem value="influence" id="influence" />
+                        <Label htmlFor="influence" className="font-medium leading-tight">
+                          Participer à nos dialogues de haut niveau
+                        </Label>
+                      </div>
+                      <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
+                        <RadioGroupItem value="programmes" id="programmes" />
+                        <Label htmlFor="programmes" className="font-medium leading-tight">
+                          Contribuer aux programmes et groupes d’experts
+                        </Label>
+                      </div>
+                      <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
+                        <RadioGroupItem value="reseau" id="reseau" />
+                        <Label htmlFor="reseau" className="font-medium leading-tight">
+                          Accéder à notre réseau panafricain
+                        </Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+                  <div className="space-y-2 md:col-span-2">
+                    <Label htmlFor="message">Message / besoins spécifiques</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Précisez vos projets, attentes ou besoins en accompagnement."
+                      rows={6}
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <Button type="submit" className="w-full md:w-auto">
+                      <Send className="mr-2 h-4 w-4" />
+                      Soumettre ma candidature
+                    </Button>
+                  </div>
+                </form>
               </CardContent>
             </Card>
 
-            <Card className="border border-border/60 shadow-[var(--shadow-card)]">
-              <CardHeader>
-                <CardTitle className="text-lg text-primary">
-                  Coordonnées
-                </CardTitle>
-                <CardDescription>
+            <div className="space-y-6">
+              <Card className="border border-border/60 shadow-[var(--shadow-card)]">
+                <CardHeader>
+                  <CardTitle className="text-lg text-primary">
+                    Avantages de l’adhésion
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-sm text-muted-foreground">
+                  <p className="flex items-start gap-3">
+                    <Users className="w-4 h-4 mt-1 text-secondary" />
+                    Accès prioritaire à nos programmes, groupes d’experts et webinaires privés.
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <Wallet className="w-4 h-4 mt-1 text-secondary" />
+                    Opportunités d’investissement et de financement en partenariat avec nos membres.
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <Building className="w-4 h-4 mt-1 text-secondary" />
+                    Accompagnement personnalisé pour vos missions économiques ou institutionnelles.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <section className="grid gap-10 rounded-4xl border border-border/60 bg-muted/15 px-8 py-10 lg:grid-cols-2">
+            <div className="flex flex-col gap-6 justify-between">
+              <div className="space-y-3">
+                <h2 className="text-3xl font-bold text-primary">Nos coordonnées</h2>
+                <p className="text-muted-foreground">
                   Notre équipe est disponible du lundi au vendredi de 9h à 17h (heure de Montréal).
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
+                </p>
+              </div>
+              <div className="space-y-4">
                 {contactDetails.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-start gap-3 rounded-xl border border-border/40 p-4 hover:border-accent hover:text-accent transition-colors"
+                    className="flex items-start gap-4 rounded-3xl border border-border/50 bg-background px-4 py-5 shadow-[var(--shadow-card)] transition-colors hover:border-secondary hover:text-secondary"
                   >
-                    <item.icon className="w-5 h-5 mt-1 text-accent" aria-hidden="true" />
+                    <item.icon className="mt-1 h-5 w-5 text-secondary" aria-hidden="true" />
                     <div>
-                      <div className="font-semibold text-primary">{item.label}</div>
-                      <div className="text-sm text-muted-foreground">{item.value}</div>
+                      <span className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground/80">
+                        {item.label}
+                      </span>
+                      <p className="text-base text-primary">{item.value}</p>
                     </div>
                   </a>
                 ))}
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+              <Button asChild size="lg" className="w-full sm:w-fit">
+                <a href="mailto:contact@partenariatsca.org">
+                  Nous contacter
+                </a>
+              </Button>
+            </div>
+            <div className="h-[360px] rounded-3xl border border-border/60 bg-background shadow-[var(--shadow-card)]">
+              <iframe
+                title="Localisation de l’association"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.661341770618!2d-73.5765724226917!3d45.50704313169984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a45c8df0adf%3A0x99f8fef0e0fe8070!2sSherbrooke%20St%20W%2C%20Montreal%2C%20QC!5e0!3m2!1sen!2sca!4v1717276800000!5m2!1sen!2sca"
+                className="h-full w-full rounded-3xl"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </section>
         </div>
-
-        <Card className="border border-border/60 shadow-[var(--shadow-card)]">
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary">
-              Contact rapide
-            </CardTitle>
-            <CardDescription>
-              Posez-nous vos questions : nous vous répondons sous 48h.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form className="grid gap-6 md:grid-cols-2" noValidate>
-              <div className="space-y-2">
-                <Label htmlFor="quick-name">Nom complet</Label>
-                <Input
-                  id="quick-name"
-                  name="quick-name"
-                  placeholder="Votre nom"
-                  autoComplete="name"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="quick-email">Adresse courriel</Label>
-                <Input
-                  id="quick-email"
-                  name="quick-email"
-                  type="email"
-                  placeholder="vous@email.com"
-                  autoComplete="email"
-                />
-              </div>
-              <div className="space-y-2 md:col-span-2">
-                <Label htmlFor="quick-message">Message</Label>
-                <Textarea
-                  id="quick-message"
-                  name="quick-message"
-                  placeholder="Expliquez votre besoin en quelques lignes."
-                  rows={4}
-                />
-              </div>
-              <div className="md:col-span-2 flex flex-wrap gap-3 justify-between items-center">
-                <p className="text-sm text-muted-foreground">
-                  En soumettant ce formulaire, vous acceptez notre politique de confidentialité.
-                </p>
-                <Button type="submit">
-                  <Send className="w-4 h-4 mr-2" />
-                  Envoyer mon message
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
       </section>
     </div>
   );

@@ -92,7 +92,7 @@ const About = () => {
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.2),transparent)]" />
-        <div className="container mx-auto px-4 relative z-10 space-y-6 text-center md:text-left">
+        <div className="relative z-10 mx-auto max-w-5xl space-y-6 px-6 text-center md:text-left">
           <span className="inline-flex items-center gap-2 self-center md:self-auto rounded-full bg-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white/85 shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-accent" />
             À propos de l’association
@@ -110,206 +110,204 @@ const About = () => {
       </section>
 
       <section
-        className="container mx-auto px-4 py-16 space-y-16"
+        className="py-24"
         aria-labelledby="presentation-heading"
       >
-        <div className="grid md:grid-cols-3 gap-10">
-          <article className="space-y-4">
-            <h2
-              id="presentation-heading"
-              className="text-2xl font-semibold text-primary"
-            >
-              Mission
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Mobiliser les expertises canadiennes et africaines pour construire
-              des alliances économiques, diplomatiques et sociales porteuses
-              d’impact durable et inclusif.
-            </p>
-          </article>
-          <article className="space-y-4">
-            <h2 className="text-2xl font-semibold text-primary">Vision</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Devenir la plateforme de référence pour des partenariats
-              transformationnels entre le Canada et l’Afrique, au service des
-              citoyens et des territoires.
-            </p>
-          </article>
-          <article className="space-y-4">
-            <h2 className="text-2xl font-semibold text-primary">Historique</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Fondée en 2013 à Montréal, l’association est née de la volonté
-              d’un réseau de diplomates, entrepreneurs et universitaires de
-              renforcer le dialogue stratégique avec les capitales africaines.
-            </p>
-          </article>
+        <div className="mx-auto flex max-w-6xl flex-col gap-20 px-6">
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                id: "presentation-heading",
+                title: "Mission",
+                description:
+                  "Mobiliser les expertises canadiennes et africaines pour construire des alliances économiques, diplomatiques et sociales porteuses d’impact durable et inclusif.",
+              },
+              {
+                title: "Vision",
+                description:
+                  "Devenir la plateforme de référence pour des partenariats transformationnels entre le Canada et l’Afrique, au service des citoyens et des territoires.",
+              },
+              {
+                title: "Historique",
+                description:
+                  "Fondée en 2013 à Montréal, l’association est née de la volonté d’un réseau de diplomates, entrepreneurs et universitaires de renforcer le dialogue stratégique avec les capitales africaines.",
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="h-full rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]"
+              >
+                <h2
+                  id={item.id}
+                  className="text-2xl font-semibold text-primary"
+                >
+                  {item.title}
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <section aria-labelledby="objectifs-heading" className="space-y-8">
+            <div className="space-y-3 max-w-2xl">
+              <h2
+                id="objectifs-heading"
+                className="text-3xl font-bold text-primary"
+              >
+                Objectifs stratégiques
+              </h2>
+              <p className="text-muted-foreground">
+                Nous orientons nos actions autour de quatre piliers qui encadrent les collaborations et renforcent les capacités de nos membres.
+              </p>
+            </div>
+            <ul className="grid gap-6 md:grid-cols-2">
+              {[
+                {
+                  title: "Diplomatie économique",
+                  description:
+                    "Faciliter la signature d’accords bilatéraux et de partenariats public-privé structurants.",
+                },
+                {
+                  title: "Développement inclusif",
+                  description:
+                    "Soutenir les projets favorisant l’égalité des genres, la participation citoyenne et la résilience des territoires.",
+                },
+                {
+                  title: "Innovation et savoirs",
+                  description:
+                    "Créer des passerelles entre universités, centres de recherche et incubateurs pour accélérer l’innovation.",
+                },
+                {
+                  title: "Renforcement institutionnel",
+                  description:
+                    "Accompagner les administrations publiques et les organisations régionales dans l’amélioration des services rendus aux citoyens.",
+                },
+              ].map((objective) => (
+                <li
+                  key={objective.title}
+                  className="rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]"
+                >
+                  <h3 className="text-lg font-semibold text-primary">
+                    {objective.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {objective.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section aria-labelledby="board-heading" className="space-y-8">
+            <div className="max-w-3xl space-y-3">
+              <h2
+                id="board-heading"
+                className="text-3xl font-bold text-primary"
+              >
+                Conseil d’administration
+              </h2>
+              <p className="text-muted-foreground">
+                Composé de leaders issus de la diplomatie, du secteur privé et de l’innovation sociale, il assure la gouvernance stratégique de l’association.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {boardMembers.map((member) => (
+                <ProfileCard
+                  key={member.name}
+                  {...member}
+                  socials={[
+                    {
+                      label: "Profil LinkedIn",
+                      href: "https://www.linkedin.com",
+                      icon: <Linkedin className="h-4 w-4" aria-hidden="true" />,
+                    },
+                    {
+                      label: "Profil Twitter",
+                      href: "https://twitter.com",
+                      icon: <Twitter className="h-4 w-4" aria-hidden="true" />,
+                    },
+                  ]}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section
+            aria-labelledby="honorary-heading"
+            className="space-y-8 rounded-4xl border border-border/60 bg-muted/20 px-8 py-10"
+          >
+            <div className="max-w-3xl space-y-3">
+              <h2
+                id="honorary-heading"
+                className="text-3xl font-bold text-primary"
+              >
+                Membres honoraires
+              </h2>
+              <p className="text-muted-foreground">
+                Nos membres honoraires soutiennent la mission de l’association à titre consultatif et par leur réseau d’influence.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {honoraryMembers.map((member) => (
+                <ProfileCard
+                  key={member.name}
+                  {...member}
+                  socials={[
+                    {
+                      label: "Profil LinkedIn",
+                      href: "https://www.linkedin.com",
+                      icon: <Linkedin className="h-4 w-4" aria-hidden="true" />,
+                    },
+                    {
+                      label: "Profil Twitter",
+                      href: "https://twitter.com",
+                      icon: <Twitter className="h-4 w-4" aria-hidden="true" />,
+                    },
+                  ]}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section aria-labelledby="regional-heading" className="space-y-8">
+            <div className="max-w-3xl space-y-3">
+              <h2
+                id="regional-heading"
+                className="text-3xl font-bold text-primary"
+              >
+                Représentants régionaux d’Afrique
+              </h2>
+              <p className="text-muted-foreground">
+                Cinq délégués animent nos réseaux dans les principales régions africaines, au plus près des acteurs locaux et des priorités territoriales.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+              {regionalRepresentatives.map((representative) => (
+                <ProfileCard
+                  key={representative.name}
+                  name={representative.name}
+                  title={representative.region}
+                  bio={representative.bio}
+                  image={representative.image}
+                  socials={[
+                    {
+                      label: "Profil LinkedIn",
+                      href: "https://www.linkedin.com",
+                      icon: <Linkedin className="h-4 w-4" aria-hidden="true" />,
+                    },
+                    {
+                      label: "Profil Twitter",
+                      href: "https://twitter.com",
+                      icon: <Twitter className="h-4 w-4" aria-hidden="true" />,
+                    },
+                  ]}
+                />
+              ))}
+            </div>
+          </section>
         </div>
-
-        <section aria-labelledby="objectifs-heading" className="space-y-6">
-          <div className="max-w-3xl space-y-3">
-            <h2
-              id="objectifs-heading"
-              className="text-3xl font-bold text-primary"
-            >
-              Objectifs stratégiques
-            </h2>
-            <p className="text-muted-foreground">
-              Nous orientons nos actions autour de quatre piliers qui encadrent
-              les collaborations et renforcent les capacités de nos membres.
-            </p>
-          </div>
-          <ul className="grid md:grid-cols-2 gap-8">
-            <li className="rounded-3xl bg-card border border-border/60 p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-primary mb-3">
-                Diplomatie économique
-              </h3>
-              <p className="text-muted-foreground">
-                Faciliter la signature d’accords bilatéraux et de partenariats
-                public-privé structurants.
-              </p>
-            </li>
-            <li className="rounded-3xl bg-card border border-border/60 p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-primary mb-3">
-                Développement inclusif
-              </h3>
-              <p className="text-muted-foreground">
-                Soutenir les projets favorisant l’égalité des genres, la
-                participation citoyenne et la résilience des territoires.
-              </p>
-            </li>
-            <li className="rounded-3xl bg-card border border-border/60 p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-primary mb-3">
-                Innovation et savoirs
-              </h3>
-              <p className="text-muted-foreground">
-                Créer des passerelles entre universités, centres de recherche et
-                incubateurs pour accélérer l’innovation.
-              </p>
-            </li>
-            <li className="rounded-3xl bg-card border border-border/60 p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-primary mb-3">
-                Renforcement institutionnel
-              </h3>
-              <p className="text-muted-foreground">
-                Accompagner les administrations publiques et les organisations
-                régionales dans l’amélioration des services rendus aux citoyens.
-              </p>
-            </li>
-          </ul>
-        </section>
-
-        <section aria-labelledby="board-heading" className="space-y-8">
-          <div className="space-y-3">
-            <h2
-              id="board-heading"
-              className="text-3xl font-bold text-primary"
-            >
-              Conseil d’administration
-            </h2>
-            <p className="text-muted-foreground max-w-3xl">
-              Composé de leaders issus de la diplomatie, du secteur privé et de
-              l’innovation sociale, il assure la gouvernance stratégique de
-              l’association.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {boardMembers.map((member) => (
-              <ProfileCard
-                key={member.name}
-                {...member}
-                socials={[
-                  {
-                    label: "Profil LinkedIn",
-                    href: "https://www.linkedin.com",
-                    icon: <Linkedin className="w-4 h-4" aria-hidden="true" />,
-                  },
-                  {
-                    label: "Profil Twitter",
-                    href: "https://twitter.com",
-                    icon: <Twitter className="w-4 h-4" aria-hidden="true" />,
-                  },
-                ]}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="honorary-heading"
-          className="space-y-8 bg-muted/30 border border-border/50 rounded-3xl p-10"
-        >
-          <div className="space-y-3">
-            <h2
-              id="honorary-heading"
-              className="text-3xl font-bold text-primary"
-            >
-              Membres honoraires
-            </h2>
-            <p className="text-muted-foreground max-w-3xl">
-              Nos membres honoraires soutiennent la mission de l’association à
-              titre consultatif et par leur réseau d’influence.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {honoraryMembers.map((member) => (
-              <ProfileCard
-                key={member.name}
-                {...member}
-                socials={[
-                  {
-                    label: "Profil LinkedIn",
-                    href: "https://www.linkedin.com",
-                    icon: <Linkedin className="w-4 h-4" aria-hidden="true" />,
-                  },
-                  {
-                    label: "Profil Twitter",
-                    href: "https://twitter.com",
-                    icon: <Twitter className="w-4 h-4" aria-hidden="true" />,
-                  },
-                ]}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section aria-labelledby="regional-heading" className="space-y-8">
-          <div className="space-y-3">
-            <h2
-              id="regional-heading"
-              className="text-3xl font-bold text-primary"
-            >
-              Représentants régionaux d’Afrique
-            </h2>
-            <p className="text-muted-foreground max-w-3xl">
-              Cinq délégués animent nos réseaux dans les principales régions
-              africaines, au plus près des acteurs locaux et des priorités
-              territoriales.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {regionalRepresentatives.map((representative) => (
-              <ProfileCard
-                key={representative.name}
-                name={representative.name}
-                title={representative.region}
-                bio={representative.bio}
-                image={representative.image}
-                socials={[
-                  {
-                    label: "Profil LinkedIn",
-                    href: "https://www.linkedin.com",
-                    icon: <Linkedin className="w-4 h-4" aria-hidden="true" />,
-                  },
-                  {
-                    label: "Profil Twitter",
-                    href: "https://twitter.com",
-                    icon: <Twitter className="w-4 h-4" aria-hidden="true" />,
-                  },
-                ]}
-              />
-            ))}
-          </div>
-        </section>
       </section>
     </div>
   );
