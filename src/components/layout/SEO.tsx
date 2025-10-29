@@ -2,11 +2,11 @@ import { Helmet } from "react-helmet-async";
 
 // Global default SEO + JSON-LD schema
 const SEO = () => {
-  const siteName = "Association Partenariats Canada-Afrique";
-  const title = `${siteName} - Bâtir des partenariats transformateurs`;
+  const siteName = "RPAC | Réseau Partenariats Afrique-Canada";
+  const title = "RPAC | Accélérer les coopérations Canada-Afrique";
   const description =
-    "L’Association Partenariats Canada-Afrique rassemble institutions, entreprises et acteurs de la société civile pour co-construire des initiatives de diplomatie économique, d’innovation et de gouvernance inclusive sur le continent africain.";
-  const url = "https://www.partenariatsca.org"; // Placeholder; replace with real domaine
+    "RPAC réunit gouvernements, entreprises et société civile afin de co-construire des projets durables reliant le Canada et l’ensemble du continent africain.";
+  const url = "https://www.rpac-international.org"; // Placeholder; replace with real domaine
   const image =
     "https://storage.googleapis.com/gpt-engineer-file-uploads/fWGee95WDThbZaV7NtGh9rbUFT03/social-images/social-1759892605022-D‚clinaison 1.png";
 
