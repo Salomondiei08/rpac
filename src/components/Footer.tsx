@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import { partners } from "@/data/partners";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
@@ -14,26 +13,6 @@ const Footer = () => {
       <h2 id="footer-heading" className="sr-only">
         Pied de page
       </h2>
-      <section className="border-b border-primary-foreground/15">
-        <div className="container mx-auto px-4 pb-12">
-          <div className="flex gap-6 overflow-x-auto" aria-label="Partenaires de l’association">
-            {partners.concat(partners).map((partner, index) => (
-              <a
-                key={`${partner.name}-${index}`}
-                href={partner.href}
-                className="flex-none w-64 rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 px-6 py-4 text-primary-foreground/90 hover:bg-primary-foreground/15 transition-colors"
-              >
-                <div className="text-sm uppercase tracking-wide opacity-70">Partenaire</div>
-                <div className="text-lg font-semibold">{partner.name}</div>
-                <div className="text-xs text-primary-foreground/70 mt-1">
-                  {partner.sector}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="container mx-auto px-4 py-12">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4 space-y-4">
