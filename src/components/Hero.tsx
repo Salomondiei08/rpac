@@ -7,13 +7,13 @@ const Hero = () => {
     <section
       id="accueil"
       aria-labelledby="hero-heading"
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+      className="relative isolate overflow-hidden mt-[-80px] md:mt-[-96px] pt-20 md:pt-24 pb-24"
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 -z-10">
         <img
           src={heroImage}
           alt="Représentants de l'association réunis autour d'une table de travail"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -25,25 +25,27 @@ const Hero = () => {
         <Users className="w-16 h-16" aria-hidden="true" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
-        <div className="max-w-3xl space-y-6 animate-fade-up">
-          <div className="inline-flex items-center gap-2 bg-accent/20 text-accent-foreground/90 rounded-full px-4 py-2 text-sm font-semibold">
+      <div className="container mx-auto px-4">
+        <div className="flex min-h-[70vh] flex-col items-center justify-center gap-8 text-center text-primary-foreground animate-fade-up">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur">
             <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
             Alliance panafricaine pour des partenariats durables
           </div>
-          <h1
-            id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight"
-          >
-            Bâtir des{" "}
-            <span className="text-accent">partenariats transformateurs</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-primary-foreground/90">
-            L’Association des Partenariats Canada-Afrique réunit décideurs,
-            entreprises et acteurs de la société civile pour co-créer des
-            solutions inclusives sur l’ensemble du continent africain.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="space-y-6 max-w-4xl">
+            <h1
+              id="hero-heading"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+            >
+              Bâtir des{" "}
+              <span className="text-accent">partenariats transformateurs</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-primary-foreground/90">
+              L’Association des Partenariats Canada-Afrique réunit décideurs,
+              entreprises et acteurs de la société civile pour co-créer des
+              solutions inclusives sur l’ensemble du continent africain.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
             <Button
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 group"
