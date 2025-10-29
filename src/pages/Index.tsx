@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import ProgramsHighlights from "@/components/home/ProgramsHighlights";
 import RecentEvents from "@/components/home/RecentEvents";
 import NewsHighlights from "@/components/home/NewsHighlights";
-import PartnersCarousel from "@/components/home/PartnersCarousel";
+import PartnersShowcase from "@/components/home/PartnersShowcase";
 
 const Index = () => {
   return (
@@ -15,10 +15,10 @@ const Index = () => {
         Aller au contenu
       </a>
       <Hero />
-      <PartnersCarousel />
       <ProgramsHighlights />
       <RecentEvents />
       <NewsHighlights />
+      <PartnersShowcase />
     </>
   );
 };
