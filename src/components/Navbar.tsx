@@ -40,19 +40,17 @@ const Navbar = () => {
   ];
 
   const isActivitiesRoute = activitiesItems.some((item) =>
-    location.pathname.startsWith(item.to),
+    location.pathname.startsWith(item.to)
   );
 
-  const handleActivitiesBlur = (
-    event: FocusEvent<HTMLDivElement, Element>,
-  ) => {
+  const handleActivitiesBlur = (event: FocusEvent<HTMLDivElement, Element>) => {
     if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
       setIsActivitiesOpen(false);
     }
   };
 
   const handleActivitiesMouseLeave = (
-    event: ReactMouseEvent<HTMLDivElement, MouseEvent>,
+    event: ReactMouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     if (event.currentTarget.contains(event.relatedTarget as Node | null)) {
       return;
@@ -103,8 +101,8 @@ const Navbar = () => {
                           ? "text-white"
                           : "text-white/80 hover:text-white"
                         : isActive
-                          ? "text-accent"
-                          : "text-foreground hover:text-accent"
+                        ? "text-accent"
+                        : "text-foreground hover:text-accent"
                     }`
                   }
                   role="menuitem"
@@ -129,8 +127,8 @@ const Navbar = () => {
                       ? "text-white"
                       : "text-white/80 hover:text-white"
                     : isActivitiesRoute
-                      ? "text-accent"
-                      : "text-foreground hover:text-accent"
+                    ? "text-accent"
+                    : "text-foreground hover:text-accent"
                 }`}
                 aria-haspopup="true"
                 aria-expanded={isActivitiesOpen}
