@@ -58,8 +58,8 @@ const Hero = () => {
             </Button>
             <Button
               size="lg"
-              variant="secondary"
-              className="text-primary font-semibold text-lg px-8 py-6"
+              variant="outline"
+              className="border-accent text-accent font-semibold text-lg px-8 py-6 hover:bg-accent/10"
               asChild
             >
               <a href="/adhesion-contact">Rejoindre l’association</a>

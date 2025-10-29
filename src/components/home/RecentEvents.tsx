@@ -27,27 +27,18 @@ const events = [
 const RecentEvents = () => {
   return (
     <section id="events" aria-labelledby="events-heading" className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="md:flex md:items-start md:justify-between gap-12 mb-10">
-          <div className="max-w-xl space-y-3">
-            <h2
-              id="events-heading"
-              className="text-3xl md:text-4xl font-bold text-primary"
-            >
-              Événements récents
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Des échanges stratégiques pour rapprocher les écosystèmes canadiens
-              et africains. Découvrez les rendez-vous qui ont marqué notre
-              agenda.
-            </p>
-          </div>
-          <a
-            href="/agenda"
-            className="hidden md:inline-flex items-center gap-2 text-accent font-semibold"
+      <div className="container mx-auto px-4 space-y-10">
+        <div className="max-w-3xl mx-auto text-center space-y-4">
+          <h2
+            id="events-heading"
+            className="text-3xl md:text-4xl font-bold text-primary"
           >
-            Consulter l’agenda complet
-          </a>
+            Événements récents
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Des échanges stratégiques pour rapprocher les écosystèmes canadiens
+            et africains. Découvrez les rendez-vous qui ont marqué notre agenda.
+          </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -71,14 +62,20 @@ const RecentEvents = () => {
                 {event.title}
               </h3>
               <p className="text-muted-foreground flex-1">{event.description}</p>
-              <a
-                href="/agenda"
-                className="text-accent font-medium"
-              >
+              <a href="/agenda" className="text-accent font-medium">
                 Voir le compte-rendu
               </a>
             </article>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <a
+            href="/agenda"
+            className="inline-flex items-center gap-2 text-accent font-semibold"
+          >
+            Consulter l’agenda complet
+          </a>
         </div>
       </div>
     </section>

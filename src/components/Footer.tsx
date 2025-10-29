@@ -1,24 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
-
-const partnerLogos = [
-  {
-    name: "Alliance Canada-Afrique",
-    href: "https://example.org",
-  },
-  {
-    name: "Chambre de commerce Panafricaine",
-    href: "https://example.org",
-  },
-  {
-    name: "Réseau des Villes Durables",
-    href: "https://example.org",
-  },
-  {
-    name: "Institut de la Gouvernance Inclusive",
-    href: "https://example.org",
-  },
-];
+import { partners } from "@/data/partners";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
@@ -35,7 +17,7 @@ const Footer = () => {
       <section className="border-b border-primary-foreground/15">
         <div className="container mx-auto px-4 pb-12">
           <div className="flex gap-6 overflow-x-auto" aria-label="Partenaires de l’association">
-            {partnerLogos.concat(partnerLogos).map((partner, index) => (
+            {partners.concat(partners).map((partner, index) => (
               <a
                 key={`${partner.name}-${index}`}
                 href={partner.href}
@@ -43,6 +25,9 @@ const Footer = () => {
               >
                 <div className="text-sm uppercase tracking-wide opacity-70">Partenaire</div>
                 <div className="text-lg font-semibold">{partner.name}</div>
+                <div className="text-xs text-primary-foreground/70 mt-1">
+                  {partner.sector}
+                </div>
               </a>
             ))}
           </div>

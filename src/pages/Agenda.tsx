@@ -69,24 +69,24 @@ const Agenda = () => {
 
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-r from-primary via-primary/95 to-primary/80 text-primary-foreground py-20">
-        <div className="container mx-auto px-4 space-y-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
+        <div className="container mx-auto px-4 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
-            className="bg-white/15 text-primary-foreground"
+            className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
           >
             Nos activités
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-3xl leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
             Un agenda continental pour connecter les écosystèmes canadiens et
             africains.
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90">
+          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90 mx-auto md:mx-0">
             Forums, séminaires, missions économiques et rencontres sectorielles
             rythment notre programmation. Sélectionnez les filtres pour suivre
             les événements qui vous concernent.
           </p>
-          <div className="flex flex-wrap gap-3 text-sm text-primary-foreground/70">
+          <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-primary-foreground/70">
             <span className="inline-flex items-center gap-2">
               <CalendarDays className="w-4 h-4" />
               Agenda mis à jour en continu

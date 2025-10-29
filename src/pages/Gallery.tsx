@@ -60,19 +60,19 @@ const resources = [
 const Gallery = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground py-20">
-        <div className="container mx-auto px-4 space-y-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
+        <div className="container mx-auto px-4 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
-            className="bg-white/15 text-primary-foreground"
+            className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
           >
             Nos activités
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-3xl leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
             Galerie multimédia & ressources, pour revivre nos temps forts et
             approfondir nos travaux.
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90">
+          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90 mx-auto md:mx-0">
             Photos, vidéos, publications et rapports : explorez les contenus
             produits avec nos partenaires et membres partout en Afrique et au
             Canada.

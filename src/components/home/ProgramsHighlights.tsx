@@ -34,25 +34,23 @@ const ProgramsHighlights = () => {
       aria-labelledby="highlights-heading"
       className="py-16 bg-muted/30"
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center md:text-left md:flex md:items-end md:justify-between gap-12 mb-12">
-          <div className="max-w-2xl mx-auto md:mx-0 space-y-4">
-            <h2
-              id="highlights-heading"
-              className="text-3xl md:text-4xl font-bold text-primary"
-            >
-              Des actions concrètes sur tout le continent
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Notre réseau mobilise décideurs publics et privés autour
-              d’initiatives qui accélèrent les investissements, renforcent les
-              capacités institutionnelles et soutiennent l’innovation sociale.
-            </p>
-          </div>
+      <div className="container mx-auto px-4 space-y-12">
+        <div className="max-w-3xl mx-auto text-center space-y-4">
+          <h2
+            id="highlights-heading"
+            className="text-3xl md:text-4xl font-bold text-primary"
+          >
+            Des actions concrètes sur tout le continent
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Notre réseau mobilise décideurs publics et privés autour
+            d’initiatives qui accélèrent les investissements, renforcent les
+            capacités institutionnelles et soutiennent l’innovation sociale.
+          </p>
         </div>
 
         <ul
-          className="grid gap-8 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 max-w-6xl mx-auto"
           aria-label="Sections mises en avant"
         >
           {highlights.map((item) => (
