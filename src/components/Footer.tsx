@@ -9,7 +9,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground pt-16" aria-labelledby="footer-heading">
+    <footer className="bg-[#0d2a33] text-white pt-16" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Pied de page
       </h2>
@@ -104,14 +104,14 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            <p className="text-xs text-primary-foreground/70">
+              <p className="text-xs text-white/70">
               Inscrivez-vous à notre lettre d’information pour recevoir les dernières actualités.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#0d2a33] border-t border-white/10">
+      <section className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6 text-sm text-white/70 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p>&copy; {new Date().getFullYear()} Association Partenariats Canada-Afrique. Tous droits réservés.</p>
           <div className="flex flex-wrap gap-4">
