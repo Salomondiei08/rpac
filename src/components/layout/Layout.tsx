@@ -15,11 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
       <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <Navbar />
-        <main
-          id="main"
-          className="flex-1 focus:outline-none pt-28 md:pt-32 pb-24"
-          tabIndex={-1}
-        >
+        <main id="main" className="flex-1 focus:outline-none pb-24" tabIndex={-1}>
           {children}
         </main>
         <Footer />

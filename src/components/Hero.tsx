@@ -7,7 +7,7 @@ const Hero = () => {
     <section
       id="accueil"
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden pt-20 md:pt-24 pb-24"
+      className="relative isolate overflow-hidden pt-12 md:pt-24 pb-24"
     >
       <div className="absolute inset-0 -z-10">
         <img
@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="flex min-h-[70vh] flex-col items-center justify-center gap-8 text-center text-primary-foreground animate-fade-up">
+        <div className="flex min-h-[60vh] md:min-h-[70vh] flex-col items-center justify-start md:justify-center gap-8 text-center text-primary-foreground animate-fade-up pt-6 md:pt-0">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur">
             <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
             Alliance panafricaine pour des partenariats durables

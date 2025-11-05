@@ -31,8 +31,8 @@ const Navbar = () => {
     >
       {isHomePage && (
         <div className="bg-primary text-primary-foreground">
-          <div className="container mx-auto flex flex-col gap-2 px-4 py-2 text-xs sm:text-sm md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-3 text-primary-foreground/90">
+          <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
+            <div className="flex items-center gap-3">
               <a
                 href="https://linkedin.com"
                 className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
@@ -48,7 +48,7 @@ const Navbar = () => {
                 <Facebook className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="flex flex-wrap items-center gap-4 text-primary-foreground/90">
+            <div className="hidden md:flex flex-wrap items-center gap-4 text-primary-foreground/90">
               <a
                 href="mailto:contact@rpac.org"
                 className="inline-flex items-center gap-2 hover:text-primary-foreground"
@@ -67,8 +67,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="border-t border-white/15 md:border-none">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4 md:py-6">
           <NavLink
             to="/"
             className="flex items-center rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-opacity"
@@ -77,7 +77,7 @@ const Navbar = () => {
             <img
               src={rpacLogo}
               alt="Logo Partenariats Canada-Afrique"
-              className="h-12 w-auto"
+              className="h-10 w-auto md:h-12"
             />
           </NavLink>
 
