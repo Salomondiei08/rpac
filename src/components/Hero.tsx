@@ -18,7 +18,7 @@ const Hero = () => {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/65 to-primary/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d2a33]/85 via-[#13435a]/70 to-[#1d5c76]/55" />
       </div>
 
       <div className="absolute top-20 right-8 hidden md:block text-accent/20 animate-pulse">

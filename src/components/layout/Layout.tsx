@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "./SEO";
+import ScrollToTop from "./ScrollToTop";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,6 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <SEO />
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <Navbar />
         <main

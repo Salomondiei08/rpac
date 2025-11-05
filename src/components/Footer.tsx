@@ -111,8 +111,8 @@ const Footer = () => {
         </div>
       </section>
 
-      <section className="bg-primary/95 border-t border-primary-foreground/15">
-        <div className="container mx-auto px-4 py-6 text-sm text-primary-foreground/70 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <section className="bg-[#0d2a33] border-t border-white/10">
+        <div className="container mx-auto px-4 py-6 text-sm text-white/70 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p>&copy; {new Date().getFullYear()} Association Partenariats Canada-Afrique. Tous droits réservés.</p>
           <div className="flex flex-wrap gap-4">
             <NavLink to="/mentions-legales" className="hover:text-accent transition-colors">
