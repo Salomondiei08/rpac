@@ -1,7 +1,6 @@
 import { CalendarDays, MapPin, ArrowUpRight } from "lucide-react";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 
 const events = [
   {
@@ -59,13 +58,13 @@ const RecentEvents = () => {
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <Badge className="rounded-full bg-accent/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="inline-flex items-center rounded-full border border-transparent bg-[#f3d9d3] px-5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-primary">
                     {event.tag}
-                  </Badge>
-                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground/80">
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground/70">
                     <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                    {event.date}
+                    {event.date.toUpperCase()}
                   </span>
                 </div>
                 <div className="space-y-3">
@@ -76,9 +75,9 @@ const RecentEvents = () => {
                     {event.description}
                   </p>
                 </div>
-                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+                <div className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground/70">
                   <MapPin className="h-4 w-4" aria-hidden="true" />
-                  {event.location}
+                  {event.location.toUpperCase()}
                 </div>
                 <a
                   href="/agenda"
