@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactCoordinates from "@/components/ContactCoordinates";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const galleryItems = [
   {
@@ -62,7 +63,7 @@ const Gallery = () => {
   return (
     <div className="bg-background">
       <section className="relative mt-[-80px] overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground md:mt-[-96px]">
-        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
+        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="mx-auto bg-white/15 text-primary-foreground md:mx-0"
@@ -75,19 +76,19 @@ const Gallery = () => {
           <p className="mx-auto max-w-3xl text-base text-primary-foreground/90 sm:text-lg lg:text-xl md:mx-0">
             Photos, vidéos, publications et rapports : explorez les contenus produits avec nos partenaires et membres partout en Afrique et au Canada.
           </p>
-        </div>
+        </AnimatedSection>
       </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="max-w-3xl space-y-4">
+          <AnimatedSection className="max-w-3xl space-y-4">
             <h2 className="text-3xl font-bold text-primary">Galerie multimédia</h2>
             <p className="text-muted-foreground">
               Revivez nos moments forts à travers une collection de photos et de vidéos produites avec nos partenaires et membres.
             </p>
-          </header>
+          </AnimatedSection>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <AnimatedSection delay={120} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {galleryItems.map((item) => (
               <div
                 key={item.title}
@@ -117,20 +118,20 @@ const Gallery = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="bg-muted/20 py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="max-w-3xl space-y-4">
+          <AnimatedSection className="max-w-3xl space-y-4">
             <h2 className="text-3xl font-bold text-primary">Publications & rapports</h2>
             <p className="text-lg text-muted-foreground">
               Accédez à nos documents de référence, rapports annuels, notes stratégiques et ressources méthodologiques.
             </p>
-          </header>
+          </AnimatedSection>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <AnimatedSection delay={120} className="grid gap-6 md:grid-cols-3">
             {resources.map((resource) => (
               <Card
                 key={resource.title}
@@ -155,11 +156,11 @@ const Gallery = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
-      <ContactCoordinates />
-
       </section>
+
+      <ContactCoordinates />
     </div>
   );
 };

@@ -4,12 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { programs } from "@/data/programs";
 import ContactCoordinates from "@/components/ContactCoordinates";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Programs = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
-        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
+        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
@@ -41,21 +42,21 @@ const Programs = () => {
               </Badge>
             </span>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="space-y-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-primary">Nos programmes</h2>
-          <p className="text-muted-foreground">
-            Chaque programme s’appuie sur un comité de pilotage et un réseau de
-            partenaires présents sur le terrain pour accompagner la conception,
-            la mise en œuvre et le suivi d’impact des projets.
-          </p>
-        </header>
+          <AnimatedSection className="space-y-4 max-w-3xl">
+            <h2 className="text-3xl font-bold text-primary">Nos programmes</h2>
+            <p className="text-muted-foreground">
+              Chaque programme s’appuie sur un comité de pilotage et un réseau de
+              partenaires présents sur le terrain pour accompagner la conception,
+              la mise en œuvre et le suivi d’impact des projets.
+            </p>
+          </AnimatedSection>
 
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <AnimatedSection delay={120} className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {programs.map((program, index) => {
               const Icon = program.icon;
               return (
@@ -118,7 +119,7 @@ const Programs = () => {
                 </Card>
               );
             })}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
       <ContactCoordinates />

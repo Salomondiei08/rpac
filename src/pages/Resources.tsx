@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ContactCoordinates from "@/components/ContactCoordinates";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const resourceCollections = [
   {
@@ -47,7 +48,7 @@ const Resources = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
-        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
+        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
@@ -78,12 +79,12 @@ const Resources = () => {
               </Badge>
             </span>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="space-y-4 max-w-3xl">
+          <AnimatedSection className="space-y-4 max-w-3xl">
             <h2 className="text-3xl font-bold text-primary">
               Nos principales ressources
             </h2>
@@ -91,9 +92,9 @@ const Resources = () => {
               Chaque ressource est conçue avec nos partenaires terrain pour transformer les ambitions
               en feuilles de route concrètes et mesurables.
             </p>
-          </header>
+          </AnimatedSection>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <AnimatedSection delay={120} className="grid gap-8 md:grid-cols-3">
             {resourceCollections.map((collection) => (
               <Card
                 key={collection.title}
@@ -125,11 +126,11 @@ const Resources = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
-      <ContactCoordinates />
-
       </section>
+
+      <ContactCoordinates />
     </div>
   );
 };

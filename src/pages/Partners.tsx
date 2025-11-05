@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import ContactCoordinates from "@/components/ContactCoordinates";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const partnersHighlights = [
   {
@@ -51,7 +52,7 @@ const Partners = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
-        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
+        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
@@ -82,20 +83,20 @@ const Partners = () => {
               </Badge>
             </span>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="space-y-4 max-w-3xl">
+          <AnimatedSection className="space-y-4 max-w-3xl">
             <h2 className="text-3xl font-bold text-primary">Nos partenaires clés</h2>
             <p className="text-muted-foreground leading-relaxed">
               Le RPAC s’appuie sur un réseau structuré de partenaires qui partagent nos priorités
               en matière de diplomatie économique, d’innovation et de gouvernance inclusive.
             </p>
-          </header>
+          </AnimatedSection>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <AnimatedSection delay={120} className="grid gap-8 md:grid-cols-3">
             {partnersHighlights.map((highlight) => (
               <Card
                 key={highlight.title}
@@ -119,13 +120,13 @@ const Partners = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="pb-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="space-y-4 max-w-3xl">
+          <AnimatedSection className="space-y-4 max-w-3xl">
             <h2 className="text-3xl font-bold text-primary">
               Comment nous accompagnons vos partenariats
             </h2>
@@ -133,9 +134,9 @@ const Partners = () => {
               Du cadrage stratégique à la mise en œuvre opérationnelle, notre équipe pilote chaque
               étape afin de sécuriser la création de valeur partagée.
             </p>
-          </header>
+          </AnimatedSection>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <AnimatedSection delay={120} className="grid gap-8 md:grid-cols-3">
             {partnershipServices.map((service) => (
               <Card
                 key={service.title}
@@ -151,11 +152,11 @@ const Partners = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
-      <ContactCoordinates />
-
       </section>
+
+      <ContactCoordinates />
     </div>
   );
 };

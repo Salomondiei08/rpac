@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, Filter } from "lucide-react";
 import ContactCoordinates from "@/components/ContactCoordinates";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const agendaEvents = [
   {
@@ -67,7 +68,7 @@ const Agenda = () => {
   return (
     <div className="bg-background">
       <section className="relative mt-[-80px] overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground md:mt-[-96px]">
-        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
+        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
           <Badge
             variant="secondary"
             className="mx-auto bg-white/15 text-primary-foreground md:mx-0"
@@ -87,112 +88,109 @@ const Agenda = () => {
               Agenda mis à jour en continu
             </span>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <header className="max-w-3xl space-y-4">
+          <AnimatedSection className="max-w-3xl space-y-4">
             <h2 className="text-3xl font-bold text-primary">Événements à venir</h2>
             <p className="text-lg text-muted-foreground">
-              Consultez notre agenda pour découvrir tous nos séminaires, forums et initiatives à venir. Utilisez les
-              filtres pour affiner votre recherche par type d’événement, programme ou région.
+              Consultez notre agenda pour découvrir tous nos séminaires, forums et initiatives à venir. Utilisez les filtres pour affiner votre recherche par type d’événement, programme ou région.
             </p>
-          </header>
+          </AnimatedSection>
 
-          <div className="flex flex-col gap-8">
-            <div className="grid gap-4 md:grid-cols-3 md:items-start">
-              <div>
-                <p className="flex items-center gap-2 text-sm text-muted-foreground/80">
-                  <Filter className="h-4 w-4" />
-                  Type d’événement
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {filters.type.map((type) => (
-                    <Button
-                      key={type}
-                      variant={activeType === type ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => toggleFilter(activeType, type, setActiveType)}
-                    >
-                      {type}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <p className="flex items-center gap-2 text-sm text-muted-foreground/80">
-                  <Filter className="h-4 w-4" />
-                  Programme
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {filters.program.map((program) => (
-                    <Button
-                      key={program}
-                      variant={activeProgram === program ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => toggleFilter(activeProgram, program, setActiveProgram)}
-                    >
-                      {program}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <p className="flex items-center gap-2 text-sm text-muted-foreground/80">
-                  <Filter className="h-4 w-4" />
-                  Région
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {filters.region.map((region) => (
-                    <Button
-                      key={region}
-                      variant={activeRegion === region ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => toggleFilter(activeRegion, region, setActiveRegion)}
-                    >
-                      {region}
-                    </Button>
-                  ))}
-                </div>
+          <AnimatedSection delay={80} className="grid gap-4 md:grid-cols-3 md:items-start">
+            <div>
+              <p className="flex items-center gap-2 text-sm text-muted-foreground/80">
+                <Filter className="h-4 w-4" />
+                Type d’événement
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {filters.type.map((type) => (
+                  <Button
+                    key={type}
+                    variant={activeType === type ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => toggleFilter(activeType, type, setActiveType)}
+                  >
+                    {type}
+                  </Button>
+                ))}
               </div>
             </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredEvents.map((event) => (
-                <Card
-                  key={event.title}
-                  className="border border-border/60 shadow-[var(--shadow-card)]"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-lg text-primary leading-snug">
-                      {event.title}
-                    </CardTitle>
-                    <p className="flex flex-wrap gap-2 text-sm text-muted-foreground/80">
-                      <span>{event.date}</span>
-                      <span aria-hidden="true">•</span>
-                      <span>{event.location}</span>
-                    </p>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {event.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 text-xs">
-                      <Badge variant="secondary">{event.type}</Badge>
-                      <Badge variant="secondary">{event.program}</Badge>
-                      <Badge variant="secondary">Région {event.region}</Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <div>
+              <p className="flex items-center gap-2 text-sm text-muted-foreground/80">
+                <Filter className="h-4 w-4" />
+                Programme
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {filters.program.map((program) => (
+                  <Button
+                    key={program}
+                    variant={activeProgram === program ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => toggleFilter(activeProgram, program, setActiveProgram)}
+                  >
+                    {program}
+                  </Button>
+                ))}
+              </div>
             </div>
-          </div>
+            <div>
+              <p className="flex items-center gap-2 text-sm text-muted-foreground/80">
+                <Filter className="h-4 w-4" />
+                Région
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {filters.region.map((region) => (
+                  <Button
+                    key={region}
+                    variant={activeRegion === region ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => toggleFilter(activeRegion, region, setActiveRegion)}
+                  >
+                    {region}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={160} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {filteredEvents.map((event) => (
+              <Card
+                key={event.title}
+                className="border border-border/60 shadow-[var(--shadow-card)]"
+              >
+                <CardHeader>
+                  <CardTitle className="text-lg text-primary leading-snug">
+                    {event.title}
+                  </CardTitle>
+                  <p className="flex flex-wrap gap-2 text-sm text-muted-foreground/80">
+                    <span>{event.date}</span>
+                    <span aria-hidden="true">•</span>
+                    <span>{event.location}</span>
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {event.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    <Badge variant="secondary">{event.type}</Badge>
+                    <Badge variant="secondary">{event.program}</Badge>
+                    <Badge variant="secondary">Région {event.region}</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="bg-muted/25 py-24">
-        <div className="mx-auto grid max-w-5xl gap-8 rounded-4xl border border-border/60 bg-card px-6 py-8 shadow-[var(--shadow-card)] md:grid-cols-2">
+        <AnimatedSection className="mx-auto grid max-w-5xl gap-8 rounded-4xl border border-border/60 bg-card px-6 py-8 shadow-[var(--shadow-card)] md:grid-cols-2">
           <div className="space-y-4 md:p-2">
             <h2 className="text-2xl font-semibold text-primary">Calendrier interactif</h2>
             <p className="text-sm text-muted-foreground">
@@ -240,8 +238,9 @@ const Agenda = () => {
               })}
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
+
       <ContactCoordinates />
     </div>
   );
