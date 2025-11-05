@@ -7,7 +7,7 @@ const Hero = () => {
     <section
       id="accueil"
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden mt-[-80px] md:mt-[-96px] pt-20 md:pt-24 pb-24"
+      className="relative isolate overflow-hidden pt-20 md:pt-24 pb-24"
     >
       <div className="absolute inset-0 -z-10">
         <img

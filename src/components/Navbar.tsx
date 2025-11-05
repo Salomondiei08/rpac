@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav
       aria-label="Navigation principale"
-      className="fixed top-0 w-full z-50 bg-white shadow-sm border-b border-border/60"
+      className="relative w-full z-50 bg-white shadow-sm border-b border-border/60"
     >
       {isHomePage && (
         <div className="bg-primary text-primary-foreground">

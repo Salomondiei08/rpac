@@ -168,7 +168,7 @@ const AnimatedSection = ({
 const About = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground mt-[-80px] md:mt-[-96px] pt-24 md:pt-28 pb-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground pt-24 md:pt-28 pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.2),transparent)]" />
         <AnimatedSection className="relative z-10 mx-auto max-w-5xl space-y-6 px-6 text-center md:text-left">
           <span className="inline-flex items-center gap-2 self-center md:self-auto rounded-full bg-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white/85 shadow-sm backdrop-blur">

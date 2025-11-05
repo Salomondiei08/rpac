@@ -37,7 +37,7 @@ const ProgramDetail = () => {
 
   return (
     <div className="bg-background">
-      <section className="relative mt-[-80px] overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground md:mt-[-96px] md:pt-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground md:pt-28">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-6 max-w-3xl">
             <Badge variant="secondary" className="bg-white/15 text-primary-foreground w-fit">
