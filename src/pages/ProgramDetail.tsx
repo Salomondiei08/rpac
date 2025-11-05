@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { programs } from "@/data/programs";
+import ContactCoordinates from "@/components/ContactCoordinates";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const ProgramDetail = () => {
@@ -120,6 +121,7 @@ const ProgramDetail = () => {
           </Card>
         </div>
       </section>
+      <ContactCoordinates />
     </div>
   );
 };

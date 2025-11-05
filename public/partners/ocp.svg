@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="80" viewBox="0 0 160 80">
+  <rect width="160" height="80" rx="18" fill="#3e8c3a"/>
+  <circle cx="55" cy="40" r="18" fill="#fff" opacity="0.85"/>
+  <path d="M55 25l6 10h-12z" fill="#3e8c3a"/>
+  <text x="80" y="49" fill="#fff" font-family="Inter, sans-serif" font-size="24" font-weight="600">OCP</text>
+</svg>

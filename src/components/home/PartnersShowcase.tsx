@@ -19,7 +19,7 @@ const PartnersShowcase = () => {
       <div className="relative overflow-hidden bg-card/40 py-6">
         <div className="absolute inset-y-0 left-0 w-24 pointer-events-none bg-gradient-to-r from-background to-transparent" aria-hidden="true" />
         <div className="absolute inset-y-0 right-0 w-24 pointer-events-none bg-gradient-to-l from-background to-transparent" aria-hidden="true" />
-        <div className="flex min-w-max items-center gap-8 animate-marquee px-8">
+        <div className="flex min-w-max items-center gap-12 animate-marquee px-8">
           {marqueePartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
@@ -28,7 +28,7 @@ const PartnersShowcase = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain drop-shadow-sm"
                 loading="lazy"
                 decoding="async"
               />

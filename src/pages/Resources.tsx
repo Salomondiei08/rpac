@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import ContactCoordinates from "@/components/ContactCoordinates";
 
 const resourceCollections = [
   {
@@ -126,6 +127,8 @@ const Resources = () => {
             ))}
           </div>
         </div>
+      <ContactCoordinates />
+
       </section>
     </div>
   );

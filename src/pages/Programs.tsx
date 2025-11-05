@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { programs } from "@/data/programs";
+import ContactCoordinates from "@/components/ContactCoordinates";
 
 const Programs = () => {
   return (
@@ -120,6 +121,7 @@ const Programs = () => {
           </div>
         </div>
       </section>
+      <ContactCoordinates />
     </div>
   );
 };

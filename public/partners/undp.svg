@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="80" viewBox="0 0 160 80">
+  <rect width="160" height="80" rx="18" fill="#0067b3"/>
+  <text x="80" y="46" fill="#fff" font-family="Inter, sans-serif" font-size="30" font-weight="700" text-anchor="middle">UNDP</text>
+  <circle cx="34" cy="30" r="10" fill="#fff" opacity="0.85"/>
+</svg>

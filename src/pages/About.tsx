@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ContactCoordinates from "@/components/ContactCoordinates";
 import impactImage from "@/assets/impact-collage.jpg";
 
 const boardMembers = [
@@ -433,6 +434,8 @@ const About = () => {
               ))}
             </div>
           </section>
+        <ContactCoordinates />
+
         </div>
       </section>
     </div>

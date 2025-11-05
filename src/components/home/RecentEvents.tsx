@@ -1,6 +1,7 @@
 import { CalendarDays, MapPin, ArrowUpRight } from "lucide-react";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 const events = [
   {
@@ -54,33 +55,34 @@ const RecentEvents = () => {
           {events.map((event, index) => (
             <article
               key={event.title}
-              className="group relative overflow-hidden rounded-4xl border border-border/60 bg-card shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-hover)] hover:bg-primary"
+              className="relative overflow-hidden rounded-3xl border border-accent/10 bg-white p-8 shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-2"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
-              <div className="relative flex h-full flex-col gap-6 p-8 text-left transition-colors duration-500 group-hover:text-primary-foreground">
+              <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent transition-colors duration-300 group-hover:bg-primary-foreground/20 group-hover:text-primary-foreground">
+                  <Badge className="rounded-full bg-accent/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
                     {event.tag}
-                  </span>
-                  <span className="inline-flex items-center gap-2 text-xs text-muted-foreground/80 transition-colors duration-300 group-hover:text-primary-foreground/80">
+                  </Badge>
+                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground/80">
                     <CalendarDays className="h-4 w-4" aria-hidden="true" />
                     {event.date}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold leading-tight">
-                  {event.title}
-                </h3>
-                <div className="space-y-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-primary-foreground/85">
-                  <p>{event.description}</p>
-                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground/70 transition-colors duration-500 group-hover:text-primary-foreground/70">
-                    <MapPin className="h-4 w-4" aria-hidden="true" />
-                    {event.location}
-                  </span>
+                <div className="space-y-3">
+                  <h3 className="text-xl font-semibold text-primary leading-tight">
+                    {event.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {event.description}
+                  </p>
+                </div>
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+                  <MapPin className="h-4 w-4" aria-hidden="true" />
+                  {event.location}
                 </div>
                 <a
                   href="/agenda"
-                  className="mt-auto inline-flex items-center gap-2 text-accent font-semibold transition-colors duration-500 group-hover:text-primary-foreground"
+                  className="inline-flex items-center gap-2 text-accent font-semibold"
                 >
                   Voir le compte-rendu
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

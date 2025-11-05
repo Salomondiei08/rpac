@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, Filter } from "lucide-react";
+import ContactCoordinates from "@/components/ContactCoordinates";
 
 const agendaEvents = [
   {
@@ -241,6 +242,7 @@ const Agenda = () => {
           </div>
         </div>
       </section>
+      <ContactCoordinates />
     </div>
   );
 };

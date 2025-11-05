@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import ContactCoordinates from "@/components/ContactCoordinates";
 
 const partnersHighlights = [
   {
@@ -152,6 +153,8 @@ const Partners = () => {
             ))}
           </div>
         </div>
+      <ContactCoordinates />
+
       </section>
     </div>
   );
