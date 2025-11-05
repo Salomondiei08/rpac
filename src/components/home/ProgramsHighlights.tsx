@@ -1,83 +1,102 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Globe2, Handshake, LineChart } from "lucide-react";
-
-const highlights = [
-  {
-    title: "Programmes phares",
-    description:
-      "Huit axes structurants qui font avancer la diplomatie économique, l’innovation et les partenariats inclusifs entre le Canada et l’Afrique.",
-    icon: LineChart,
-    cta: "Découvrir nos programmes",
-    href: "/programmes",
-  },
-  {
-    title: "Événements récents",
-    description:
-      "Forums économiques, rencontres sectorielles, rassemblements de décideurs : suivez les moments forts de notre agenda continental.",
-    icon: Globe2,
-    cta: "Consulter l’agenda",
-    href: "/agenda",
-  },
-  {
-    title: "Actualités clés",
-    description:
-      "Analyses, publications et retours d’expérience pour éclairer les grandes transformations en Afrique francophone et anglophone.",
-    icon: Handshake,
-    cta: "Lire les actualités",
-    href: "/galerie",
-  },
-];
+import { Button } from "@/components/ui/button";
+import { programs } from "@/data/programs";
+import useInView from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 
 const ProgramsHighlights = () => {
   return (
-    <section
-      aria-labelledby="highlights-heading"
-      className="bg-muted/30 py-24"
-    >
-      <div className="mx-auto max-w-6xl space-y-12 px-6">
-        <div className="mx-auto max-w-3xl space-y-4 text-center">
-          <h2
-            id="highlights-heading"
-            className="text-3xl md:text-4xl font-bold text-primary"
-          >
-            Des actions concrètes sur tout le continent
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Notre réseau mobilise décideurs publics et privés autour
-            d’initiatives qui accélèrent les investissements, renforcent les
-            capacités institutionnelles et soutiennent l’innovation sociale.
+    <section aria-labelledby="activities-heading" className="relative bg-background pt-12 pb-24">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
+        <header className="space-y-4 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            Nos activités
           </p>
+          <h1 id="activities-heading" className="text-3xl font-semibold text-primary sm:text-4xl">
+            Des programmes pensés pour transformer les ambitions en résultats
+          </h1>
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
+            Explorez les huit axes structurants du RPAC. Chaque programme fédère institutions publiques, entreprises et
+            acteurs de la société civile autour d’actions concrètes entre le Canada et l’Afrique.
+          </p>
+        </header>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {programs.slice(0, 6).map((program, index) => (
+            <ActivityCard key={program.slug} program={program} index={index} />
+          ))}
         </div>
 
-        <ul
-          className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 max-w-6xl mx-auto"
-          aria-label="Sections mises en avant"
-        >
-          {highlights.map((item) => (
-            <li key={item.title}>
-              <article className="h-full rounded-3xl bg-card shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-300 p-8 flex flex-col gap-6">
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                  <item.icon className="w-7 h-7" aria-hidden="true" />
-                </div>
-                <div className="space-y-3 flex-1">
-                  <h3 className="text-xl font-semibold text-primary">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-                <Link
-                  to={item.href}
-                  className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
-                >
-                  {item.cta}
-                  <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-              </article>
-            </li>
-          ))}
-        </ul>
+        <div className="flex justify-center">
+          <Button asChild variant="outline" className="px-8 py-6 text-base font-semibold">
+            <Link to="/programmes">Voir tous nos programmes</Link>
+          </Button>
+        </div>
       </div>
     </section>
+  );
+};
+
+interface ActivityCardProps {
+  program: (typeof programs)[number];
+  index: number;
+}
+
+const ActivityCard = ({ program, index }: ActivityCardProps) => {
+  const { ref, inView } = useInView<HTMLArticleElement>({
+    threshold: 0.2,
+  });
+  return (
+    <article
+      ref={ref}
+      className={cn(
+        "group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/60 bg-card/60 p-8 shadow-[var(--shadow-card)] transition-all duration-500",
+        "hover:-translate-y-2 hover:shadow-[var(--shadow-hover)] hover:bg-[#0d1f29]",
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      )}
+      style={{ transitionDelay: `${index * 60}ms` }}
+    >
+      <div
+        className="absolute inset-x-0 bottom-0 h-1 rounded-full bg-accent/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        aria-hidden="true"
+      />
+      <div
+        className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/15 text-accent transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white"
+      >
+        <program.icon className="h-8 w-8" aria-hidden="true" />
+      </div>
+
+      <div className="mt-6 space-y-3">
+        <h2 className="text-xl font-semibold text-primary transition-colors duration-500 group-hover:text-white">
+          {program.title}
+        </h2>
+        <p className="text-sm leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-white/80">
+          {program.excerpt}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {program.focus.slice(0, 3).map((item) => (
+            <span key={item} className="rounded-full border border-border/70 px-3 py-1 text-xs uppercase tracking-wide text-muted-foreground transition-colors duration-500 group-hover:border-white/40 group-hover:text-white/80">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <Button
+          asChild
+          className="w-full justify-between bg-accent text-accent-foreground shadow-none transition-all duration-500 group-hover:bg-white group-hover:text-[#0d1f29]"
+        >
+          <Link to={`/programmes/${program.slug}`}>
+            Lire plus
+            <span aria-hidden="true" className="ml-2 inline-block transition-transform duration-500 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
+        </Button>
+      </div>
+    </article>
   );
 };
 

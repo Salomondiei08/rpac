@@ -15,6 +15,7 @@ import Agenda from "./pages/Agenda";
 import Gallery from "./pages/Gallery";
 import Partners from "./pages/Partners";
 import Resources from "./pages/Resources";
+import ProgramDetail from "./pages/ProgramDetail";
 
 const App = () => (
   <HelmetProvider>
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/a-propos" element={<About />} />
             <Route path="/programmes" element={<Programs />} />
+            <Route path="/programmes/:slug" element={<ProgramDetail />} />
             <Route path="/agenda" element={<Agenda />} />
             <Route path="/galerie" element={<Gallery />} />
             <Route path="/adhesion-contact" element={<MembershipContact />} />

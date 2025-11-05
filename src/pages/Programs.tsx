@@ -1,57 +1,8 @@
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const programs = [
-  {
-    title: "Axe diplomatique et économique",
-    subtitle: "La stratégie canadienne pour l’Afrique",
-    description:
-      "Accompagner les gouvernements et institutions dans la co-construction de feuilles de route stratégiques pour un partenariat durable.",
-    focus: ["Dialogue bilatéral", "Accords structurants", "Plaidoyer commun"],
-  },
-  {
-    title: "Commerce, Investissements & Innovation",
-    description:
-      "Mettre en réseau investisseurs, entrepreneurs et incubateurs pour accélérer les projets porteurs d’impact socio-économique.",
-    focus: ["Rencontres B2B", "Financement mixte", "Transfert technologique"],
-  },
-  {
-    title: "Partenariats stratégiques",
-    description:
-      "Co-développer des solutions avec les institutions multilatérales, les villes et les régions afin d’aligner les priorités territoriales.",
-    focus: ["Coalitions publiques", "Diplomatie urbaine", "Alliance panafricaine"],
-  },
-  {
-    title: "Forum économique",
-    description:
-      "Organiser des rendez-vous annuels pour connecter décideurs économiques, sociétés civiles et entrepreneurs des deux continents.",
-    focus: ["Sessions plénières", "Ateliers sectoriels", "Rencontres investisseurs"],
-  },
-  {
-    title: "Rencontres sectorielles",
-    description:
-      "Mettre en lumière des secteurs clés : agriculture durable, santé, énergie, numérique et industries créatives.",
-    focus: ["Visites terrain", "Clusters sectoriels", "Partage d’expertise"],
-  },
-  {
-    title: "Gouvernance publique & capacités institutionnelles",
-    description:
-      "Renforcer les administrations publiques à travers la formation, le mentorat et l’open innovation civique.",
-    focus: ["Formations ciblées", "Coaching institutionnel", "Open data"],
-  },
-  {
-    title: "Droits, inclusion & gouvernance démocratique",
-    description:
-      "Promouvoir l’inclusion sociale, l’égalité des genres et le dialogue citoyen dans les processus décisionnels.",
-    focus: ["Plateformes citoyennes", "Femmes leaders", "Participation des jeunes"],
-  },
-  {
-    title: "Agenda 2063 en Action",
-    description:
-      "Traduire les ambitions de l’Union africaine en projets opérationnels et partenariats mesurables.",
-    focus: ["Suivi d’impact", "Laboratoires d’idées", "Coalitions régionales"],
-  },
-];
+import { Button } from "@/components/ui/button";
+import { programs } from "@/data/programs";
 
 const Programs = () => {
   return (
@@ -103,38 +54,75 @@ const Programs = () => {
           </p>
         </header>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {programs.map((program) => (
-              <Card
-                key={program.title}
-                className="border border-border/60 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300"
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">
-                    {program.title}
-                  </CardTitle>
-                  {program.subtitle && (
-                    <p className="text-sm text-accent font-medium">
-                      {program.subtitle}
-                    </p>
-                  )}
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {program.description}
-                  </p>
-                  <ul className="flex flex-wrap gap-2">
-                    {program.focus.map((item) => (
-                      <li key={item}>
-                        <Badge variant="outline" className="border-accent text-accent">
-                          {item}
-                        </Badge>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {programs.map((program, index) => {
+              const Icon = program.icon;
+              return (
+                <Card
+                  key={program.slug}
+                  className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card/70 p-8 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-hover)]"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:from-[#0d1f29]/60 group-hover:via-[#0d1f29]/40 group-hover:to-[#0d1f29]/70" />
+                  <div className="relative flex h-full flex-col gap-6">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white">
+                          <Icon className="h-7 w-7" aria-hidden="true" />
+                        </div>
+                        <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors duration-500 group-hover:text-white/80">
+                          Programme #{index + 1}
+                        </span>
+                      </div>
+                      <Badge variant="outline" className="border-transparent bg-accent/15 text-accent transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white">
+                        RPAC
+                      </Badge>
+                    </div>
+                    <CardHeader className="p-0 space-y-3">
+                      <CardTitle className="text-2xl font-semibold text-primary transition-colors duration-500 group-hover:text-white">
+                        {program.title}
+                      </CardTitle>
+                      {program.subtitle && (
+                        <p className="text-sm font-medium text-accent transition-colors duration-500 group-hover:text-accent/90">
+                          {program.subtitle}
+                        </p>
+                      )}
+                    </CardHeader>
+                    <CardContent className="p-0 space-y-5 text-sm leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-white/85">
+                      <p>{program.description}</p>
+                      <ul className="flex flex-wrap gap-2">
+                        {program.focus.map((item) => (
+                          <li key={item}>
+                            <Badge
+                              variant="outline"
+                              className="border-border/70 text-muted-foreground transition-colors duration-500 group-hover:border-white/40 group-hover:text-white"
+                            >
+                              {item}
+                            </Badge>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <div className="relative mt-2 flex items-center justify-between">
+                      <Link
+                        to={`/programmes/${program.slug}`}
+                        className="inline-flex items-center gap-2 text-accent font-semibold transition-colors duration-500 group-hover:text-white"
+                      >
+                        Lire plus
+                        <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </Link>
+                      <Button
+                        asChild
+                        className="bg-accent text-accent-foreground transition-colors duration-500 hover:bg-accent/90 group-hover:bg-white group-hover:text-[#0d1f29]"
+                      >
+                        <Link to="/adhesion-contact">Nous rejoindre</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
