@@ -3,6 +3,7 @@ import ProgramsHighlights from "@/components/home/ProgramsHighlights";
 import RecentEvents from "@/components/home/RecentEvents";
 import NewsHighlights from "@/components/home/NewsHighlights";
 import PartnersShowcase from "@/components/home/PartnersShowcase";
+import AboutSpotlight from "@/components/home/AboutSpotlight";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       </a>
       <Hero />
       <ProgramsHighlights />
+      <AboutSpotlight />
       <RecentEvents />
       <NewsHighlights />
       <PartnersShowcase />
