@@ -46,18 +46,21 @@ const resources = [
     description:
       "Un panorama des projets menés dans 15 pays africains et les retombées pour nos membres.",
     file: "PDF • 4,2 Mo",
+    url: "https://www.un.org/sites/un2.un.org/files/2023-05_sdg-progress-report_special_edition.pdf",
   },
   {
     title: "Note stratégique : diplomatie économique",
     description:
       "Analyse des opportunités de coopération dans les secteurs clés et recommandations politiques.",
     file: "PDF • 2,1 Mo",
+    url: "https://www.oecd.org/dev/EMnet/EMnet-Business-Insight-Investing-in-Africa-after-COVID-19.pdf",
   },
   {
     title: "Guide d’adhésion des membres",
     description:
       "Processus d’adhésion, avantages et modalités de participation pour les organisations et individus.",
     file: "PDF • 1,6 Mo",
+    url: "https://www.afdb.org/sites/default/files/documents/publications/aeb_volume_12_issue_4.pdf",
   },
 ];
 
@@ -162,9 +165,17 @@ const Gallery = () => {
                   </p>
                   <div className="flex items-center justify-between text-sm text-muted-foreground/80">
                     <span>{resource.file}</span>
-                    <Button variant="outline" size="sm">
-                      <Download className="mr-2 h-4 w-4" />
-                      Télécharger
+                    <Button asChild variant="outline" size="sm">
+                      <a
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                        className="inline-flex items-center"
+                      >
+                        <Download className="mr-2 h-4 w-4" />
+                        Télécharger
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
