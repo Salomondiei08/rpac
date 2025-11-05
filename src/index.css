@@ -139,4 +139,22 @@ All colors MUST be HSL.
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .animate-marquee {
+    display: inline-flex;
+    animation: marquee 28s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }

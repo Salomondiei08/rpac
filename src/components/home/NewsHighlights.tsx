@@ -1,4 +1,6 @@
-import { Newspaper } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import useInView from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 
 const news = [
   {
@@ -7,6 +9,8 @@ const news = [
     excerpt:
       "Le partenariat tripartite Canada – Maroc – Kenya ouvre la voie à de nouveaux financements pour les projets urbains durables.",
     href: "/galerie",
+    image:
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Publication du rapport 2023 sur l’Agenda 2063 en action",
@@ -14,6 +18,8 @@ const news = [
     excerpt:
       "Une analyse prospective de nos projets pilotes et recommandations pour accélérer la mise en œuvre continentale.",
     href: "/galerie",
+    image:
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Lancement du réseau des femmes leaders en innovation sociale",
@@ -21,52 +27,66 @@ const news = [
     excerpt:
       "Plus de 80 entrepreneures et dirigeantes réunies pour partager des solutions sur l’inclusion économique.",
     href: "/galerie",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
 const NewsHighlights = () => {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
+
   return (
-    <section
-      id="actualites"
-      aria-labelledby="news-heading"
-      className="bg-muted/20 py-24"
-    >
+    <section id="actualites" aria-labelledby="news-heading" className="bg-muted/20 py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 space-y-3 text-center">
-          <h2
-            id="news-heading"
-            className="text-3xl md:text-4xl font-bold text-primary"
-          >
+          <h2 id="news-heading" className="text-3xl md:text-4xl font-bold text-primary">
             Actualités importantes
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Suivez nos annonces institutionnelles, nos rapports d’impact et les
-            grandes décisions prises avec nos partenaires sur le continent.
+            Suivez nos annonces institutionnelles, nos rapports d’impact et les grandes décisions prises avec nos partenaires sur le continent.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {news.map((item) => (
+        <div
+          ref={ref}
+          className={cn(
+            "grid gap-6 md:grid-cols-3 transition-all duration-700",
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+          )}
+        >
+          {news.map((item, index) => (
             <article
               key={item.title}
-              className="rounded-3xl bg-card shadow-[var(--shadow-card)] p-8 flex flex-col gap-5 border border-border/40"
+              className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-hover)] hover:bg-primary"
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <div className="inline-flex items-center gap-2 text-accent font-medium text-sm uppercase tracking-wide">
-                <Newspaper className="w-4 h-4" aria-hidden="true" />
-                {item.date}
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="absolute left-5 top-5 inline-flex items-center rounded-full bg-white/90 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-primary shadow">
+                  {item.date}
+                </span>
               </div>
-              <div className="space-y-3 flex-1">
-                <h3 className="text-xl font-semibold text-primary leading-tight">
+              <div className="flex h-full flex-col gap-4 p-8 text-left transition-colors duration-500 group-hover:text-primary-foreground">
+                <h3 className="text-lg font-semibold leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground">{item.excerpt}</p>
+                <p className="flex-1 text-sm leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-primary-foreground/90">
+                  {item.excerpt}
+                </p>
+                <a
+                  href={item.href}
+                  className="inline-flex items-center gap-2 text-accent font-semibold transition-colors duration-500 group-hover:text-primary-foreground"
+                >
+                  Lire la suite
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
-              <a
-                href={item.href}
-                className="text-accent font-semibold hover:underline"
-              >
-                Lire la suite
-              </a>
             </article>
           ))}
         </div>

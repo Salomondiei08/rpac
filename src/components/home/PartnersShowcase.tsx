@@ -1,32 +1,38 @@
 import { partners } from "@/data/partners";
 
 const PartnersShowcase = () => {
+  const marqueePartners = [...partners, ...partners];
+
   return (
-    <section
-      aria-labelledby="partners-heading"
-      className="py-20 bg-background"
-    >
-      <div className="container mx-auto px-4 space-y-14">
-        <div className="text-center space-y-4">
-          <h2
-            id="partners-heading"
-            className="text-3xl md:text-4xl font-semibold text-primary"
-          >
+    <section aria-labelledby="partners-heading" className="bg-background pt-20 pb-0">
+      <div className="container mx-auto space-y-10 px-4">
+        <div className="space-y-3 text-center">
+          <h2 id="partners-heading" className="text-3xl md:text-4xl font-semibold text-primary">
             Ils nous font confiance
           </h2>
-          <span className="mx-auto block h-0.5 w-24 rounded-full bg-accent" />
+          <p className="mx-auto max-w-2xl text-muted-foreground">
+            Nos partenaires institutionnels et privés nous accompagnent pour faire émerger des projets concrets entre le Canada et l’Afrique.
+          </p>
         </div>
+      </div>
 
-        <div className="grid gap-12 sm:grid-cols-3 lg:grid-cols-5 items-center">
-          {partners.map((partner) => (
+      <div className="relative overflow-hidden bg-card/40 py-6">
+        <div className="absolute inset-y-0 left-0 w-24 pointer-events-none bg-gradient-to-r from-background to-transparent" aria-hidden="true" />
+        <div className="absolute inset-y-0 right-0 w-24 pointer-events-none bg-gradient-to-l from-background to-transparent" aria-hidden="true" />
+        <div className="flex min-w-max items-center gap-8 animate-marquee px-8">
+          {marqueePartners.map((partner, index) => (
             <div
-              key={partner.name}
-              className="flex flex-col items-center gap-4 text-center"
+              key={`${partner.name}-${index}`}
+              className="flex min-w-[200px] flex-col items-center gap-3 text-center"
             >
-              <span className="text-5xl font-light tracking-[0.15em] text-muted-foreground">
-                {partner.symbol}
-              </span>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-16 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 {partner.name}
               </p>
             </div>
@@ -38,4 +44,3 @@ const PartnersShowcase = () => {
 };
 
 export default PartnersShowcase;
-
