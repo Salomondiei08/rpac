@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Mail, Menu, Phone, X } from "lucide-react";
+import { Facebook, Linkedin, Mail, Menu, Phone, X } from "lucide-react";
 import rpacLogo from "@/assets/rpac-logo.svg";
 
 const Navbar = () => {
@@ -18,7 +18,6 @@ const Navbar = () => {
     { label: "Nos programmes", to: "/programmes" },
     { label: "Événements / Agenda", to: "/agenda" },
     { label: "Galerie multimédia", to: "/galerie" },
-    { label: "Adhésion", to: "/adhesion-contact" },
     { label: "Partenaires", to: "/partenaires" },
     { label: "Ressources", to: "/ressources" },
   ] as const;
@@ -33,10 +32,22 @@ const Navbar = () => {
       {isHomePage && (
         <div className="bg-primary text-primary-foreground">
           <div className="container mx-auto flex flex-col gap-2 px-4 py-2 text-xs sm:text-sm md:flex-row md:items-center md:justify-between">
-            <p className="font-medium tracking-wide uppercase text-primary-foreground/80">
-              Réseau Partenariats Afrique-Canada · Connecter les initiatives
-              publiques et privées entre les deux continents
-            </p>
+            <div className="flex items-center gap-3 text-primary-foreground/90">
+              <a
+                href="https://linkedin.com"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://facebook.com"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
             <div className="flex flex-wrap items-center gap-4 text-primary-foreground/90">
               <a
                 href="mailto:contact@rpac.org"
