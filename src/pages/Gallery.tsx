@@ -1,9 +1,11 @@
-import { Camera, Download, PlayCircle } from "lucide-react";
+import { Camera, Download, PlayCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactCoordinates from "@/components/ContactCoordinates";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Dialog, DialogContent, DialogOverlay, DialogPortal } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const galleryItems = [
   {
@@ -60,6 +62,16 @@ const resources = [
 ];
 
 const Gallery = () => {
+  const [activeMedia, setActiveMedia] = useState<typeof galleryItems[number] | null>(null);
+
+  const handleOpen = (item: typeof galleryItems[number]) => {
+    if (item.type === "photo") {
+      setActiveMedia(item);
+    } else {
+      window.open(item.src, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground">
@@ -90,9 +102,11 @@ const Gallery = () => {
 
           <AnimatedSection delay={120} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {galleryItems.map((item) => (
-              <div
+              <button
                 key={item.title}
-                className="group relative overflow-hidden rounded-3xl shadow-[var(--shadow-card)] transition-all hover:shadow-[var(--shadow-hover)]"
+                type="button"
+                onClick={() => handleOpen(item)}
+                className="group relative overflow-hidden rounded-3xl shadow-[var(--shadow-card)] transition-all hover:shadow-[var(--shadow-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <img
                   src={item.src}
@@ -102,7 +116,7 @@ const Gallery = () => {
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
-                <div className="absolute bottom-4 left-4 right-4 space-y-2 text-primary-foreground">
+                <div className="absolute bottom-4 left-4 right-4 space-y-2 text-primary-foreground text-left">
                   <span className="inline-flex items-center gap-2 text-xs uppercase tracking-wide">
                     {item.type === "video" ? (
                       <>
@@ -116,7 +130,7 @@ const Gallery = () => {
                   </span>
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                 </div>
-              </div>
+              </button>
             ))}
           </AnimatedSection>
         </div>
@@ -159,6 +173,36 @@ const Gallery = () => {
           </AnimatedSection>
         </div>
       </section>
+
+      <Dialog open={Boolean(activeMedia)} onOpenChange={(open) => !open && setActiveMedia(null)}>
+        <DialogPortal>
+          <DialogOverlay />
+          <DialogContent className="max-w-5xl border-none bg-transparent shadow-none p-0 sm:rounded-none">
+            {activeMedia && (
+              <div className="relative flex flex-col items-center">
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setActiveMedia(null)}
+                    className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
+                    aria-label="Fermer la photo"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                  <img
+                    src={activeMedia.src}
+                    alt={activeMedia.title}
+                    className="max-h-[80vh] w-full max-w-4xl rounded-3xl object-contain"
+                  />
+                </div>
+                <p className="mt-4 text-center text-base font-medium text-white drop-shadow">
+                  {activeMedia.title}
+                </p>
+              </div>
+            )}
+          </DialogContent>
+        </DialogPortal>
+      </Dialog>
 
       <ContactCoordinates />
     </div>
