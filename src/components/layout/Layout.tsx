@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Navbar />
         <main
           id="main"
-          className="flex-1 focus:outline-none pt-24 pb-24"
+          className="flex-1 focus:outline-none pt-28 md:pt-32 pb-24"
           tabIndex={-1}
         >
           {children}
