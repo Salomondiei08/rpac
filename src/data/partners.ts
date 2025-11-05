@@ -5,27 +5,27 @@ interface Partner {
 
 export const partners: Partner[] = [
   {
-    name: "Aurora Finance",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+    name: "Banque africaine de développement",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/09/African_Development_Bank_%28logo%29.svg",
   },
   {
-    name: "Maple Labs",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Airbnb_Logo_Belo.svg",
+    name: "Affaires mondiales Canada",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Global_Affairs_Canada_logo.svg",
   },
   {
-    name: "Nairobi Futures",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Pepsi_logo_2014.svg",
+    name: "Banque mondiale – IFC",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/IFC_logo.svg",
   },
   {
-    name: "Atlas Infrastructure",
+    name: "UNESCO",
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/UNESCO_logo.svg",
   },
   {
-    name: "Sahara Impact",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/Canon_wordmark.svg",
+    name: "OCP Group",
+    logo: "https://upload.wikimedia.org/wikipedia/fr/5/52/Logo_OCP.svg",
   },
   {
-    name: "Montreal Hub",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/LG_General_logo.svg",
+    name: "Programme des Nations Unies pour le développement",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/65/UNDP_logo.svg",
   },
 ];

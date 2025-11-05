@@ -33,7 +33,7 @@ const RecentEvents = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section id="events" aria-labelledby="events-heading" className="bg-primary/5 py-24">
+    <section id="events" aria-labelledby="events-heading" className="bg-[#f8ecea] py-24">
       <div className="mx-auto max-w-6xl space-y-10 px-6">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <h2 id="events-heading" className="text-3xl md:text-4xl font-bold text-primary">
