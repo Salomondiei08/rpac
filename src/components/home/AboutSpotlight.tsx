@@ -11,7 +11,7 @@ const stats = [
 ];
 
 const AboutSpotlight = () => {
-  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.3 });
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
 
   return (
     <section
@@ -20,26 +20,26 @@ const AboutSpotlight = () => {
       className="relative overflow-hidden bg-muted/40 py-24"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(13,42,51,0.12),_transparent)]" />
-      <div
-        className={cn(
-          "mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center",
-          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 transition-all duration-700 ease-out"
-        )}
-      >
-        <div className="relative h-[340px] overflow-hidden rounded-4xl bg-[#0d2a33] lg:w-1/2">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center">
+        <div
+          className={cn(
+            "relative h-[360px] overflow-hidden rounded-4xl bg-[#0d2a33] lg:w-1/2 transition-all duration-700 ease-out",
+            inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+          )}
+        >
           <img
             src={impactImage}
             alt="Membres du RPAC en mission de terrain"
-            className="h-full w-full object-cover opacity-90 transition-transform duration-700 ease-out hover:scale-[1.03]"
+            className="h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out hover:scale-[1.04]"
           />
-          <div className="absolute bottom-6 left-6 flex gap-6">
+          <div className="absolute bottom-6 left-6 right-6 grid gap-4 sm:grid-cols-3">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl bg-white/95 px-5 py-4 text-center shadow-lg backdrop-blur"
+                className="rounded-2xl bg-white/95 px-4 py-5 text-center shadow-lg backdrop-blur transition-transform duration-500 hover:-translate-y-1"
               >
-                <p className="text-xl font-semibold text-primary">{stat.value}</p>
-                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/80">
+                <p className="text-2xl font-semibold text-primary">{stat.value}</p>
+                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground/80">
                   {stat.label}
                 </p>
               </div>
@@ -47,7 +47,12 @@ const AboutSpotlight = () => {
           </div>
         </div>
 
-        <div className="space-y-6 lg:w-1/2">
+        <div
+          className={cn(
+            "space-y-6 lg:w-1/2 transition-all duration-700 ease-out",
+            inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+          )}
+        >
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
             Qui sommes-nous ?
           </span>

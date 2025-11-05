@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 interface SocialLink {
   label: string;
@@ -13,6 +14,8 @@ interface ProfileCardProps {
   bio: string;
   image: string;
   socials?: SocialLink[];
+  className?: string;
+  interactive?: boolean;
 }
 
 const ProfileCard = ({
@@ -21,16 +24,27 @@ const ProfileCard = ({
   bio,
   image,
   socials = [],
+  className,
+  interactive = false,
 }: ProfileCardProps) => {
   return (
-    <Card className="h-full border border-border/40 bg-card/95 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300">
+    <Card
+      className={cn(
+        "group h-full border border-border/40 bg-card/95 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-hover)]",
+        interactive && "cursor-pointer",
+        className,
+      )}
+    >
       <CardContent className="flex h-full flex-col items-center gap-5 px-8 py-10 text-center">
         <div className="relative">
-          <span className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-primary/0 blur-xl" aria-hidden="true" />
+          <span
+            className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-primary/0 blur-xl transition-opacity duration-300 group-hover:opacity-80"
+            aria-hidden="true"
+          />
           <img
             src={image}
             alt={`Portrait de ${name}`}
-            className="relative h-32 w-32 rounded-full border-4 border-background object-cover shadow-lg"
+            className="relative h-32 w-32 rounded-full border-4 border-background object-cover shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
             loading="lazy"
             decoding="async"
           />
