@@ -43,7 +43,7 @@ const NewsHighlights = () => {
             Actualités importantes
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Suivez nos annonces institutionnelles, nos rapports d’impact et les grandes décisions prises avec nos partenaires sur le continent.
+            Suivez nos annonces institutionnelles, nos rapports d’impact et les grandes décisions prises avec nos partenaires.
           </p>
         </div>
 

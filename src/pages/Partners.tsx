@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import ContactCoordinates from "@/components/ContactCoordinates";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const partnersHighlights = [
@@ -156,7 +155,6 @@ const Partners = () => {
         </div>
       </section>
 
-      <ContactCoordinates />
     </div>
   );
 };

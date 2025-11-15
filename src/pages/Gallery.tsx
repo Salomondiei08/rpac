@@ -1,6 +1,5 @@
 import { X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import ContactCoordinates from "@/components/ContactCoordinates";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Dialog, DialogContent, DialogOverlay, DialogPortal } from "@/components/ui/dialog";
 import { useState } from "react";
@@ -140,7 +139,6 @@ const Gallery = () => {
         </DialogPortal>
       </Dialog>
 
-      <ContactCoordinates />
     </div>
   );
 };
