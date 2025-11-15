@@ -62,7 +62,7 @@ const AnimatedSection = ({
 const Teams = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-[#1CC47B] text-white pt-24 md:pt-28 pb-24">
+      <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 md:pt-28 pb-24">
         <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Nos équipes</h1>
         </AnimatedSection>

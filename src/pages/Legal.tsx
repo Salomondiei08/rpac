@@ -1,7 +1,7 @@
 const Legal = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-[#1CC47B] text-white pt-24 pb-20 md:pt-28">
+      <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 pb-20 md:pt-28">
         <div className="mx-auto max-w-5xl px-6 space-y-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold">Mentions légales</h1>
           <p className="mx-auto max-w-2xl text-white/90">
