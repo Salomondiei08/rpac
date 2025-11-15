@@ -1,6 +1,27 @@
 import { useState, useEffect } from "react";
+import type { SVGProps } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Facebook, Linkedin, Mail, Menu, Phone, X } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  Menu,
+  Phone,
+  X,
+  Youtube,
+} from "lucide-react";
+
+const TwitterXIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M3 2.5h5.2l4 5.1 5.2-5.1H23l-8.2 8.5 8.4 10.5h-5.2l-4.7-6-6 6H1l8.7-8.9z" />
+  </svg>
+);
 import rpacLogo from "@/assets/rpac-logo.svg";
 
 const Navbar = () => {
@@ -45,6 +66,27 @@ const Navbar = () => {
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://instagram.com"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://twitter.com"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <TwitterXIcon className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://youtube.com"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
             <div className="hidden md:flex flex-wrap items-center gap-4 text-primary-foreground/90">

@@ -50,11 +50,11 @@ const ActivityCard = ({ program, index }: ActivityCardProps) => {
     <article
       ref={ref}
       className={cn(
-        "group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/60 bg-card/60 p-8 shadow-[var(--shadow-card)] transition-all duration-500",
+        "group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/60 bg-card/60 p-8 shadow-[var(--shadow-card)] transition-all duration-700",
         "hover:-translate-y-2 hover:shadow-[var(--shadow-hover)] hover:bg-[#0d1f29]",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
       )}
-      style={{ transitionDelay: `${index * 60}ms` }}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div
         className="absolute inset-x-0 bottom-0 h-1 rounded-full bg-accent/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
