@@ -1,8 +1,7 @@
-import { X } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Dialog, DialogContent, DialogOverlay, DialogPortal } from "@/components/ui/dialog";
-import { useState } from "react";
+import { X } from "lucide-react";
 
 const galleryItems = [
   {
@@ -46,10 +45,6 @@ const galleryItems = [
 const Gallery = () => {
   const [activeMedia, setActiveMedia] = useState<typeof galleryItems[number] | null>(null);
 
-  const handleOpen = (item: typeof galleryItems[number]) => {
-    setActiveMedia(item);
-  };
-
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground">
@@ -59,39 +54,22 @@ const Gallery = () => {
       </section>
 
       <section className="py-24">
-        <div className="mx-auto max-w-6xl space-y-12 px-6">
-          <AnimatedSection className="max-w-3xl space-y-4">
-            <h2 className="text-3xl font-bold text-primary">Galerie multimédia</h2>
-            <p className="text-muted-foreground">
-              Revivez nos moments forts à travers une collection de photos produites avec nos partenaires et membres.
-            </p>
-          </AnimatedSection>
-
-          <AnimatedSection
-            delay={120}
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-          >
+        <div className="mx-auto max-w-6xl px-6">
+          <AnimatedSection className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {galleryItems.map((item) => (
               <button
                 key={item.title}
                 type="button"
-                onClick={() => handleOpen(item)}
+                onClick={() => setActiveMedia(item)}
                 className="group relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <img
                   src={item.src}
                   alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform durée-500 group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
-                <div className="absolute bottom-4 left-4 right-4 space-y-2 text-left text-primary-foreground">
-                  <Badge variant="secondary" className="bg-white/15 text-xs uppercase tracking-[0.2em]">
-                    Moment RPAC
-                  </Badge>
-                  <h3 className="text-lg font-semibold leading-snug">{item.title}</h3>
-                </div>
               </button>
             ))}
           </AnimatedSection>
@@ -119,15 +97,11 @@ const Gallery = () => {
                     className="max-h-[80vh] w-full max-w-4xl rounded-3xl object-contain"
                   />
                 </div>
-                <p className="mt-4 text-center text-base font-medium text-white drop-shadow">
-                  {activeMedia.title}
-                </p>
               </div>
             )}
           </DialogContent>
         </DialogPortal>
       </Dialog>
-
     </div>
   );
 };
