@@ -83,3 +83,48 @@ export const regionalRepresentatives = [
     bio: "Basé à Abidjan, il accompagne les gouvernements et entreprises ouest-africains dans la mise en œuvre de partenariats.",
   },
 ];
+
+export const followers = [
+  {
+    name: "Isabelle Gagnon",
+    role: "Chercheuse en politiques publiques",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c17226538c?auto=format&fit=crop&w=300&q=80",
+    bio: "Basée à Québec, elle accompagne les études comparatives sur les coopérations provinciales et partage les pratiques canadiennes.",
+  },
+  {
+    name: "Moussa Diallo",
+    role: "Entrepreneur social",
+    image:
+      "https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=300&q=80",
+    bio: "Fondateur d’un accélérateur à Dakar, il relaie les opportunités d’innovation et mentor les cohortes RPAC.",
+  },
+  {
+    name: "Chloé Mercier",
+    role: "Experte médias",
+    image:
+      "https://images.unsplash.com/photo-1544723795-3f44e0f78b09?auto=format&fit=crop&w=300&q=80",
+    bio: "Productrice à Toronto, elle valorise les récits d’impact du réseau via des capsules vidéo et podcasts.",
+  },
+  {
+    name: "Idriss Bamba",
+    role: "Consultant en climat",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+    bio: "Spécialiste ivoirien des politiques climatiques, il conseille les projets de transition énergétique.",
+  },
+  {
+    name: "Sara El Fassi",
+    role: "Coordinatrice académique",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653fc?auto=format&fit=crop&w=300&q=80",
+    bio: "Installée à Rabat, elle mobilise les universités partenaires et coanime les programmes d’échanges étudiants.",
+  },
+  {
+    name: "Noah Tremblay",
+    role: "Conseiller numérique",
+    image:
+      "https://images.unsplash.com/photo-1544723795-432537f3b2b9?auto=format&fit=crop&w=300&q=80",
+    bio: "Développeur montréalais, il soutient la transformation numérique des initiatives communautaires RPAC.",
+  },
+];

@@ -18,6 +18,7 @@ import {
   boardMembers,
   honoraryMembers,
   regionalRepresentatives,
+  followers,
 } from "@/data/team";
 
 const defaultSocials = [
@@ -81,7 +82,7 @@ const Teams = () => {
       </section>
 
       <section className="py-20">
-        <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
           <div id="board-heading" className="space-y-6">
             <AnimatedSection className="max-w-3xl space-y-3">
               <h2 className="text-3xl font-bold text-primary">
@@ -92,7 +93,7 @@ const Teams = () => {
                 programmes portés par le RPAC.
               </p>
             </AnimatedSection>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-2">
               {boardMembers.map((member, index) => (
                 <AnimatedSection key={member.name} delay={index * 80}>
                   <Dialog>
@@ -101,6 +102,7 @@ const Teams = () => {
                         {...member}
                         socials={defaultSocials}
                         interactive
+                        layout="horizontal"
                       />
                     </DialogTrigger>
                     <DialogContent className="max-w-xl space-y-4">
@@ -147,7 +149,7 @@ const Teams = () => {
                 leurs réseaux bilatéraux.
               </p>
             </AnimatedSection>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-2">
               {honoraryMembers.map((member, index) => (
                 <AnimatedSection key={member.name} delay={index * 90}>
                   <Dialog>
@@ -156,6 +158,7 @@ const Teams = () => {
                         {...member}
                         socials={defaultSocials}
                         interactive
+                        layout="horizontal"
                       />
                     </DialogTrigger>
                     <DialogContent className="max-w-xl space-y-4">
@@ -204,7 +207,7 @@ const Teams = () => {
                 missions sur les cinq grandes régions africaines.
               </p>
             </AnimatedSection>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-6 md:grid-cols-2">
               {regionalRepresentatives.map((representative, index) => (
                 <AnimatedSection key={representative.name} delay={index * 70}>
                   <Dialog>
@@ -216,6 +219,7 @@ const Teams = () => {
                         image={representative.image}
                         socials={defaultSocials}
                         interactive
+                        layout="horizontal"
                       />
                     </DialogTrigger>
                     <DialogContent className="max-w-xl space-y-4">
@@ -247,6 +251,31 @@ const Teams = () => {
                       </div>
                     </DialogContent>
                   </Dialog>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-4xl border border-dashed border-border/60 bg-muted/10 p-8">
+            <AnimatedSection className="space-y-3">
+              <h2 className="text-3xl font-bold text-primary">Followers</h2>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Nos Followers incarnent l’esprit de partenariat qui anime le RPAC. Professionnels,
+                chercheurs et leaders issus des deux régions, ils partagent leur expertise pour
+                renforcer les ponts entre l’Afrique et le Canada et soutenir les initiatives du
+                réseau.
+              </p>
+            </AnimatedSection>
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              {followers.map((person, index) => (
+                <AnimatedSection key={person.name} delay={index * 70}>
+                  <ProfileCard
+                    name={person.name}
+                    title={person.role}
+                    bio={person.bio}
+                    image={person.image}
+                    layout="horizontal"
+                  />
                 </AnimatedSection>
               ))}
             </div>

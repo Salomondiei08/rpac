@@ -8,6 +8,8 @@ interface SocialLink {
   icon: ReactNode;
 }
 
+type ProfileCardLayout = "vertical" | "horizontal";
+
 interface ProfileCardProps {
   name: string;
   title: string;
@@ -16,6 +18,7 @@ interface ProfileCardProps {
   socials?: SocialLink[];
   className?: string;
   interactive?: boolean;
+  layout?: ProfileCardLayout;
 }
 
 const ProfileCard = ({
@@ -26,7 +29,9 @@ const ProfileCard = ({
   socials = [],
   className,
   interactive = false,
+  layout = "vertical",
 }: ProfileCardProps) => {
+  const isHorizontal = layout === "horizontal";
   return (
     <Card
       className={cn(
@@ -37,11 +42,17 @@ const ProfileCard = ({
     >
       <CardContent
         className={cn(
-          "flex h-full flex-col items-center gap-5 px-8 py-10 text-center transition-colors duration-300",
+          "flex h-full flex-col items-center gap-5 px-6 py-8 text-center transition-colors duration-300",
           interactive && "group-hover:text-primary-foreground",
+          isHorizontal && "md:flex-row md:items-center md:text-left md:gap-6",
         )}
       >
-        <div className="relative">
+        <div
+          className={cn(
+            "relative",
+            isHorizontal ? "md:flex-shrink-0 md:w-28" : "",
+          )}
+        >
           <span
             className={cn(
               "absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-primary/0 blur-xl transition-opacity duration-300",
@@ -55,58 +66,71 @@ const ProfileCard = ({
             className={cn(
               "relative h-32 w-32 rounded-full border-4 border-background object-cover shadow-lg transition-transform duration-300",
               interactive && "group-hover:scale-[1.05]",
+              isHorizontal && "md:h-28 md:w-28",
             )}
             loading="lazy"
             decoding="async"
           />
         </div>
-        <div className="space-y-1">
-          <h3
-            className={cn(
-              "text-xl font-semibold leading-tight transition-colors duration-300",
-              interactive ? "text-primary group-hover:text-primary-foreground" : "text-primary",
-            )}
-          >
-            {name}
-          </h3>
-          <p
-            className={cn(
-              "text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground/80 transition-colors duration-300",
-              interactive && "group-hover:text-primary-foreground/80",
-            )}
-          >
-            {title}
-          </p>
-        </div>
-        <p
+        <div
           className={cn(
-            "text-sm leading-relaxed flex-1 transition-colors duration-300",
-            interactive ? "text-muted-foreground group-hover:text-primary-foreground/80" : "text-muted-foreground",
+            "flex flex-1 flex-col gap-4",
+            isHorizontal ? "md:text-left md:items-start" : "items-center",
           )}
         >
-          {bio}
-        </p>
-        {socials.length > 0 && (
-          <div className="flex items-center justify-center gap-3 pt-2">
-            {socials.map((social) => (
-              <a
-                key={social.href}
-                href={social.href}
-                className={cn(
-                  "inline-flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300",
-                  interactive
-                    ? "border-border/40 text-muted-foreground hover:border-primary-foreground/80 hover:text-primary-foreground group-hover:border-primary-foreground/70 group-hover:text-primary-foreground"
-                    : "border-border/50 text-muted-foreground hover:border-secondary hover:text-secondary",
-                )}
-                aria-label={`${social.label} de ${name}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        )}
+          <div className="space-y-1">
+                <h3
+                  className={cn(
+                    "text-xl font-semibold leading-tight transition-colors duration-300",
+                    interactive ? "text-primary group-hover:text-primary-foreground" : "text-primary",
+                  )}
+                >
+                  {name}
+                </h3>
+                <p
+                  className={cn(
+                    "text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground/80 transition-colors duration-300",
+                    interactive && "group-hover:text-primary-foreground/80",
+                  )}
+                >
+                  {title}
+                </p>
+              </div>
+          <p
+            className={cn(
+              "text-sm leading-relaxed flex-1 transition-colors duration-300",
+              interactive ? "text-muted-foreground group-hover:text-primary-foreground/80" : "text-muted-foreground",
+            )}
+          >
+            {bio}
+          </p>
+          {socials.length > 0 && (
+            <div
+              className={cn(
+                "flex items-center gap-3 pt-1",
+                isHorizontal ? "md:justify-start" : "justify-center",
+              )}
+            >
+              {socials.map((social) => (
+                <a
+                  key={social.href}
+                  href={social.href}
+                  className={cn(
+                    "inline-flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300",
+                    interactive
+                      ? "border-border/40 text-muted-foreground hover:border-primary-foreground/80 hover:text-primary-foreground group-hover:border-primary-foreground/70 group-hover:text-primary-foreground"
+                      : "border-border/50 text-muted-foreground hover:border-secondary hover:text-secondary",
+                  )}
+                  aria-label={`${social.label} de ${name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </CardContent>
     </Card>
   );
