@@ -1,12 +1,10 @@
 import {
   Globe2,
   LineChart,
-  Handshake,
   Landmark,
   Rocket,
   Building2,
   ShieldCheck,
-  Lightbulb,
   LucideIcon,
 } from "lucide-react";
 
@@ -26,6 +24,33 @@ export interface ProgramDetail {
 }
 
 export const programs: ProgramDetail[] = [
+  {
+    slug: "agenda-2063-en-action",
+    title: "Agenda 2063 en Action",
+    excerpt:
+      "Traduire les ambitions de l’Union africaine en projets opérationnels et partenariats mesurables.",
+    description:
+      "Nous transformons les cadres stratégiques continentaux en projets concrets, en finançant des initiatives pilotes et en accompagnant les équipes locales dans le suivi d’impact.",
+    focus: ["Suivi d’impact", "Laboratoires d’idées", "Coalitions régionales"],
+    icon: LineChart,
+    highlights: [
+      {
+        title: "Laboratoires 2063",
+        description:
+          "Groupes de travail régionaux qui transforment les priorités du continent en programmes d’investissement.",
+      },
+      {
+        title: "Mesure d’impact",
+        description:
+          "Outils de suivi-évaluation pour documenter les résultats et répliquer les projets réussis.",
+      },
+    ],
+    outcomes: [
+      "Accélération de projets alignés sur l’Agenda 2063.",
+      "Capitalisation des bonnes pratiques inter-régions.",
+      "Renforcement des coalitions régionales thématiques.",
+    ],
+  },
   {
     slug: "axe-diplomatique-economique",
     title: "Axe diplomatique et économique",
@@ -82,35 +107,8 @@ export const programs: ProgramDetail[] = [
     ],
   },
   {
-    slug: "partenariats-strategiques",
-    title: "Partenariats stratégiques",
-    excerpt:
-      "Co-développer des solutions avec les institutions multilatérales, les villes et les régions.",
-    description:
-      "Nous facilitons des alliances multi-acteurs pour aligner les priorités territoriales et mutualiser les ressources. Les coalitions animées conjuguent urbanisme durable, transformation numérique et gouvernance innovante.",
-    focus: ["Coalitions publiques", "Diplomatie urbaine", "Alliance panafricaine"],
-    icon: Handshake,
-    highlights: [
-      {
-        title: "Coalitions opérationnelles",
-        description:
-          "Mise en relation des villes, agences publiques et bailleurs pour construire des plans d’action conjoints.",
-      },
-      {
-        title: "Gouvernance partagée",
-        description:
-          "Création de comités de pilotage et d’outils de suivi d’impact pour chaque partenariat stratégique.",
-      },
-    ],
-    outcomes: [
-      "Harmonisation des feuilles de route territoriales.",
-      "Partage d’expertises et mutualisation des ressources.",
-      "Renforcement des capacités des institutions locales.",
-    ],
-  },
-  {
     slug: "forum-economique",
-    title: "Forum économique",
+    title: "Forums",
     excerpt:
       "Organiser des rendez-vous annuels connectant décideurs, société civile et entrepreneurs.",
     description:
@@ -187,60 +185,6 @@ export const programs: ProgramDetail[] = [
       "Professionnalisation des équipes publiques.",
       "Amélioration de la qualité des services délivrés.",
       "Transparence accrue et engagement citoyen.",
-    ],
-  },
-  {
-    slug: "droits-inclusion-gouvernance-democratique",
-    title: "Droits, inclusion & gouvernance démocratique",
-    excerpt:
-      "Promouvoir l’inclusion sociale, l’égalité des genres et le dialogue citoyen dans les processus décisionnels.",
-    description:
-      "Ce programme soutient les organisations de la société civile, les réseaux de jeunes et les coalitions de femmes leaders afin d’amplifier leur impact dans les espaces de gouvernance.",
-    focus: ["Plateformes citoyennes", "Femmes leaders", "Participation des jeunes"],
-    icon: Lightbulb,
-    highlights: [
-      {
-        title: "Leadership inclusif",
-        description:
-          "Mentorat, renforcement des capacités et visibilité accrue pour les voix émergentes.",
-      },
-      {
-        title: "Dialogue multi-acteurs",
-        description:
-          "Organisation de consultations et hackathons citoyens pour co-construire les politiques publiques.",
-      },
-    ],
-    outcomes: [
-      "Participation accrue des citoyens aux décisions publiques.",
-      "Renforcement des organisations communautaires.",
-      "Projets pilotes sur l’égalité des genres et l’inclusion.",
-    ],
-  },
-  {
-    slug: "agenda-2063-en-action",
-    title: "Agenda 2063 en Action",
-    excerpt:
-      "Traduire les ambitions de l’Union africaine en projets opérationnels et partenariats mesurables.",
-    description:
-      "Nous transformons les cadres stratégiques continentaux en projets concrets, en finançant des initiatives pilotes et en accompagnant les équipes locales dans le suivi d’impact.",
-    focus: ["Suivi d’impact", "Laboratoires d’idées", "Coalitions régionales"],
-    icon: LineChart,
-    highlights: [
-      {
-        title: "Laboratoires 2063",
-        description:
-          "Groupes de travail régionaux qui transforment les priorités du continent en programmes d’investissement.",
-      },
-      {
-        title: "Mesure d’impact",
-        description:
-          "Outils de suivi-évaluation pour documenter les résultats et répliquer les projets réussis.",
-      },
-    ],
-    outcomes: [
-      "Accélération de projets alignés sur l’Agenda 2063.",
-      "Capitalisation des bonnes pratiques inter-régions.",
-      "Renforcement des coalitions régionales thématiques.",
     ],
   },
 ];

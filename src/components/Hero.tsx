@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="flex min-h-[60vh] md:min-h-[70vh] flex-col items-center justify-start md:justify-center gap-8 text-center text-primary-foreground animate-fade-up pt-6 md:pt-0">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur">
             <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
-            Alliance panafricaine pour des partenariats durables
+            Réseau panafricain des Partenaraits Afrique Canada
           </div>
           <div className="space-y-6 max-w-4xl">
             <h1
@@ -39,11 +39,6 @@ const Hero = () => {
               Bâtir des{" "}
               <span className="text-accent">partenariats transformateurs</span>
             </h1>
-            <p className="text-lg sm:text-xl text-primary-foreground/90">
-              L’Association des Partenariats Canada-Afrique réunit décideurs,
-              entreprises et acteurs de la société civile pour co-créer des
-              solutions inclusives sur l’ensemble du continent africain.
-            </p>
           </div>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <Button
@@ -55,14 +50,6 @@ const Hero = () => {
                 Explorer nos initiatives
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-accent text-accent font-semibold text-lg px-8 py-6 hover:bg-accent/10"
-              asChild
-            >
-              <a href="/adhesion-contact">Rejoindre l’association</a>
             </Button>
           </div>
         </div>

@@ -5,12 +5,15 @@ import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
 
 const ProgramsHighlights = () => {
+  const programsList = [...programs].slice(0, 6);
+  programsList.sort((a, b) => (a.slug === "agenda-2063-en-action" ? -1 : b.slug === "agenda-2063-en-action" ? 1 : 0));
+
   return (
     <section aria-labelledby="activities-heading" className="relative bg-background pt-12 pb-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <header className="space-y-4 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Nos activités
+            Nos programmes
           </p>
           <h1 id="activities-heading" className="text-3xl font-semibold text-primary sm:text-4xl">
             Des programmes pensés pour transformer les ambitions en résultats
@@ -22,7 +25,7 @@ const ProgramsHighlights = () => {
         </header>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {programs.slice(0, 6).map((program, index) => (
+          {programsList.slice(0, 6).map((program, index) => (
             <ActivityCard key={program.slug} program={program} index={index} />
           ))}
         </div>
