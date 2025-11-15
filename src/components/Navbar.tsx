@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Facebook, Linkedin, Mail, Menu, Phone, X } from "lucide-react";
 import rpacLogo from "@/assets/rpac-logo.svg";
 
@@ -82,20 +81,18 @@ const Navbar = () => {
           </NavLink>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8" role="menubar">
+          <div className="hidden md:flex items-center space-x-6" role="menubar">
             {menuItems.map((item) => {
               const baseClasses =
-                "transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-1 py-2 text-sm";
+                "relative inline-flex items-center gap-1 text-sm font-semibold px-3 py-2 rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent";
               return (
                 <NavLink
                   key={item.to}
                   to={item.to}
                   className={({ isActive }) =>
                     `${baseClasses} ${
-                      isActive
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-primary"
-                    }`
+                      isActive ? "text-primary" : "text-foreground"
+                    } hover:bg-[#b42424] hover:text-white hover:shadow-md`
                   }
                   role="menuitem"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -104,13 +101,16 @@ const Navbar = () => {
                 </NavLink>
               );
             })}
-            <Button
-              variant="default"
-              className="font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm"
-              asChild
+            <NavLink
+              to="/adhesion-contact"
+              className={({ isActive }) =>
+                `relative inline-flex items-center gap-1 text-sm font-semibold px-3 py-2 rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                  isActive ? "text-[#b42424]" : "text-foreground"
+                } hover:bg-[#b42424] hover:text-white hover:shadow-md`
+              }
             >
-              <NavLink to="/adhesion-contact">Devenir membre</NavLink>
-            </Button>
+              Devenir membre
+            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,13 +143,16 @@ const Navbar = () => {
                 {item.label}
               </NavLink>
             ))}
-            <Button
-              variant="default"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              asChild
+            <NavLink
+              to="/adhesion-contact"
+              className={({ isActive }) =>
+                `block text-center w-full font-semibold px-3 py-2 rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                  isActive ? "text-[#b42424]" : "text-foreground"
+                } hover:bg-[#b42424] hover:text-white`
+              }
             >
-              <NavLink to="/adhesion-contact">Devenir membre</NavLink>
-            </Button>
+              Devenir membre
+            </NavLink>
           </div>
         )}
       </div>
