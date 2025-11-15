@@ -65,21 +65,14 @@ const AboutSpotlight = () => {
             </h2>
             <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
               <p>
-                Le Réseau pour le Partenariat Afrique-Canada (RPAC) est une organisation à but non lucratif qui œuvre au
-                renforcement des liens stratégiques entre le Canada et l’Afrique.
-              </p>
-              <p>
-                Fondé sur les principes de réciprocité et de co-construction, il accompagne les acteurs publics, privés et
-                communautaires dans la mise en œuvre d’initiatives concrètes en matière d’investissement, d’entrepreneuriat,
+                Organisation à but non lucratif, le RPAC renforce les liens stratégiques entre le Canada et l’Afrique en
+                accompagnant gouvernements, entreprises et communautés sur des projets d’investissement, d’entrepreneuriat,
                 d’éducation et de coopération institutionnelle.
               </p>
               <p>
-                Le RPAC facilite et promeut l’augmentation des investissements et du commerce durable, en veillant à ce que
-                ces échanges bénéficient à l’ensemble des parties prenantes et respectent les principes de la RSE.
-              </p>
-              <p>
-                En phase avec l’Agenda 2063 de l’Union africaine et la Stratégie canadienne pour l’Afrique, le réseau incarne
-                une vision ambitieuse : celle d’un partenariat transformateur, fondé sur la création de valeurs partagées.
+                Aligné sur l’Agenda 2063 et la Stratégie canadienne pour l’Afrique, le réseau catalyse des partenariats
+                transformateurs qui promeuvent des investissements responsables, du commerce durable et la création de valeurs
+                partagées entre les deux continents.
               </p>
             </div>
           </div>
