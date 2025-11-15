@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import rpacLogo from "@/assets/rpac-logo.png";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
@@ -17,21 +18,15 @@ const Footer = () => {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-primary-foreground/10 flex items-center justify-center">
-                <svg className="w-7 h-7 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2 2 7v10c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5zm0 2.2 8 4v8.3c0 4.4-3.1 8.6-8 9.5-4.9-.9-8-5.1-8-9.5V8.2l8-4z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-primary-foreground/70">Association</p>
-                <p className="text-lg font-semibold">Partenariats Canada-Afrique</p>
-              </div>
+              <img
+                src={rpacLogo}
+                alt="Réseau pour le Partenariat Afrique Canada"
+                className="h-14 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="text-lg font-semibold">Réseau pour le Partenariat Afrique Canada</p>
             </div>
-            <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              Nous catalysons les collaborations entre institutions, entreprises et communautés pour bâtir des
-              partenariats transformateurs sur l’ensemble du continent africain.
-            </p>
           </div>
 
           <div className="lg:col-span-3 space-y-4">

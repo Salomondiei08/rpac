@@ -5,26 +5,26 @@ import rpacNews from "@/assets/rpac-actu.png";
 
 const news = [
   {
-    title: "Signature d’un protocole d’entente sur les infrastructures vertes",
-    date: "Février 2024",
+    title: "Activité RPAC",
+    date: "À venir",
     excerpt:
-      "Le partenariat tripartite Canada – Maroc – Kenya ouvre la voie à de nouveaux financements pour les projets urbains durables.",
+      "Le RPAC œuvre à renforcer les collaborations entre l’Afrique et le Canada, en facilitant les initiatives, les partenariats et les projets visant un développement durable et inclusif.",
     href: "/galerie",
     image: rpacNews,
   },
   {
-    title: "Publication du rapport 2023 sur l’Agenda 2063 en action",
-    date: "Janvier 2024",
+    title: "Activité RPAC",
+    date: "À venir",
     excerpt:
-      "Une analyse prospective de nos projets pilotes et recommandations pour accélérer la mise en œuvre continentale.",
+      "Le RPAC œuvre à renforcer les collaborations entre l’Afrique et le Canada, en facilitant les initiatives, les partenariats et les projets visant un développement durable et inclusif.",
     href: "/galerie",
     image: rpacNews,
   },
   {
-    title: "Lancement du réseau des femmes leaders en innovation sociale",
-    date: "Décembre 2023",
+    title: "Activité RPAC",
+    date: "À venir",
     excerpt:
-      "Plus de 80 entrepreneures et dirigeantes réunies pour partager des solutions sur l’inclusion économique.",
+      "Le RPAC œuvre à renforcer les collaborations entre l’Afrique et le Canada, en facilitant les initiatives, les partenariats et les projets visant un développement durable et inclusif.",
     href: "/galerie",
     image: rpacNews,
   },
