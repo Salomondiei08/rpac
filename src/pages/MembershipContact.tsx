@@ -124,6 +124,7 @@ const MembershipContact = () => {
                         <SelectItem value="centre">Afrique centrale</SelectItem>
                         <SelectItem value="est">Afrique de l’Est</SelectItem>
                         <SelectItem value="sud">Afrique australe</SelectItem>
+                        <SelectItem value="autre">Autre</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -145,13 +146,13 @@ const MembershipContact = () => {
                       <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
                         <RadioGroupItem value="programmes" id="programmes" />
                         <Label htmlFor="programmes" className="font-medium leading-tight">
-                          Contribuer aux programmes et groupes d’experts
+                          Contribuer aux programmes et groupes
                         </Label>
                       </div>
                       <div className="flex items-start gap-3 rounded-xl border border-border/60 p-4">
                         <RadioGroupItem value="reseau" id="reseau" />
                         <Label htmlFor="reseau" className="font-medium leading-tight">
-                          Accéder à notre réseau panafricain
+                          Accéder à notre réseau
                         </Label>
                       </div>
                     </RadioGroup>
