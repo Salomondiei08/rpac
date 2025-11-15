@@ -12,7 +12,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
-import rpacLogo from "@/assets/rpac-logo.svg";
+import rpacLogo from "@/assets/rpac-logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
