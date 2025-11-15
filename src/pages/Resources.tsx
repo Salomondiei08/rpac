@@ -102,37 +102,8 @@ const Resources = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground pt-24 md:pt-28 pb-24">
-        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
-          <Badge
-            variant="secondary"
-            className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
-          >
-            Ressources
-          </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
-            Capitaliser sur l’expertise du réseau pour accélérer vos projets.
-          </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90 mx-auto md:mx-0">
-            Explorez nos publications, outils pratiques et communautés d’échange dédiées au
-            co-développement entre le Canada et l’Afrique.
-          </p>
-          <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-primary-foreground/70">
-            <span className="inline-flex items-center gap-2">
-              <Badge variant="secondary" className="bg-white/10">
-                Publications
-              </Badge>
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Badge variant="secondary" className="bg-white/10">
-                Outils métiers
-              </Badge>
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Badge variant="secondary" className="bg-white/10">
-                Communautés
-              </Badge>
-            </span>
-          </div>
+        <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Ressources</h1>
         </AnimatedSection>
       </section>
 

@@ -53,19 +53,8 @@ const Gallery = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground">
-        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
-          <Badge
-            variant="secondary"
-            className="mx-auto bg-white/15 text-primary-foreground md:mx-0"
-          >
-            Nos activités
-          </Badge>
-          <h1 className="mx-auto max-w-4xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl md:mx-0">
-            Galerie multimédia & ressources, pour revivre nos temps forts et approfondir nos travaux.
-          </h1>
-          <p className="mx-auto max-w-3xl text-base text-primary-foreground/90 sm:text-lg lg:text-xl md:mx-0">
-            Explorez les temps forts de nos missions, ateliers et rencontres bilatérales qui font vivre le réseau.
-          </p>
+        <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Galerie multimédia</h1>
         </AnimatedSection>
       </section>
 

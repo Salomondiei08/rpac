@@ -64,20 +64,8 @@ const Teams = () => {
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70 text-primary-foreground pt-24 md:pt-28 pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.15),transparent)]" />
-        <AnimatedSection className="relative z-10 mx-auto max-w-5xl space-y-6 px-6 text-center md:text-left">
-          <span className="inline-flex items-center gap-2 self-center md:self-auto rounded-full bg-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white/85 shadow-sm backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            Nos équipes
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
-            Des femmes et des hommes engagés pour connecter les acteurs du
-            Canada et de l’Afrique.
-          </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/85 mx-auto md:mx-0">
-            Conseil, membres honoraires et représentants régionaux travaillent
-            ensemble pour faire avancer nos missions diplomatiques, économiques
-            et citoyennes.
-          </p>
+        <AnimatedSection className="relative z-10 mx-auto max-w-5xl px-6 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Nos équipes</h1>
         </AnimatedSection>
       </section>
 

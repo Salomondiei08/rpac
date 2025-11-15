@@ -67,26 +67,10 @@ const Agenda = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground">
-        <AnimatedSection className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
-          <Badge
-            variant="secondary"
-            className="mx-auto bg-white/15 text-primary-foreground md:mx-0"
-          >
-            Nos activités
-          </Badge>
-          <h1 className="mx-auto max-w-4xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl md:mx-0">
-            Un agenda continental pour connecter les écosystèmes canadiens et africains.
+        <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Nos événements et agendas
           </h1>
-          <p className="mx-auto max-w-3xl text-base text-primary-foreground/90 sm:text-lg lg:text-xl md:mx-0">
-            Forums, séminaires, missions économiques et rencontres sectorielles rythment notre programmation.
-            Sélectionnez les filtres pour suivre les événements qui vous concernent.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 text-sm text-primary-foreground/70 md:justify-start">
-            <span className="inline-flex items-center gap-2">
-              <CalendarDays className="h-4 w-4" />
-              Agenda mis à jour en continu
-            </span>
-          </div>
         </AnimatedSection>
       </section>
 

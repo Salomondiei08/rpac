@@ -69,19 +69,9 @@ const About = () => {
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground pt-24 md:pt-28 pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.2),transparent)]" />
         <AnimatedSection className="relative z-10 mx-auto max-w-5xl space-y-6 px-6 text-center md:text-left">
-          <span className="inline-flex items-center gap-2 self-center md:self-auto rounded-full bg-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white/85 shadow-sm backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            À propos de l’association
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
-            Connecter les visions canadiennes et africaines pour un avenir
-            partagé et durable.
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
+            À propos
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/85 mx-auto md:mx-0">
-            Depuis plus de dix ans, l’Association des Partenariats Canada-Afrique
-            construit des passerelles entre institutions publiques, entreprises,
-            acteurs de la société civile et communautés universitaires.
-          </p>
         </AnimatedSection>
       </section>
 

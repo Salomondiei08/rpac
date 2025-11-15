@@ -26,22 +26,10 @@ const MembershipContact = () => {
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 text-primary-foreground pt-24 md:pt-28 pb-24">
-        <div className="mx-auto max-w-5xl px-6 space-y-6 text-center md:text-left">
-          <Badge
-            variant="secondary"
-            className="bg-white/15 text-primary-foreground mx-auto md:mx-0"
-          >
-            Adhésion & contact
-          </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight mx-auto md:mx-0">
-            Rejoignez un réseau unique d’acteurs engagés pour des partenariats
-            transformateurs entre le Canada et l’Afrique.
+        <div className="mx-auto max-w-5xl px-6 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Adhésion et contacts
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl max-w-3xl text-primary-foreground/90 mx-auto md:mx-0">
-            Individus, entreprises, organisations publiques ou associatives : votre
-            adhésion ouvre la porte à des programmes exclusifs, des rencontres
-            stratégiques et un accompagnement personnalisé.
-          </p>
         </div>
       </section>
 
