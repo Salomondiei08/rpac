@@ -8,11 +8,8 @@ const PartnersShowcase = () => {
       <div className="container mx-auto space-y-10 px-4">
         <div className="space-y-3 text-center">
           <h2 id="partners-heading" className="text-3xl md:text-4xl font-semibold text-primary">
-            Ils nous font confiance
+            Partenaires
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            Nos partenaires institutionnels et privés nous accompagnent pour faire émerger des projets concrets entre le Canada et l’Afrique.
-          </p>
         </div>
       </div>
 
