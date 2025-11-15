@@ -62,9 +62,8 @@ const AnimatedSection = ({
 const Teams = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70 text-primary-foreground pt-24 md:pt-28 pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.15),transparent)]" />
-        <AnimatedSection className="relative z-10 mx-auto max-w-5xl px-6 text-center md:text-left">
+      <section className="relative overflow-hidden bg-[#1CC47B] text-white pt-24 md:pt-28 pb-24">
+        <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Nos équipes</h1>
         </AnimatedSection>
       </section>

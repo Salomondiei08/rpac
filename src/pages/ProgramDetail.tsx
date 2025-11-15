@@ -36,7 +36,7 @@ const ProgramDetail = () => {
 
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-24 text-primary-foreground md:pt-28">
+      <section className="relative overflow-hidden bg-[#1CC47B] text-white pt-24 pb-24 md:pt-28">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 text-center md:text-left">
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">{program.title}</h1>
           <Button variant="secondary" className="self-center md:self-start w-fit" asChild>

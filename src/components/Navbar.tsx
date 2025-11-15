@@ -67,65 +67,42 @@ const Navbar = () => {
       aria-label="Navigation principale"
       className="relative w-full z-50 bg-white shadow-sm border-b border-border/60"
     >
-      {isHomePage && (
-        <div className="bg-primary text-primary-foreground">
-          <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
-            <div className="flex items-center gap-3">
+      <div className="bg-[#1CC47B] text-white">
+        <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
+          <div className="flex items-center gap-3">
+            {[Linkedin, Facebook, Instagram, TwitterXIcon, Youtube].map((Icon, index) => (
               <a
-                href="https://linkedin.com"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
-                aria-label="LinkedIn"
+                key={Icon.displayName ?? index}
+                href={
+                  Icon === Linkedin
+                    ? "https://linkedin.com"
+                    : Icon === Facebook
+                    ? "https://facebook.com"
+                    : Icon === Instagram
+                    ? "https://instagram.com"
+                    : Icon === TwitterXIcon
+                    ? "https://twitter.com"
+                    : "https://youtube.com"
+                }
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/25 hover:bg-white/15 transition-colors"
+                aria-label={Icon === TwitterXIcon ? "X (Twitter)" : Icon.displayName ?? "réseau social"}
               >
-                <Linkedin className="h-4 w-4" aria-hidden="true" />
+                <Icon className="h-4 w-4" aria-hidden="true" />
               </a>
-              <a
-                href="https://facebook.com"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="https://instagram.com"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="https://twitter.com"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <TwitterXIcon className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="https://youtube.com"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 hover:bg-primary/20 transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </div>
-            <div className="hidden md:flex flex-wrap items-center gap-4 text-primary-foreground/90">
-              <a
-                href="mailto:info@rpac.ca"
-                className="inline-flex items-center gap-2 hover:text-primary-foreground"
-              >
-                <Mail className="h-4 w-4" aria-hidden="true" />
-                info@rpac.ca
-              </a>
-              <a
-                href="tel:+18194460661"
-                className="inline-flex items-center gap-2 hover:text-primary-foreground"
-              >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                +1 (819) 446-0661
-              </a>
-            </div>
+            ))}
+          </div>
+          <div className="hidden md:flex flex-wrap items-center gap-4 text-white/90">
+            <a href="mailto:info@rpac.ca" className="inline-flex items-center gap-2 hover:text-white">
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              info@rpac.ca
+            </a>
+            <a href="tel:+18194460661" className="inline-flex items-center gap-2 hover:text-white">
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              +1 (819) 446-0661
+            </a>
           </div>
         </div>
-      )}
+      </div>
       <div className="border-t border-white/15 md:border-none">
         <div className="container mx-auto flex items-center justify-between px-4 py-4 md:py-6">
           <NavLink
@@ -150,7 +127,7 @@ const Navbar = () => {
                 return (
                   <DropdownMenu key={item.label}>
                     <DropdownMenuTrigger
-                      className={`${baseClasses} text-foreground hover:bg-[#b42424] hover:text-white hover:shadow-md data-[state=open]:bg-[#b42424] data-[state=open]:text-white`}
+                      className={`${baseClasses} text-foreground hover:bg-[#1CC47B] hover:text-white hover:shadow-md data-[state=open]:bg-[#1CC47B] data-[state=open]:text-white`}
                       type="button"
                     >
                       <span>{item.label}</span>
@@ -185,8 +162,8 @@ const Navbar = () => {
                     to={item.to}
                     className={({ isActive }) =>
                       `${baseClasses} ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:bg-[#b42424] hover:text-white hover:shadow-md`
+                        isActive ? "text-[#1CC47B]" : "text-foreground"
+                      } hover:bg-[#1CC47B] hover:text-white hover:shadow-md`
                     }
                     role="menuitem"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -202,8 +179,8 @@ const Navbar = () => {
               to="/adhesion-contact"
               className={({ isActive }) =>
                 `relative inline-flex items-center gap-1 text-sm font-semibold px-3 py-2 rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                  isActive ? "text-[#b42424]" : "text-foreground"
-                } hover:bg-[#b42424] hover:text-white hover:shadow-md`
+                  isActive ? "text-[#1CC47B]" : "text-foreground"
+                } hover:bg-[#1CC47B] hover:text-white hover:shadow-md`
               }
             >
               Devenir membre
@@ -240,7 +217,11 @@ const Navbar = () => {
                       <NavLink
                         key={child.to}
                         to={child.to}
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                        className={({ isActive }) =>
+                          `block text-sm font-medium rounded-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                            isActive ? "text-[#1CC47B]" : "text-muted-foreground hover:text-[#1CC47B]"
+                          }`
+                        }
                         onClick={() => setIsMobileMenuOpen(false)}
                         role="menuitem"
                       >
@@ -254,7 +235,11 @@ const Navbar = () => {
                   <NavLink
                     key={item.label}
                     to={item.to}
-                    className="block text-foreground hover:text-primary transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                    className={({ isActive }) =>
+                      `block rounded-sm text-foreground transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                        isActive ? "text-[#1CC47B]" : "hover:text-[#1CC47B]"
+                      }`
+                    }
                     onClick={() => setIsMobileMenuOpen(false)}
                     role="menuitem"
                   >
@@ -267,8 +252,8 @@ const Navbar = () => {
               to="/adhesion-contact"
               className={({ isActive }) =>
                 `block text-center w-full font-semibold px-3 py-2 rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                  isActive ? "text-[#b42424]" : "text-foreground"
-                } hover:bg-[#b42424] hover:text-white`
+                  isActive ? "text-[#1CC47B]" : "text-foreground"
+                } hover:bg-[#1CC47B] hover:text-white`
               }
             >
               Devenir membre

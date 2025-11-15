@@ -1,16 +1,12 @@
 const Privacy = () => {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 pt-24 pb-20 text-primary-foreground md:pt-28">
+      <section className="relative overflow-hidden bg-[#1CC47B] text-white pt-24 pb-20 md:pt-28">
         <div className="mx-auto max-w-5xl px-6 space-y-4 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white/85 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            Protection des données
-          </span>
           <h1 className="text-3xl md:text-4xl font-bold">
             Politique de confidentialité
           </h1>
-          <p className="mx-auto max-w-2xl text-primary-foreground/85">
+          <p className="mx-auto max-w-2xl text-white/90">
             Cette politique précise la façon dont l’Association Partenariats Canada-Afrique collecte, utilise et protège
             vos données personnelles.
           </p>
