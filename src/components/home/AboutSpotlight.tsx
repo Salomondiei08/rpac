@@ -61,31 +61,45 @@ const AboutSpotlight = () => {
               id="about-spotlight-heading"
               className="text-3xl font-semibold text-primary sm:text-4xl"
             >
-              Une alliance Canada–Afrique au service d’un impact durable.
+              Le RPAC, catalyseur des partenariats Afrique–Canada
             </h2>
-            <p className="text-base leading-relaxed text-muted-foreground">
-              Le RPAC catalyse des coalitions publiques et privées pour concrétiser des
-              projets structurants. Nos équipes coordonnent la stratégie, l’ingénierie de
-              partenariats et le suivi d’impact avec les leaders des deux continents.
-            </p>
+            <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
+              <p>
+                Le Réseau pour le Partenariat Afrique-Canada (RPAC) est une organisation à but non lucratif qui œuvre au
+                renforcement des liens stratégiques entre le Canada et l’Afrique.
+              </p>
+              <p>
+                Fondé sur les principes de réciprocité et de co-construction, il accompagne les acteurs publics, privés et
+                communautaires dans la mise en œuvre d’initiatives concrètes en matière d’investissement, d’entrepreneuriat,
+                d’éducation et de coopération institutionnelle.
+              </p>
+              <p>
+                Le RPAC facilite et promeut l’augmentation des investissements et du commerce durable, en veillant à ce que
+                ces échanges bénéficient à l’ensemble des parties prenantes et respectent les principes de la RSE.
+              </p>
+              <p>
+                En phase avec l’Agenda 2063 de l’Union africaine et la Stratégie canadienne pour l’Afrique, le réseau incarne
+                une vision ambitieuse : celle d’un partenariat transformateur, fondé sur la création de valeurs partagées.
+              </p>
+            </div>
           </div>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
               <span>
-                Accompagnement sur-mesure des gouvernements, villes, entreprises et réseaux citoyens.
+                Accompagnement sur-mesure des gouvernements, entreprises et organisations communautaires des deux continents.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
               <span>
-                Une approche terrain grâce à nos représentants régionaux et communautés de pratiques.
+                Promotion d’investissements responsables et de collaborations alignées sur les principes de la RSE.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
               <span>
-                Des programmes qui articulent diplomatie économique, inclusion sociale et innovation.
+                Programmes alignés sur l’Agenda 2063 et la Stratégie canadienne pour l’Afrique pour créer des valeurs partagées.
               </span>
             </li>
           </ul>

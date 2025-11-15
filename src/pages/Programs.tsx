@@ -18,12 +18,21 @@ const Programs = () => {
       <section className="py-24">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
           <AnimatedSection className="space-y-4 max-w-3xl">
-            <h2 className="text-3xl font-bold text-primary">Nos programmes</h2>
-            <p className="text-muted-foreground">
-              Chaque programme s’appuie sur un comité de pilotage et un réseau de
-              partenaires présents sur le terrain pour accompagner la conception,
-              la mise en œuvre et le suivi d’impact des projets.
-            </p>
+            <h2 className="text-3xl font-bold text-primary">Activer des alliances concrètes</h2>
+            <div className="space-y-3 text-muted-foreground">
+              <p>
+                Nos programmes concrétisent la mission du RPAC : activer des partenariats publics et privés qui allient
+                investissement, innovation et engagement mutuel.
+              </p>
+              <p>
+                Chaque initiative est un levier de transformation, au croisement des intérêts stratégiques et des
+                aspirations collectives, grâce à des coopérations structurées entre institutions, entreprises et communautés.
+              </p>
+              <p>
+                Ancrés dans un dialogue politique continu entre décideurs africains et canadiens, nos programmes s’inscrivent
+                dans les grandes visions de l’Agenda 2063 et de la Stratégie canadienne pour l’Afrique.
+              </p>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={120} className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">

@@ -28,27 +28,27 @@ export const programs: ProgramDetail[] = [
     slug: "agenda-2063-en-action",
     title: "Agenda 2063 en Action",
     excerpt:
-      "Traduire les ambitions de l’Union africaine en projets opérationnels et partenariats mesurables.",
+      "Le Réseau milite en faveur de la transformation des grandes ambitions de l’Agenda 2063 en dynamiques concrètes, portées par les talents, les idées et les alliances entre l’Afrique et le Canada.",
     description:
-      "Nous transformons les cadres stratégiques continentaux en projets concrets, en finançant des initiatives pilotes et en accompagnant les équipes locales dans le suivi d’impact.",
-    focus: ["Suivi d’impact", "Laboratoires d’idées", "Coalitions régionales"],
+      "Le RPAC inscrit ses initiatives dans la vision portée par l’Agenda 2063 de l’Union africaine, feuille de route stratégique pour bâtir « l’Afrique que nous voulons ». En favorisant la coopération avec le Canada et en soutenant les priorités africaines en matière de développement durable, d’intégration régionale et de prospérité partagée, le réseau agit comme un catalyseur pour faire passer les engagements politiques à l’échelle opérationnelle.",
+    focus: ["Coalitions Canada–Afrique", "Suivi des objectifs 2063", "Talents et alliances"],
     icon: LineChart,
     highlights: [
       {
-        title: "Laboratoires 2063",
+        title: "Programmes alignés",
         description:
-          "Groupes de travail régionaux qui transforment les priorités du continent en programmes d’investissement.",
+          "Les activités du réseau contribuent à renforcer les partenariats institutionnels, promouvoir le commerce et l’innovation, et créer des cadres de dialogue qui accompagnent la mise en œuvre des priorités de l’Agenda 2063.",
       },
       {
-        title: "Mesure d’impact",
+        title: "Sensibilisation Agenda 2063",
         description:
-          "Outils de suivi-évaluation pour documenter les résultats et répliquer les projets réussis.",
+          "Le RPAC mobilise experts et institutions pour démontrer comment les visions continentales peuvent devenir des projets porteurs d’impact concret et d’intégration régionale.",
       },
     ],
     outcomes: [
-      "Accélération de projets alignés sur l’Agenda 2063.",
-      "Capitalisation des bonnes pratiques inter-régions.",
-      "Renforcement des coalitions régionales thématiques.",
+      "Transformation des engagements politiques en initiatives opérationnelles.",
+      "Renforcement des partenariats institutionnels centrés sur l’Agenda 2063.",
+      "Mise en avant des talents et idées partagés entre l’Afrique et le Canada.",
     ],
   },
   {
@@ -56,135 +56,135 @@ export const programs: ProgramDetail[] = [
     title: "Axe diplomatique et économique",
     subtitle: "La stratégie canadienne pour l’Afrique",
     excerpt:
-      "Co-construire des feuilles de route diplomatiques et économiques entre les institutions africaines et canadiennes.",
+      "Nous créons des passerelles entre décideurs africains et canadiens pour renforcer le dialogue politique et économique, et soutenir des partenariats publics-privés alignés sur l’Agenda 2063 et la Stratégie canadienne pour l’Afrique.",
     description:
-      "Nous accompagnons les gouvernements, agences et institutions dans la définition d’alliances durables pour soutenir les priorités africaines. L’accent est mis sur le rapprochement des agendas politiques, le partage d’expertise et la mobilisation d’investissements publics.",
-    focus: ["Dialogue bilatéral", "Accords structurants", "Plaidoyer commun"],
+      "Le Réseau pour le Partenariat Afrique Canada (RPAC) inscrit son action dans une dynamique qui dépasse les intentions générales pour s’ancrer dans des cadres stratégiques concrets.",
+    focus: ["Dialogue politique", "Stratégie Canada-Afrique", "Partenariats publics-privés"],
     icon: Landmark,
     highlights: [
       {
-        title: "Feuilles de route partagées",
+        title: "Alignement stratégique",
         description:
-          "Diagnostic des priorités nationales et élaboration d’axes diplomatiques conjoints Canada–Afrique.",
+          "Accompagnement des acteurs autour des priorités de l’Agenda 2063 et de la Stratégie canadienne pour l’Afrique pour favoriser l’intégration régionale et la diversification des marchés.",
       },
       {
-        title: "Mobilisation des décideurs",
+        title: "Relations gouvernementales renforcées",
         description:
-          "Sessions confidentielles entre ministères, gouvernements locaux et organisations continentales.",
+          "Organisation de dialogues récurrents entre institutions africaines et canadiennes afin de transformer les engagements politiques en projets concrets au service de la stabilité et de la croissance.",
       },
     ],
     outcomes: [
-      "Renforcement de la coordination politique entre les parties prenantes clés.",
-      "Création de cadres de dialogue réguliers pour accélérer les partenariats.",
-      "Déploiement de missions d’influence ciblées.",
+      "Cadres diplomatiques mieux coordonnés et orientés résultats.",
+      "Partenariats publics-privés alignés sur les visions africaines et canadiennes.",
+      "Suivi d’engagements partagés autour de la paix, de la sécurité et de la prospérité.",
     ],
   },
   {
     slug: "commerce-investissements-innovation",
     title: "Commerce, Investissements & Innovation",
     excerpt:
-      "Relier investisseurs, entrepreneurs et incubateurs pour accélérer les projets à impact socio-économique.",
+      "Nous connectons les entrepreneurs, investisseurs et institutions pour stimuler des échanges économiques durables entre l’Afrique et le Canada.",
     description:
-      "Nous orchestrons des passerelles entre capital canadien et écosystèmes africains. Les projets accompagnés sont priorisés pour leur contribution à l’emploi, à l’innovation technologique et à la transformation durable des territoires.",
-    focus: ["Rencontres B2B", "Financement mixte", "Transfert technologique"],
+      "Le Réseau pour le Partenariat Afrique Canada (RPAC) fait du commerce, des investissements et de l’innovation des piliers essentiels de son action.",
+    focus: ["Innovation locale", "Partenariats stratégiques", "Commerce durable"],
     icon: Rocket,
     highlights: [
       {
-        title: "Plateformes d’affaires",
+        title: "Commerce",
         description:
-          "Organisation de rencontres d’investissements, d’ateliers sectoriels et de roadshows ciblés.",
+          "En cohérence avec l’Agenda 2063 et la ZLECAf, le RPAC encourage l’expansion des échanges entre le Canada et les États africains pour faciliter l’accès aux marchés, diversifier les exportations et consolider les chaînes de valeur régionales.",
       },
       {
-        title: "Ingénierie financière",
+        title: "Investissements",
         description:
-          "Structuration de financements mixtes et accompagnement des dossiers auprès des bailleurs.",
+          "Le réseau mobilise des capitaux responsables et durables en favorisant les partenariats public-privé. Ces investissements créent des opportunités pour les entreprises canadiennes et africaines, stimulent la croissance inclusive, développent les infrastructures stratégiques et renforcent la résilience économique.",
       },
     ],
     outcomes: [
-      "Pipeline de projets prêts à l’investissement.",
-      "Transfert de compétences en financement structuré.",
-      "Accélération de l’innovation inclusive dans les territoires.",
+      "Échanges économiques durables et diversifiés.",
+      "Projets structurants porteurs d’impact pour les territoires.",
+      "Innovation partagée au service d’un développement inclusif.",
     ],
   },
   {
     slug: "forum-economique",
-    title: "Forums",
+    title: "Forum économique",
     excerpt:
-      "Organiser des rendez-vous annuels connectant décideurs, société civile et entrepreneurs.",
+      "Le Réseau organise des forums politiques, économiques, culturels et sociaux pour renforcer le dialogue entre l’Afrique et le Canada.",
     description:
-      "Le Forum économique RPAC est l’espace privilégié pour annoncer des accords, lancer des initiatives structurantes et favoriser la coopération intercontinentale. La programmation associe plénières, ateliers sectoriels et sessions de matchmaking.",
-    focus: ["Sessions plénières", "Ateliers sectoriels", "Rencontres investisseurs"],
+      "Le Forum économique du RPAC constitue une plateforme institutionnelle dédiée au dialogue et à la coopération. Il réunit décideurs publics, acteurs économiques, institutions académiques et partenaires de la société civile pour imaginer des solutions adaptées autour du commerce, des investissements, de l’innovation et de la diplomatie économique.",
+    focus: ["Forums politiques et économiques", "Experts canadiens et africains", "Solutions stratégiques"],
     icon: Globe2,
     highlights: [
       {
-        title: "Programmation sur-mesure",
+        title: "Plateforme institutionnelle",
         description:
-          "Séquences thématiques construites avec les partenaires afin de refléter les priorités du moment.",
+          "Une programmation articulant plénières, ateliers sectoriels et sessions de mise en relation pour faire converger les priorités africaines et canadiennes.",
       },
       {
-        title: "Accès privilégié",
+        title: "Solutions partagées",
         description:
-          "Rencontres B2B et networking ciblé pour concrétiser les collaborations annoncées.",
+          "Les forums favorisent la confrontation des idées, la consultation des parties prenantes et la traduction des engagements en projets concrets.",
       },
     ],
     outcomes: [
-      "Signature d’accords multilatéraux et bilatéraux.",
-      "Visibilité renforcée pour les initiatives territoriales.",
-      "Création de communautés sectorielles pérennes.",
+      "Dialogue structuré entre institutions africaines et canadiennes.",
+      "Élaboration de feuilles de route partagées par secteur.",
+      "Annonce d’initiatives et partenariats porteurs d’impact.",
     ],
   },
   {
     slug: "rencontres-sectorielles",
     title: "Rencontres sectorielles",
     excerpt:
-      "Mettre en lumière les secteurs clés : agriculture durable, santé, énergie, numérique et industries créatives.",
+      "Le Réseau initie des rencontres ciblées entre acteurs africains et canadiens dans les secteurs stratégiques tels que l’agriculture, la science, la santé, les mines, l’énergie, l’éducation, les technologies, la culture et les industries créatives.",
     description:
-      "Ces rencontres ciblées combinent visites terrain, démonstrations et partage d’expertise. Elles permettent aux acteurs locaux et internationaux d’identifier des synergies d’investissement et d’innovation.",
-    focus: ["Visites terrain", "Clusters sectoriels", "Partage d’expertise"],
+      "Ce dispositif institutionnel de dialogue et de coopération crée des cadres de discussion structurés débouchant sur des actions concrètes. Chaque rencontre est conçue comme un levier d’innovation, de coopération et de transformation, aligné sur les priorités partagées.",
+    focus: ["Dialogue expert·e·s", "Partenariats sectoriels", "Solutions concrètes"],
     icon: Building2,
     highlights: [
       {
-        title: "Immersions locales",
+        title: "Espaces dédiés",
         description:
-          "Découvertes des écosystèmes territoriaux et de leurs projets phares avec les parties prenantes.",
+          "Rencontres animées par des expert·e·s des deux régions pour partager visions stratégiques, retours d’expérience et bonnes pratiques.",
       },
       {
-        title: "Communautés métiers",
+        title: "Solutions adaptées",
         description:
-          "Animation de réseaux thématiques pour capitaliser sur les retours d’expérience.",
+          "Les échanges débouchent sur des initiatives tangibles, renforçant la pertinence des programmes RPAC sur le terrain.",
       },
     ],
     outcomes: [
-      "Identification de projets pilotes et d’alliances public-privé.",
-      "Valorisation des initiatives locales.",
-      "Renforcement du transfert de connaissances sectorielles.",
+      "Partenariats alignés sur les priorités africaines et canadiennes.",
+      "Émergence d’actions concrètes par secteur stratégique.",
+      "Renforcement des communautés d’experts transcontinentales.",
     ],
   },
   {
     slug: "gouvernance-publique-institutionnelle",
     title: "Gouvernance publique & capacités institutionnelles",
     excerpt:
-      "Renforcer les administrations publiques via la formation, le mentorat et l’innovation civique.",
+      "Le RPAC accompagne le renforcement des institutions africaines en mobilisant des expert·e·s des deux régions.",
     description:
-      "Nous accompagnons les institutions dans la modernisation des services publics, la formation des cadres et l’ouverture des données. Les parcours sont conçus sur mesure avec des pairs canadiens et africains.",
-    focus: ["Formations ciblées", "Coaching institutionnel", "Open data"],
+      "Ce programme cible les enjeux de gouvernance moderne : transformation administrative, transparence, leadership public, décentralisation, justice et innovation institutionnelle. En créant des espaces de dialogue et de partenariat, il favorise le transfert de technologies, de savoir-faire et de bonnes pratiques au bénéfice de services publics plus efficaces.",
+    focus: ["Transformation administrative", "Transparence", "Innovation institutionnelle"],
     icon: ShieldCheck,
     highlights: [
       {
-        title: "Parcours de formation",
+        title: "Renforcement des compétences",
         description:
-          "Modules hybrides mêlant ateliers pratiques, mentorat et immersion dans les meilleures pratiques internationales.",
+          "Diagnostics, formations ciblées et mentorats entre pairs pour renforcer les capacités stratégiques des acteurs publics, universitaires et communautaires.",
       },
       {
-        title: "Innovation civique",
+        title: "Transfert de savoir-faire",
         description:
-          "Programmes open data et laboratoires citoyens pour coconstruire des services avec les usagers.",
+          "Mise en relation d’expert·e·s africains et canadiens pour moderniser les outils, méthodes de gestion et cadres de coopération institutionnelle.",
       },
     ],
     outcomes: [
-      "Professionnalisation des équipes publiques.",
-      "Amélioration de la qualité des services délivrés.",
-      "Transparence accrue et engagement citoyen.",
+      "Institutions plus résilientes et proches des citoyens.",
+      "Services publics modernisés et transparents.",
+      "Partenariats durables entre administrations africaines et canadiennes.",
     ],
   },
 ];

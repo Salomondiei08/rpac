@@ -1,41 +1,32 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContactCoordinates from "@/components/ContactCoordinates";
-import impactImage from "@/assets/impact-collage.jpg";
 
-const strategicObjectives = [
-  {
-    title: "Diplomatie économique",
-    summary:
-      "Faciliter la signature d’accords bilatéraux et de partenariats public-privé structurants.",
-    detail:
-      "Nous orchestrons des missions ciblées, des tables rondes ministérielles et des dispositifs de suivi d’engagements pour garantir que chaque accord débouche sur des retombées mesurables pour les territoires.",
-  },
-  {
-    title: "Développement inclusif",
-    summary:
-      "Soutenir les projets favorisant l’égalité des genres, la participation citoyenne et la résilience des territoires.",
-    detail:
-      "Chaque initiative intègre des dispositifs de consultation citoyenne, des indicateurs d’inclusion et un accompagnement des organisations communautaires pour renforcer la gouvernance locale.",
-  },
-  {
-    title: "Innovation et savoirs",
-    summary:
-      "Créer des passerelles entre universités, centres de recherche et incubateurs pour accélérer l’innovation.",
-    detail:
-      "Les laboratoires d’idées et programmes d’échanges académiques que nous pilotons permettent de co-développer des solutions technologiques adaptées aux réalités africaines.",
-  },
-  {
-    title: "Renforcement institutionnel",
-    summary:
-      "Accompagner les administrations publiques et les organisations régionales dans l’amélioration des services rendus aux citoyens.",
-    detail:
-      "Formations immersives, mentorat par pairs canadiens et diagnostics organisationnels structurent nos parcours pour moderniser les services publics.",
-  },
+const identityParagraphs = [
+  "Le Réseau pour le Partenariat Afrique-Canada (RPAC) est une organisation à but non lucratif qui œuvre au renforcement des liens stratégiques entre le Canada et l’Afrique.",
+  "Reconnu par des institutions des deux régions, le RPAC agit comme catalyseur de projets innovants, porteurs de développement durable, de transformation sociale et de coopération équitable.",
+  "Fondé sur les principes de réciprocité et de co-construction, il accompagne les acteurs publics, privés et communautaires dans la mise en œuvre d’initiatives concrètes en matière d’investissement, d’entrepreneuriat, d’éducation et de coopération institutionnelle.",
+  "Le RPAC facilite et promeut l’augmentation des investissements et du commerce durable entre les secteurs canadiens et africains, en veillant à ce que ces échanges bénéficient à l’ensemble des parties prenantes et soient alignés sur les principes de la Responsabilité sociale des entreprises (RSE).",
+  "En phase avec l’Agenda 2063 de l’Union africaine et la Stratégie canadienne pour l’Afrique, le RPAC incarne une vision ambitieuse : celle d’un partenariat transformateur, fondé sur la création de valeurs partagées.",
+];
+
+const missionParagraphs = [
+  "Le Réseau pour le Partenariat Afrique-Canada (RPAC) a pour mission de promouvoir une coopération structurée, durable et mutuellement bénéfique entre les écosystèmes africains et canadiens.",
+  "Il agit comme un catalyseur de partenariats stratégiques en mobilisant les institutions, les communautés, la diaspora et les acteurs économiques autour d’enjeux communs.",
+  "À travers ses actions, le RPAC vise à contribuer à la mise en œuvre de cadres de coopération alignés sur les priorités africaines et canadiennes, notamment l’Agenda 2063 de l’Union africaine et la Stratégie canadienne pour l’Afrique.",
+];
+
+const missionFocus = [
+  "Infrastructures",
+  "Agriculture et agroalimentaire",
+  "Fabrication industrielle",
+  "Soins de santé",
+  "Énergie et mines",
+  "Nouvelles technologies d’information et de communication (NTIC)",
+  "Éducation",
+  "Produits de consommation",
+  "Investissements responsables et gouvernance",
 ];
 
 const AnimatedSection = ({
@@ -74,43 +65,42 @@ const About = () => {
         </AnimatedSection>
       </section>
 
-      <section
-        className="py-24"
-        aria-labelledby="presentation-heading"
-      >
-        <div className="mx-auto flex max-w-6xl flex-col gap-20 px-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                id: "presentation-heading",
-                title: "Mission",
-                description:
-                  "Mobiliser les expertises canadiennes et africaines pour construire des alliances économiques, diplomatiques et sociales porteuses d’impact durable et inclusif.",
-              },
-            {
-              title: "Vision",
-              description:
-                "Devenir la plateforme de référence pour des partenariats transformationnels entre le Canada et l’Afrique, au service des citoyens et des territoires.",
-            },
-          ].map((item, index) => (
-            <AnimatedSection key={item.title} delay={index * 80} className="h-full">
-              <article className="h-full rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
-                <h2
-                    id={item.id}
-                    className="text-2xl font-semibold text-primary"
-                  >
-                    {item.title}
-                  </h2>
-                  <p className="mt-4 text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </article>
-              </AnimatedSection>
-            ))}
-          </div>
+      <section className="py-24" aria-labelledby="presentation-heading">
+        <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6">
+          <AnimatedSection className="space-y-6">
+            <h2 id="presentation-heading" className="text-3xl font-bold text-primary">
+              Qui sommes-nous ?
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              {identityParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </AnimatedSection>
 
-        <ContactCoordinates />
+          <AnimatedSection delay={100} className="space-y-6">
+            <h3 className="text-3xl font-bold text-primary">Notre mission</h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              {missionParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
+              <h4 className="text-xl font-semibold text-primary">
+                Enjeux prioritaires
+              </h4>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {missionFocus.map((focus) => (
+                  <li key={focus} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                    <span>{focus}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimatedSection>
 
+          <ContactCoordinates />
         </div>
       </section>
     </div>

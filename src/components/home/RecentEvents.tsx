@@ -44,7 +44,7 @@ const RecentEvents = () => {
             Événements récents
           </h2>
           <p className="text-muted-foreground text-lg">
-            Des échanges stratégiques pour rapprocher les écosystèmes canadiens et africains. Découvrez les rendez-vous qui ont marqué notre agenda.
+            Des rencontres institutionnelles pour renforcer les synergies entre les écosystèmes africains et canadiens. Découvrez les rendez-vous qui ont marqué notre agenda.
           </p>
         </div>
 

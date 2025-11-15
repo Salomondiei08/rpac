@@ -110,6 +110,25 @@ const Resources = () => {
         </section>
       ))}
 
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <AnimatedSection>
+            <p className="rounded-3xl border border-border/60 bg-card p-8 text-center text-muted-foreground shadow-[var(--shadow-card)]">
+              Pour en savoir plus sur l’Agenda 2063, consultez le document officiel de l’Union africaine&nbsp;:
+              <a
+                href="https://au.int/sites/default/files/documents/36204-doc-agenda2063_popular_version_en.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 font-semibold text-primary"
+              >
+                Agenda 2063 – L’Afrique que nous voulons
+              </a>
+              .
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       <ContactCoordinates />
     </div>
   );

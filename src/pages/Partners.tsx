@@ -11,7 +11,13 @@ const Partners = () => {
       </section>
 
       <section className="py-24">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 space-y-10">
+          <AnimatedSection>
+            <p className="text-lg text-muted-foreground text-center md:text-left">
+              Nos partenaires institutionnels et privés sont les architectes d’une coopération concrète entre le Canada
+              et l’Afrique.
+            </p>
+          </AnimatedSection>
           <AnimatedSection>
             <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {partners.map((partner) => (

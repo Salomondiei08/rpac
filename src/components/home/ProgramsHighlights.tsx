@@ -11,17 +11,28 @@ const ProgramsHighlights = () => {
   return (
     <section aria-labelledby="activities-heading" className="relative bg-background pt-12 pb-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
-        <header className="space-y-4 text-center">
+        <header className="space-y-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
             Nos programmes
           </p>
           <h1 id="activities-heading" className="text-3xl font-semibold text-primary sm:text-4xl">
-            Des programmes pensés pour transformer les ambitions en résultats
+            Activer des partenariats publics-privés transformateurs
           </h1>
-          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
-            Explorez les huit axes structurants du RPAC. Chaque programme fédère institutions publiques, entreprises et
-            acteurs de la société civile autour d’actions concrètes entre le Canada et l’Afrique.
-          </p>
+          <div className="mx-auto max-w-3xl space-y-3 text-base text-muted-foreground sm:text-lg">
+            <p>
+              Nos programmes concrétisent la mission du RPAC : activer des partenariats publics et privés qui allient
+              investissement, innovation et engagement mutuel.
+            </p>
+            <p>
+              Chaque initiative est un levier de transformation, au croisement des intérêts stratégiques et des
+              aspirations collectives.
+            </p>
+            <p>
+              Ancrés dans un dialogue politique continu entre décideurs africains et canadiens, nos programmes s’inscrivent
+              dans les grandes visions de l’Agenda 2063 de l’Union africaine et de la Stratégie canadienne pour l’Afrique,
+              en catalysant des coopérations multisectorielles porteuses d’avenir.
+            </p>
+          </div>
         </header>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
