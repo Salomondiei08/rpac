@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import type { SVGProps } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
+  ChevronDown,
   Facebook,
   Instagram,
   Linkedin,
@@ -11,6 +12,13 @@ import {
   X,
   Youtube,
 } from "lucide-react";
+import rpacLogo from "@/assets/rpac-logo.svg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const TwitterXIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -22,7 +30,27 @@ const TwitterXIcon = (props: SVGProps<SVGSVGElement>) => (
     <path d="M3 2.5h5.2l4 5.1 5.2-5.1H23l-8.2 8.5 8.4 10.5h-5.2l-4.7-6-6 6H1l8.7-8.9z" />
   </svg>
 );
-import rpacLogo from "@/assets/rpac-logo.svg";
+type MenuItem = {
+  label: string;
+  to?: string;
+  children?: { label: string; to: string }[];
+};
+
+const menuItems: MenuItem[] = [
+  { label: "Accueil", to: "/" },
+  { label: "À propos", to: "/a-propos" },
+  { label: "Équipe", to: "/equipes" },
+  { label: "Programmes", to: "/programmes" },
+  { label: "Événements / Agenda", to: "/agenda" },
+  { label: "Partenaires", to: "/partenaires" },
+  {
+    label: "Media & ressources",
+    children: [
+      { label: "Galerie multimédia", to: "/galerie" },
+      { label: "Ressources", to: "/ressources" },
+    ],
+  },
+];
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,16 +59,6 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname, location.hash]);
-
-  const menuItems = [
-    { label: "Accueil", to: "/" },
-    { label: "À propos", to: "/a-propos" },
-    { label: "Nos programmes", to: "/programmes" },
-    { label: "Événements / Agenda", to: "/agenda" },
-    { label: "Galerie multimédia", to: "/galerie" },
-    { label: "Partenaires", to: "/partenaires" },
-    { label: "Ressources", to: "/ressources" },
-  ] as const;
 
   const isHomePage = location.pathname === "/" && location.hash.length === 0;
 
@@ -123,25 +141,62 @@ const Navbar = () => {
           </NavLink>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6" role="menubar">
+          <div className="hidden md:flex items-center space-x-4" role="menubar">
             {menuItems.map((item) => {
               const baseClasses =
                 "relative inline-flex items-center gap-1 text-sm font-semibold px-3 py-2 rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent";
-              return (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) =>
-                    `${baseClasses} ${
-                      isActive ? "text-primary" : "text-foreground"
-                    } hover:bg-[#b42424] hover:text-white hover:shadow-md`
-                  }
-                  role="menuitem"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              );
+
+              if (item.children?.length) {
+                return (
+                  <DropdownMenu key={item.label}>
+                    <DropdownMenuTrigger
+                      className={`${baseClasses} text-foreground hover:bg-[#b42424] hover:text-white hover:shadow-md data-[state=open]:bg-[#b42424] data-[state=open]:text-white`}
+                      type="button"
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-56">
+                      {item.children.map((child) => (
+                        <DropdownMenuItem key={child.to} asChild className="p-0">
+                          <NavLink
+                            to={child.to}
+                            className={({ isActive }) =>
+                              `flex w-full items-center rounded-sm px-2 py-1.5 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                                isActive
+                                  ? "text-primary"
+                                  : "text-muted-foreground hover:text-foreground"
+                              }`
+                            }
+                          >
+                            {child.label}
+                          </NavLink>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+
+              if (item.to) {
+                return (
+                  <NavLink
+                    key={item.label}
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `${baseClasses} ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:bg-[#b42424] hover:text-white hover:shadow-md`
+                    }
+                    role="menuitem"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                );
+              }
+
+              return null;
             })}
             <NavLink
               to="/adhesion-contact"
@@ -174,17 +229,40 @@ const Navbar = () => {
             className="md:hidden py-4 space-y-4 bg-white rounded-lg mt-2 p-4 shadow-lg border border-border/60"
             role="menu"
           >
-            {menuItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className="block text-foreground hover:text-primary transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
-                onClick={() => setIsMobileMenuOpen(false)}
-                role="menuitem"
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {menuItems.map((item) =>
+              item.children?.length ? (
+                <div key={item.label} className="space-y-3">
+                  <span className="block text-sm font-semibold uppercase tracking-wide text-foreground/80">
+                    {item.label}
+                  </span>
+                  <div className="ml-3 space-y-2">
+                    {item.children.map((child) => (
+                      <NavLink
+                        key={child.to}
+                        to={child.to}
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        role="menuitem"
+                      >
+                        {child.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                item.to && (
+                  <NavLink
+                    key={item.label}
+                    to={item.to}
+                    className="block text-foreground hover:text-primary transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    role="menuitem"
+                  >
+                    {item.label}
+                  </NavLink>
+                )
+              )
+            )}
             <NavLink
               to="/adhesion-contact"
               className={({ isActive }) =>

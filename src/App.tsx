@@ -16,6 +16,7 @@ import Gallery from "./pages/Gallery";
 import Partners from "./pages/Partners";
 import Resources from "./pages/Resources";
 import ProgramDetail from "./pages/ProgramDetail";
+import Teams from "./pages/Teams";
 
 const App = () => (
   <HelmetProvider>
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/galerie" element={<Gallery />} />
             <Route path="/adhesion-contact" element={<MembershipContact />} />
             <Route path="/partenaires" element={<Partners />} />
+            <Route path="/equipes" element={<Teams />} />
             <Route path="/ressources" element={<Resources />} />
             <Route path="/mentions-legales" element={<Legal />} />
             <Route path="/politique-confidentialite" element={<Privacy />} />
