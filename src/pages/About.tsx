@@ -88,20 +88,15 @@ const About = () => {
                 description:
                   "Mobiliser les expertises canadiennes et africaines pour construire des alliances économiques, diplomatiques et sociales porteuses d’impact durable et inclusif.",
               },
-              {
-                title: "Vision",
-                description:
-                  "Devenir la plateforme de référence pour des partenariats transformationnels entre le Canada et l’Afrique, au service des citoyens et des territoires.",
-              },
-              {
-                title: "Historique",
-                description:
-                  "Fondée en 2013 à Montréal, l’association est née de la volonté d’un réseau de diplomates, entrepreneurs et universitaires de renforcer le dialogue stratégique avec les capitales africaines.",
-              },
-            ].map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 80} className="h-full">
-                <article className="h-full rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
-                  <h2
+            {
+              title: "Vision",
+              description:
+                "Devenir la plateforme de référence pour des partenariats transformationnels entre le Canada et l’Afrique, au service des citoyens et des territoires.",
+            },
+          ].map((item, index) => (
+            <AnimatedSection key={item.title} delay={index * 80} className="h-full">
+              <article className="h-full rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
+                <h2
                     id={item.id}
                     className="text-2xl font-semibold text-primary"
                   >
