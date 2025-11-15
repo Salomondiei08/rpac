@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import rpacNews from "@/assets/rpac-actu.png";
 
 const news = [
   {
@@ -9,8 +10,7 @@ const news = [
     excerpt:
       "Le partenariat tripartite Canada – Maroc – Kenya ouvre la voie à de nouveaux financements pour les projets urbains durables.",
     href: "/galerie",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
+    image: rpacNews,
   },
   {
     title: "Publication du rapport 2023 sur l’Agenda 2063 en action",
@@ -18,8 +18,7 @@ const news = [
     excerpt:
       "Une analyse prospective de nos projets pilotes et recommandations pour accélérer la mise en œuvre continentale.",
     href: "/galerie",
-    image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
+    image: rpacNews,
   },
   {
     title: "Lancement du réseau des femmes leaders en innovation sociale",
@@ -27,8 +26,7 @@ const news = [
     excerpt:
       "Plus de 80 entrepreneures et dirigeantes réunies pour partager des solutions sur l’inclusion économique.",
     href: "/galerie",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+    image: rpacNews,
   },
 ];
 
