@@ -7,34 +7,34 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const agendaEvents = [
   {
-    title: "Séminaire sur la transition énergétique",
-    date: "18 mars 2024",
-    location: "Casablanca, Maroc",
+    title: "Lancement officiel",
+    date: "À venir",
+    location: "Canada",
     type: "Séminaire",
     program: "Innovation",
     region: "Nord",
     description:
-      "Discussion sur les mécanismes de financement et les partenariats public-privé pour l’énergie renouvelable.",
+      "Lancement officiel du RPAC pour renforcer les échanges, les collaborations et les partenariats Afrique–Canada.",
   },
   {
-    title: "Forum régional des collectivités africaines",
-    date: "02 avril 2024",
-    location: "Nairobi, Kenya",
+    title: "Rencontre des partenaires",
+    date: "À venir",
+    location: "Canada",
     type: "Forum",
     program: "Gouvernance",
     region: "Est",
     description:
-      "Renforcement des capacités locales et partage de solutions innovantes pour les villes résilientes.",
+      "Partage de solutions innovantes pour renforcer les institutions publiques et l’accès aux services essentiels.",
   },
   {
-    title: "Rencontre d’affaires Canada – Afrique australe",
-    date: "21 mai 2024",
-    location: "Johannesburg, Afrique du Sud",
+    title: "1er Forum annuel",
+    date: "À venir",
+    location: "Canada",
     type: "Rencontre",
     program: "Commerce",
     region: "Sud",
     description:
-      "Matchmaking d’investissements pour les secteurs santé, numérique et infrastructures durables.",
+      "Dialogue entre experts canadiens et africains pour accélérer les partenariats en santé numérique.",
   },
 ];
 

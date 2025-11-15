@@ -1,31 +1,35 @@
 import { CalendarDays, MapPin, ArrowUpRight } from "lucide-react";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import rpacLogo from "@/assets/rpac-actu.png";
 
 const events = [
   {
-    title: "Forum économique Canada – Afrique de l’Ouest",
-    date: "12 mars 2024",
-    location: "Dakar, Sénégal",
+    title: "Lancement officiel",
+    date: "À venir",
+    location: "Canada",
     tag: "Diplomatie économique",
     description:
-      "Table ronde ministérielle et rencontres B2B autour des investissements durables et des partenariats technologiques.",
+      "Lancement officiel du RPAC pour renforcer les échanges, les collaborations et les partenariats Afrique–Canada.",
+    image: rpacLogo,
   },
   {
-    title: "Sommet régional sur la gouvernance inclusive",
-    date: "28 avril 2024",
-    location: "Abuja, Nigeria",
+    title: "Rencontre des partenaires",
+    date: "À venir",
+    location: "Canada",
     tag: "Gouvernance inclusive",
     description:
       "Partage de solutions innovantes pour renforcer les institutions publiques et l’accès aux services essentiels.",
+    image: rpacLogo,
   },
   {
-    title: "Rencontre sectorielle santé & innovation",
-    date: "09 juin 2024",
-    location: "Montréal, Canada",
+    title: "1er Forum annuel",
+    date: "À venir",
+    location: "Canada",
     tag: "Innovation & santé",
     description:
       "Dialogue entre experts canadiens et africains pour accélérer les partenariats en santé numérique.",
+    image: rpacLogo,
   },
 ];
 
@@ -58,6 +62,15 @@ const RecentEvents = () => {
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               <div className="space-y-6">
+                <div className="flex justify-center">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="h-16 w-auto object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="inline-flex items-center rounded-full border border-transparent bg-[#f3d9d3] px-5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-primary">
                     {event.tag}
