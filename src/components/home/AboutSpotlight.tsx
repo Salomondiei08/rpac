@@ -2,13 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
-import impactImage from "@/assets/impact-collage.jpg";
-
-const stats = [
-  { value: "15+", label: "pays partenaires mobilisés" },
-  { value: "120", label: "institutions accompagnées" },
-  { value: "300+", label: "experts et membres actifs" },
-];
+import impactImage from "@/assets/rpac-actu.png";
 
 const AboutSpotlight = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
@@ -29,22 +23,9 @@ const AboutSpotlight = () => {
         >
           <img
             src={impactImage}
-            alt="Membres du RPAC en mission de terrain"
+            alt="Le RPAC en action"
             className="h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out hover:scale-[1.04]"
           />
-          <div className="absolute bottom-6 left-6 right-6 grid gap-4 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl bg-white/95 px-4 py-5 text-center shadow-lg backdrop-blur transition-transform duration-500 hover:-translate-y-1"
-              >
-                <p className="text-2xl font-semibold text-primary">{stat.value}</p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground/80">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div
