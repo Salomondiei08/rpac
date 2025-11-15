@@ -70,7 +70,7 @@ const ActivityCard = ({ program, index }: ActivityCardProps) => {
       </div>
 
       <div className="mt-6 space-y-3">
-        <h2 className="text-xl font-semibold text-primary transition-colors duration-500 group-hover:text-white">
+        <h2 className="text-xl font-semibold text-[#0f0f0f] transition-colors duration-500 group-hover:text-white">
           {program.title}
         </h2>
         <p className="text-sm leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-white/80">
