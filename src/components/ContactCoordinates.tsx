@@ -6,14 +6,14 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Courriel",
-    value: "contact@partenariatsca.org",
-    href: "mailto:contact@partenariatsca.org",
+    value: "info@rpac.ca",
+    href: "mailto:info@rpac.ca",
   },
   {
     icon: Phone,
     label: "Téléphone",
-    value: "+1 (514) 555-9087",
-    href: "tel:+15145559087",
+    value: "+1 (819) 446-0661",
+    href: "tel:+18194460661",
   },
   {
     icon: MapPin,
@@ -56,7 +56,7 @@ const ContactCoordinates = ({ className }: ContactCoordinatesProps) => {
             ))}
           </div>
           <Button asChild size="lg" className="w-full sm:w-fit">
-            <a href="mailto:contact@partenariatsca.org">Nous contacter</a>
+            <a href="mailto:info@rpac.ca">Nous contacter</a>
           </Button>
         </div>
         <div className="h-[360px] rounded-3xl border border-border/60 bg-background shadow-[var(--shadow-card)]">

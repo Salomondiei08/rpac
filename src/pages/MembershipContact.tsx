@@ -93,7 +93,7 @@ const MembershipContact = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+1 514 000 0000"
+                      placeholder="+1 819 446-0661"
                       autoComplete="tel"
                     />
                   </div>

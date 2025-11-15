@@ -29,8 +29,8 @@ const Legal = () => {
             <h2 className="mb-3 text-lg font-semibold text-primary">Directeur de la publication</h2>
             <p>
               Conseil d’administration de l’Association PCA. Contact :{" "}
-              <a href="mailto:contact@partenariatsca.org" className="text-accent hover:underline">
-                contact@partenariatsca.org
+              <a href="mailto:info@rpac.ca" className="text-accent hover:underline">
+                info@rpac.ca
               </a>
               .
             </p>
@@ -66,8 +66,8 @@ const Legal = () => {
             <h2 className="mb-3 text-lg font-semibold text-primary">Contact</h2>
             <p>
               Pour toute question relative aux mentions légales, veuillez nous écrire à{" "}
-              <a href="mailto:legal@partenariatsca.org" className="text-accent hover:underline">
-                legal@partenariatsca.org
+              <a href="mailto:info@rpac.ca" className="text-accent hover:underline">
+                info@rpac.ca
               </a>
               .
             </p>

@@ -70,11 +70,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-1" aria-hidden="true" />
-                contact@partenariatsca.org
+                info@rpac.ca
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-1" aria-hidden="true" />
-                +1 (514) 555-9087
+                +1 (819) 446-0661
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-1" aria-hidden="true" />

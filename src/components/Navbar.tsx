@@ -109,18 +109,18 @@ const Navbar = () => {
             </div>
             <div className="hidden md:flex flex-wrap items-center gap-4 text-primary-foreground/90">
               <a
-                href="mailto:contact@rpac.org"
+                href="mailto:info@rpac.ca"
                 className="inline-flex items-center gap-2 hover:text-primary-foreground"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
-                contact@rpac.org
+                info@rpac.ca
               </a>
               <a
-                href="tel:+15145550199"
+                href="tel:+18194460661"
                 className="inline-flex items-center gap-2 hover:text-primary-foreground"
               >
                 <Phone className="h-4 w-4" aria-hidden="true" />
-                +1 (514) 555-0199
+                +1 (819) 446-0661
               </a>
             </div>
           </div>
