@@ -12,7 +12,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
-import rpacLogo from "@/assets/rpac-logo.png";
+import rpacLogo from "@/assets/rpac-actu.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -136,7 +136,7 @@ const Navbar = () => {
             <img
               src={rpacLogo}
               alt="Logo Partenariats Canada-Afrique"
-              className="h-10 w-auto md:h-12"
+              className="h-12 w-auto md:h-16"
             />
           </NavLink>
 
