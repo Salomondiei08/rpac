@@ -110,56 +110,6 @@ const About = () => {
             ))}
           </div>
 
-          <section aria-labelledby="objectifs-heading" className="space-y-10">
-            <AnimatedSection className="space-y-3 max-w-2xl">
-              <h2
-                id="objectifs-heading"
-                className="text-3xl font-bold text-primary"
-              >
-                Objectifs stratégiques
-              </h2>
-              <p className="text-muted-foreground">
-                Nous orientons nos actions autour de quatre piliers qui encadrent les collaborations et renforcent les capacités de nos membres.
-              </p>
-            </AnimatedSection>
-            <div className="grid gap-10 lg:grid-cols-[1.05fr,1fr]">
-              <AnimatedSection className="relative overflow-hidden rounded-4xl bg-[#0d2a33]" delay={60}>
-                <img
-                  src={impactImage}
-                  alt="Partenaires du RPAC sur le terrain"
-                  className="h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out hover:scale-[1.03]"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute top-6 left-6 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary shadow-lg">
-                  Terrains RPAC
-                </div>
-                <div className="absolute bottom-6 right-6 rounded-2xl bg-white/90 px-5 py-4 text-sm font-semibold text-primary shadow-lg">
-                  45 projets pilotes accompagnés
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={140} className="space-y-6 rounded-4xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
-                <Accordion type="single" collapsible className="space-y-2">
-                  {strategicObjectives.map((objective, index) => (
-                    <AccordionItem key={objective.title} value={`objective-${index}`} className="border-b border-border/60">
-                      <AccordionTrigger className="text-left text-base font-semibold text-primary">
-                        {objective.title}
-                      </AccordionTrigger>
-                      <AccordionContent className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-                        <p>{objective.summary}</p>
-                        <div className="rounded-2xl bg-muted/40 p-4">
-                          <p>{objective.detail}</p>
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-                <Button asChild variant="outline" className="w-full justify-center">
-                  <Link to="/programmes">Explorer nos programmes</Link>
-                </Button>
-              </AnimatedSection>
-            </div>
-          </section>
         <ContactCoordinates />
 
         </div>
