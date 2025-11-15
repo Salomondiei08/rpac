@@ -81,7 +81,7 @@ const RecentEvents = () => {
                   </span>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-primary leading-tight">
+                  <h3 className="text-xl font-semibold text-[#0f0f0f] leading-tight">
                     {event.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
