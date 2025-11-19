@@ -97,17 +97,19 @@ const RecentEvents = () => {
                     {event.description}
                   </p>
                 </div>
-                <div className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground/70">
-                  <MapPin className="h-4 w-4" aria-hidden="true" />
-                  {event.location.toUpperCase()}
+                <div className="flex items-center justify-between text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground/70">
+                  <span className="inline-flex items-center gap-2 text-muted-foreground/80">
+                    <MapPin className="h-4 w-4" aria-hidden="true" />
+                    {event.location.toUpperCase()}
+                  </span>
+                  <a
+                    href="/agenda"
+                    className="inline-flex items-center gap-2 text-accent font-semibold tracking-normal"
+                  >
+                    Voir le compte-rendu
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
                 </div>
-                <a
-                  href="/agenda"
-                  className="inline-flex items-center gap-2 text-accent font-semibold"
-                >
-                  Voir le compte-rendu
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </a>
               </div>
             </article>
           ))}
