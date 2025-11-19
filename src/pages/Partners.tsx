@@ -26,7 +26,7 @@ const Partners = () => {
                   href={partner.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center rounded-2xl border border-border/60 bg-card p-6 shadow-sm transition transform hover:-translate-y-1 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-border/60 bg-card p-6 shadow-sm transition transform hover:-translate-y-1 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent text-center"
                 >
                   <img
                     src={partner.logo}
@@ -35,6 +35,7 @@ const Partners = () => {
                     loading="lazy"
                     decoding="async"
                   />
+                  <p className="text-sm font-semibold text-muted-foreground">{partner.name}</p>
                 </a>
               ))}
             </div>
