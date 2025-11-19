@@ -71,7 +71,7 @@ const About = () => {
             <h2 id="presentation-heading" className="text-3xl font-bold text-primary">
               Qui sommes-nous ?
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-relaxed">
               {identityParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -80,23 +80,27 @@ const About = () => {
 
           <AnimatedSection delay={100} className="space-y-6">
             <h3 className="text-3xl font-bold text-primary">Notre mission</h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-relaxed">
               {missionParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <div className="rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
-              <h4 className="text-xl font-semibold text-primary">
+              <h4 className="text-4xl font-semibold text-primary">
                 Enjeux prioritaires
               </h4>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {missionFocus.map((focus) => (
-                  <li key={focus} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-                    <span>{focus}</span>
-                  </li>
+              <div className="mt-10 grid gap-8 sm:grid-cols-2">
+                {[missionFocus.slice(0, Math.ceil(missionFocus.length / 2)), missionFocus.slice(Math.ceil(missionFocus.length / 2))].map((column, index) => (
+                  <ul key={`mission-focus-column-${index}`} className="space-y-4">
+                    {column.map((focus) => (
+                      <li key={focus} className="flex items-start gap-3 text-xl text-muted-foreground leading-snug">
+                        <span className="mt-2 h-3 w-3 rounded-full bg-accent" aria-hidden="true" />
+                        <span>{focus}</span>
+                      </li>
+                    ))}
+                  </ul>
                 ))}
-              </ul>
+              </div>
             </div>
           </AnimatedSection>
 
