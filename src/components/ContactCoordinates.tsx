@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const contactDetails = [
   {
@@ -60,7 +61,7 @@ const ContactCoordinates = ({ className }: ContactCoordinatesProps) => {
             ))}
           </div>
           <Button asChild size="lg" className="w-full sm:w-fit">
-            <a href="mailto:info@rpac.ca">Nous contacter</a>
+            <Link to="/adhesion-contact">Devenir membre</Link>
           </Button>
         </div>
         <div className="h-[360px] rounded-3xl border border-border/60 bg-background shadow-[var(--shadow-card)]">
