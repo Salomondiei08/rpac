@@ -85,7 +85,7 @@ const About = () => {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <div className="rounded-3xl border border-border/60 bg-card/95 p-8 shadow-[var(--shadow-card)]">
+            <div className="rounded-3xl border border-neutral-300 bg-neutral-50 p-8">
               <h4 className="text-4xl font-semibold text-primary">
                 Enjeux prioritaires
               </h4>
