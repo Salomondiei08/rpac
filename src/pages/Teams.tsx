@@ -70,10 +70,13 @@ const Teams = () => {
         </AnimatedSection>
       </section>
 
-      <section className="py-20">
-        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
+      <section className="py-20 bg-background">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
           <div id="board-heading" className="space-y-6">
             <AnimatedSection className="max-w-3xl space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                Conseil
+              </p>
               <h2 className="text-3xl font-bold text-primary">
                 Conseil d’administration
               </h2>
@@ -82,7 +85,7 @@ const Teams = () => {
                 programmes portés par le RPAC.
               </p>
             </AnimatedSection>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {boardMembers.map((member, index) => (
                 <AnimatedSection key={member.name} delay={index * 80}>
                   <Dialog>
@@ -91,7 +94,7 @@ const Teams = () => {
                         {...member}
                         socials={defaultSocials}
                         interactive
-                        layout="horizontal"
+                        layout="vertical"
                       />
                     </DialogTrigger>
                     <DialogContent className="max-w-xl space-y-4">
@@ -124,12 +127,16 @@ const Teams = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div
-            id="honorary-heading"
-            className="space-y-6 rounded-4xl border border-border/60 bg-muted/20 px-8 py-10"
-          >
+      <section className="py-20 bg-[#f8f4ef]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+          <div id="honorary-heading" className="space-y-6">
             <AnimatedSection className="max-w-3xl space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                Influence
+              </p>
               <h2 className="text-3xl font-bold text-primary">
                 Membres honoraires
               </h2>
@@ -138,7 +145,7 @@ const Teams = () => {
                 réseaux bilatéraux.
               </p>
             </AnimatedSection>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {honoraryMembers.map((member, index) => (
                 <AnimatedSection key={member.name} delay={index * 90}>
                   <Dialog>
@@ -147,7 +154,7 @@ const Teams = () => {
                         {...member}
                         socials={defaultSocials}
                         interactive
-                        layout="horizontal"
+                        layout="vertical"
                       />
                     </DialogTrigger>
                     <DialogContent className="max-w-xl space-y-4">
@@ -185,9 +192,16 @@ const Teams = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
+      <section className="py-20 bg-[#e7f6f2]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
           <div id="regional-heading" className="space-y-6">
             <AnimatedSection className="max-w-3xl space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                Terrain
+              </p>
               <h2 className="text-3xl font-bold text-primary">
                 Représentants régionaux
               </h2>
@@ -196,7 +210,7 @@ const Teams = () => {
                 missions sur les cinq grandes régions africaines.
               </p>
             </AnimatedSection>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {regionalRepresentatives.map((representative, index) => (
                 <AnimatedSection key={representative.name} delay={index * 70}>
                   <Dialog>
@@ -208,7 +222,7 @@ const Teams = () => {
                         image={representative.image}
                         socials={defaultSocials}
                         interactive
-                        layout="horizontal"
+                        layout="vertical"
                       />
                     </DialogTrigger>
                     <DialogContent className="max-w-xl space-y-4">
@@ -242,11 +256,18 @@ const Teams = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="rounded-4xl border border-dashed border-border/60 bg-muted/10 p-8">
+      <section className="py-20 bg-[#0d1f29] text-primary-foreground">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+          <div className="space-y-4 text-center md:text-left">
             <AnimatedSection className="space-y-3">
-              <h2 className="text-3xl font-bold text-primary">Followers</h2>
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
+                Communauté
+              </p>
+              <h2 className="text-3xl font-bold">Followers</h2>
+              <p className="text-white/80 text-base leading-relaxed">
                 Nos Followers incarnent l’esprit de partenariat qui anime le
                 RPAC. Professionnels, chercheurs et leaders issus des deux
                 régions, ils partagent leur expertise pour renforcer les ponts
@@ -254,19 +275,20 @@ const Teams = () => {
                 réseau.
               </p>
             </AnimatedSection>
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
-              {followers.map((person, index) => (
-                <AnimatedSection key={person.name} delay={index * 70}>
-                  <ProfileCard
-                    name={person.name}
-                    title={person.role}
-                    bio={person.bio}
-                    image={person.image}
-                    layout="horizontal"
-                  />
-                </AnimatedSection>
-              ))}
-            </div>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {followers.map((person, index) => (
+              <AnimatedSection key={person.name} delay={index * 70}>
+                <ProfileCard
+                  name={person.name}
+                  title={person.role}
+                  bio={person.bio}
+                  image={person.image}
+                  className="bg-[#122736]/90 border-white/10 text-left"
+                  layout="vertical"
+                />
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
