@@ -5,8 +5,8 @@ const Legal = () => {
         <div className="mx-auto max-w-5xl px-6 space-y-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold">Mentions légales</h1>
           <p className="mx-auto max-w-2xl text-white/90">
-            Ces mentions légales décrivent l’identité de l’association, les conditions d’utilisation du site et les
-            responsabilités légales applicables.
+            Ces mentions légales décrivent l’identité du réseau, les conditions
+            d’utilisation du site et les responsabilités légales applicables.
           </p>
         </div>
       </section>
@@ -14,18 +14,26 @@ const Legal = () => {
       <section className="py-24">
         <article className="mx-auto max-w-4xl space-y-8 px-6 text-sm leading-relaxed text-muted-foreground">
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-primary">Éditeur du site</h2>
+            <h2 className="mb-3 text-lg font-semibold text-primary">
+              Éditeur du site
+            </h2>
             <p>
-              Association Partenariats Canada-Afrique (PCA) — Organisation à but non lucratif, enregistrée au Québec,
-              Canada. Siège social : Maison des Associations, 125 rue Sherbrooke Ouest, Montréal, QC.
+              Réseau des Partenariats Canada-Afrique (PCA) — Organisation à but
+              non lucratif, enregistrée au Québec, Canada. Siège social : Maison
+              des réseaus, 125 rue Sherbrooke Ouest, Montréal, QC.
             </p>
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-primary">Directeur de la publication</h2>
+            <h2 className="mb-3 text-lg font-semibold text-primary">
+              Directeur de la publication
+            </h2>
             <p>
-              Conseil d’administration de l’Association PCA. Contact :{" "}
-              <a href="mailto:info@rpac.ca" className="text-accent hover:underline">
+              Conseil d’administration du réseau PCA. Contact :{" "}
+              <a
+                href="mailto:info@rpac.ca"
+                className="text-accent hover:underline"
+              >
                 info@rpac.ca
               </a>
               .
@@ -33,36 +41,49 @@ const Legal = () => {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-primary">Hébergement</h2>
+            <h2 className="mb-3 text-lg font-semibold text-primary">
+              Hébergement
+            </h2>
             <p>
-              Le site est hébergé par un prestataire conforme aux normes canadiennes et internationales de protection des
-              données. Les infrastructures sont situées au Canada.
+              Le site est hébergé par un prestataire conforme aux normes
+              canadiennes et internationales de protection des données. Les
+              infrastructures sont situées au Canada.
             </p>
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-primary">Propriété intellectuelle</h2>
+            <h2 className="mb-3 text-lg font-semibold text-primary">
+              Propriété intellectuelle
+            </h2>
             <p>
-              L’ensemble des contenus (textes, images, vidéos, documents) présentés sur ce site est la propriété exclusive
-              de l’Association PCA ou de ses partenaires. Toute reproduction ou diffusion sans autorisation préalable est
-              interdite.
+              L’ensemble des contenus (textes, images, vidéos, documents)
+              présentés sur ce site est la propriété exclusive du réseau PCA ou
+              de ses partenaires. Toute reproduction ou diffusion sans
+              autorisation préalable est interdite.
             </p>
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-primary">Liens hypertextes</h2>
+            <h2 className="mb-3 text-lg font-semibold text-primary">
+              Liens hypertextes
+            </h2>
             <p>
-              Les liens externes présents sur le site sont fournis à titre informatif. L’association ne peut être tenue
-              responsable du contenu de ces sites tiers. Les liens vers notre site sont autorisés sous réserve d’en informer
-              préalablement l’Association PCA.
+              Les liens externes présents sur le site sont fournis à titre
+              informatif. le réseau ne peut être tenue responsable du contenu de
+              ces sites tiers. Les liens vers notre site sont autorisés sous
+              réserve d’en informer préalablement le réseau PCA.
             </p>
           </section>
 
           <section>
             <h2 className="mb-3 text-lg font-semibold text-primary">Contact</h2>
             <p>
-              Pour toute question relative aux mentions légales, veuillez nous écrire à{" "}
-              <a href="mailto:info@rpac.ca" className="text-accent hover:underline">
+              Pour toute question relative aux mentions légales, veuillez nous
+              écrire à{" "}
+              <a
+                href="mailto:info@rpac.ca"
+                className="text-accent hover:underline"
+              >
                 info@rpac.ca
               </a>
               .

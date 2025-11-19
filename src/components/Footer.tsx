@@ -10,7 +10,10 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0d2a33] text-white pt-16" aria-labelledby="footer-heading">
+    <footer
+      className="bg-[#0d2a33] text-white pt-16"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Pied de page
       </h2>
@@ -25,12 +28,16 @@ const Footer = () => {
                 loading="lazy"
                 decoding="async"
               />
-              <p className="text-lg font-semibold">Réseau pour le Partenariat Afrique Canada</p>
+              <p className="text-lg font-semibold">
+                Réseau pour le Partenariat Afrique Canada
+              </p>
             </div>
           </div>
 
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide">Navigation</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide">
+              Navigation
+            </h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
                 <NavLink to="/" className="hover:text-accent transition-colors">
@@ -38,27 +45,42 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/a-propos" className="hover:text-accent transition-colors">
+                <NavLink
+                  to="/a-propos"
+                  className="hover:text-accent transition-colors"
+                >
                   À propos
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/programmes" className="hover:text-accent transition-colors">
+                <NavLink
+                  to="/programmes"
+                  className="hover:text-accent transition-colors"
+                >
                   Nos programmes
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/agenda" className="hover:text-accent transition-colors">
+                <NavLink
+                  to="/agenda"
+                  className="hover:text-accent transition-colors"
+                >
                   Événements / agenda
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/galerie" className="hover:text-accent transition-colors">
+                <NavLink
+                  to="/galerie"
+                  className="hover:text-accent transition-colors"
+                >
                   Galerie multimédia
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/adhesion-contact" className="hover:text-accent transition-colors">
+                <NavLink
+                  to="/adhesion-contact"
+                  className="hover:text-accent transition-colors"
+                >
                   Adhésion & contact
                 </NavLink>
               </li>
@@ -66,7 +88,9 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide">Contact rapide</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide">
+              Contact rapide
+            </h3>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-1" aria-hidden="true" />
@@ -78,13 +102,15 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-1" aria-hidden="true" />
-                Maison des Associations, 125 rue Sherbrooke Ouest, Montréal, QC
+                Maison des réseaus, 125 rue Sherbrooke Ouest, Montréal, QC
               </li>
             </ul>
           </div>
 
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide">Réseaux sociaux</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide">
+              Réseaux sociaux
+            </h3>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -99,8 +125,9 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-              <p className="text-xs text-white/70">
-              Inscrivez-vous à notre lettre d’information pour recevoir les dernières actualités.
+            <p className="text-xs text-white/70">
+              Inscrivez-vous à notre lettre d’information pour recevoir les
+              dernières actualités.
             </p>
           </div>
         </div>
@@ -108,15 +135,27 @@ const Footer = () => {
 
       <section className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6 text-sm text-white/70 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {new Date().getFullYear()} Association Partenariats Canada-Afrique. Tous droits réservés.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Réseau des Partenariats
+            Canada-Afrique. Tous droits réservés.
+          </p>
           <div className="flex flex-wrap gap-4">
-            <NavLink to="/mentions-legales" className="hover:text-accent transition-colors">
+            <NavLink
+              to="/mentions-legales"
+              className="hover:text-accent transition-colors"
+            >
               Mentions légales
             </NavLink>
-            <NavLink to="/politique-confidentialite" className="hover:text-accent transition-colors">
+            <NavLink
+              to="/politique-confidentialite"
+              className="hover:text-accent transition-colors"
+            >
               Politique de confidentialité
             </NavLink>
-            <NavLink to="/adhesion-contact" className="hover:text-accent transition-colors">
+            <NavLink
+              to="/adhesion-contact"
+              className="hover:text-accent transition-colors"
+            >
               Nous contacter
             </NavLink>
           </div>

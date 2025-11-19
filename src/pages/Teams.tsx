@@ -50,7 +50,7 @@ const AnimatedSection = ({
       className={cn(
         "transition-all duration-700 ease-out",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-        className,
+        className
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -64,7 +64,9 @@ const Teams = () => {
     <div className="bg-background">
       <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 md:pt-28 pb-24">
         <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Nos équipes</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Nos équipes
+          </h1>
         </AnimatedSection>
       </section>
 
@@ -132,8 +134,8 @@ const Teams = () => {
                 Membres honoraires
               </h2>
               <p className="text-muted-foreground">
-                Ils appuient la mission de l’association par leur influence et
-                leurs réseaux bilatéraux.
+                Ils appuient la mission du réseau par leur influence et leurs
+                réseaux bilatéraux.
               </p>
             </AnimatedSection>
             <div className="grid gap-6 md:grid-cols-2">
@@ -231,9 +233,7 @@ const Teams = () => {
                           <Link to="/agenda">Planifier une rencontre</Link>
                         </Button>
                         <Button asChild>
-                          <Link to="/adhesion-contact">
-                            Contacter le RPAC
-                          </Link>
+                          <Link to="/adhesion-contact">Contacter le RPAC</Link>
                         </Button>
                       </div>
                     </DialogContent>
@@ -247,9 +247,10 @@ const Teams = () => {
             <AnimatedSection className="space-y-3">
               <h2 className="text-3xl font-bold text-primary">Followers</h2>
               <p className="text-muted-foreground text-base leading-relaxed">
-                Nos Followers incarnent l’esprit de partenariat qui anime le RPAC. Professionnels,
-                chercheurs et leaders issus des deux régions, ils partagent leur expertise pour
-                renforcer les ponts entre l’Afrique et le Canada et soutenir les initiatives du
+                Nos Followers incarnent l’esprit de partenariat qui anime le
+                RPAC. Professionnels, chercheurs et leaders issus des deux
+                régions, ils partagent leur expertise pour renforcer les ponts
+                entre l’Afrique et le Canada et soutenir les initiatives du
                 réseau.
               </p>
             </AnimatedSection>

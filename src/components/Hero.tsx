@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImage}
-          alt="Représentants de l'association réunis autour d'une table de travail"
+          alt="Représentants du réseau réunis autour d'une table de travail"
           className="h-full w-full object-cover"
           loading="eager"
           fetchPriority="high"

@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 // Global default SEO + JSON-LD schema
 const SEO = () => {
-  const siteName = "RPAC | Réseau Partenariats Afrique-Canada";
+  const siteName = "RPAC | Réseau des Partenariats Afrique-Canada";
   const title = "RPAC | Accélérer les coopérations Canada-Afrique";
   const description =
     "RPAC réunit gouvernements, entreprises et société civile afin de co-construire des projets durables reliant le Canada et l’ensemble du continent africain.";

@@ -4,7 +4,7 @@ export const boardMembers = [
     title: "Présidente du conseil",
     image:
       "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?auto=format&fit=crop&w=300&q=80",
-    bio: "Spécialiste des politiques publiques et de la coopération internationale, elle dirige les partenariats institutionnels de l’association.",
+    bio: "Spécialiste des politiques publiques et de la coopération internationale, elle dirige les partenariats institutionnels du réseau.",
   },
   {
     name: "Jean-Philippe Akande",

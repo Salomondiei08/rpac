@@ -47,34 +47,50 @@ const AboutSpotlight = () => {
             </h2>
             <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
               <p>
-                Organisation à but non lucratif, le RPAC renforce les liens stratégiques entre le Canada et l’Afrique en
-                accompagnant gouvernements, entreprises et communautés sur des projets d’investissement, d’entrepreneuriat,
-                d’éducation et de coopération institutionnelle.
+                Organisation à but non lucratif, le RPAC renforce les liens
+                stratégiques entre le Canada et l’Afrique en accompagnant
+                gouvernements, entreprises et communautés sur des projets
+                d’investissement, d’entrepreneuriat, d’éducation et de
+                coopération institutionnelle.
               </p>
               <p>
-                Aligné sur l’Agenda 2063 et la Stratégie canadienne pour l’Afrique, le réseau catalyse des partenariats
-                transformateurs qui promeuvent des investissements responsables, du commerce durable et la création de valeurs
-                partagées entre les deux continents.
+                Aligné sur l’Agenda 2063 et la Stratégie canadienne pour
+                l’Afrique, le réseau catalyse des partenariats transformateurs
+                qui promeuvent des investissements responsables, du commerce
+                durable et la création de valeurs partagées entre les deux
+                continents.
               </p>
             </div>
           </div>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+              <span
+                className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
+                aria-hidden="true"
+              />
               <span>
-                Accompagnement sur-mesure des gouvernements, entreprises et organisations communautaires des deux continents.
+                Accompagnement sur-mesure des gouvernements, entreprises et
+                organisations communautaires des deux continents.
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+              <span
+                className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
+                aria-hidden="true"
+              />
               <span>
-                Promotion d’investissements responsables et de collaborations alignées sur les principes de la RSE.
+                Promotion d’investissements responsables et de collaborations
+                alignées sur les principes de la RSE.
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+              <span
+                className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
+                aria-hidden="true"
+              />
               <span>
-                Programmes alignés sur l’Agenda 2063 et la Stratégie canadienne pour l’Afrique pour créer des valeurs partagées.
+                Programmes alignés sur l’Agenda 2063 et la Stratégie canadienne
+                pour l’Afrique pour créer des valeurs partagées.
               </span>
             </li>
           </ul>
@@ -83,7 +99,7 @@ const AboutSpotlight = () => {
             size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
-            <Link to="/a-propos">Découvrir l’association</Link>
+            <Link to="/a-propos">Découvrir le réseau</Link>
           </Button>
         </div>
       </div>
