@@ -37,14 +37,23 @@ const RecentEvents = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section id="events" aria-labelledby="events-heading" className="bg-[#1CC47B]/10 py-24">
+    <section
+      id="events"
+      aria-labelledby="events-heading"
+      className="bg-[#1CC47B]/10 py-24"
+    >
       <div className="mx-auto max-w-6xl space-y-10 px-6">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
-          <h2 id="events-heading" className="text-3xl md:text-4xl font-bold text-primary">
+          <h2
+            id="events-heading"
+            className="text-3xl md:text-4xl font-bold text-primary"
+          >
             Événements récents
           </h2>
           <p className="text-muted-foreground text-lg">
-            Des rencontres institutionnelles pour renforcer les synergies entre les écosystèmes africains et canadiens. Découvrez les rendez-vous qui ont marqué notre agenda.
+            Des rencontres institutionnelles pour renforcer les synergies entre
+            les écosystèmes africains et canadiens. Découvrez les rendez-vous
+            qui ont marqué notre agenda.
           </p>
         </div>
 
@@ -52,7 +61,7 @@ const RecentEvents = () => {
           ref={ref}
           className={cn(
             "grid gap-6 lg:grid-cols-3 transition-all duration-700",
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
           {events.map((event, index) => (
@@ -105,7 +114,10 @@ const RecentEvents = () => {
         </div>
 
         <div className="flex justify-center">
-          <a href="/agenda" className="inline-flex items-center gap-2 text-accent font-semibold">
+          <a
+            href="/agenda"
+            className="inline-flex items-center gap-2 text-accent font-semibold"
+          >
             Consulter l’agenda complet
           </a>
         </div>
