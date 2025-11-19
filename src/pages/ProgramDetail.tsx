@@ -40,7 +40,7 @@ const extraProgramDetails: Record<
         "Pour en savoir plus sur l’Agenda 2063, consultez le document officiel de l’Union africaine : Agenda 2063 – L’Afrique que nous voulons.",
       ],
       link: {
-        href: "https://au.int/sites/default/files/documents/36204-doc-agenda2063_popular_version_en.pdf",
+        href: "https://au.int/sites/default/files/documents/36204-doc-agenda2063_popular_version_fr.pdf",
         label: "Agenda 2063 – L’Afrique que nous voulons",
       },
     },
