@@ -1,6 +1,11 @@
 import { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Dialog, DialogContent, DialogOverlay, DialogPortal } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogOverlay,
+  DialogPortal,
+} from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
 const galleryItems = [
@@ -9,7 +14,7 @@ const galleryItems = [
     src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Forum économique Afrique de l’Ouest",
+    title: "Nos Forums Afrique de l’Ouest",
     src: "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=900&q=80",
   },
   {
@@ -43,13 +48,17 @@ const galleryItems = [
 ];
 
 const Gallery = () => {
-  const [activeMedia, setActiveMedia] = useState<typeof galleryItems[number] | null>(null);
+  const [activeMedia, setActiveMedia] = useState<
+    (typeof galleryItems)[number] | null
+  >(null);
 
   return (
     <div className="bg-background">
       <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 pb-24">
         <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Galerie multimédia</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Galerie multimédia
+          </h1>
         </AnimatedSection>
       </section>
 
@@ -76,7 +85,10 @@ const Gallery = () => {
         </div>
       </section>
 
-      <Dialog open={Boolean(activeMedia)} onOpenChange={(open) => !open && setActiveMedia(null)}>
+      <Dialog
+        open={Boolean(activeMedia)}
+        onOpenChange={(open) => !open && setActiveMedia(null)}
+      >
         <DialogPortal>
           <DialogOverlay />
           <DialogContent className="max-w-5xl border-none bg-transparent shadow-none p-0 sm:rounded-none">

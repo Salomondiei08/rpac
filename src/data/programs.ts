@@ -108,11 +108,11 @@ export const programs: ProgramDetail[] = [
   },
   {
     slug: "forum-economique",
-    title: "Forum économique",
+    title: "Nos Forums",
     excerpt:
       "Le Réseau organise des forums politiques, économiques, culturels et sociaux pour renforcer le dialogue entre l’Afrique et le Canada.",
     description:
-      "Le Forum économique du RPAC constitue une plateforme institutionnelle dédiée au dialogue et à la coopération. Il réunit décideurs publics, acteurs économiques, institutions académiques et partenaires de la société civile pour imaginer des solutions adaptées autour du commerce, des investissements, de l’innovation et de la diplomatie économique.",
+      "Le Nos Forums du RPAC constitue une plateforme institutionnelle dédiée au dialogue et à la coopération. Il réunit décideurs publics, acteurs économiques, institutions académiques et partenaires de la société civile pour imaginer des solutions adaptées autour du commerce, des investissements, de l’innovation et de la diplomatie économique.",
     focus: ["Forums politiques et économiques", "Experts canadiens et africains", "Solutions stratégiques"],
     icon: Globe2,
     highlights: [

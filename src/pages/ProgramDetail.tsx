@@ -57,9 +57,9 @@ const extraProgramDetails: Record<
   ],
   "forum-economique": [
     {
-      title: "Forum économique",
+      title: "Nos Forums",
       paragraphs: [
-        "Le Forum économique du Réseau pour le Partenariat Afrique Canada (RPAC) constitue une plateforme institutionnelle dédiée au dialogue et à la coopération. Le réseau organise des forums sur différentes thématiques en lien avec ses programmes, afin de favoriser l’échange d’expertise, la concertation entre parties prenantes et la formulation de solutions adaptées aux enjeux contemporains.",
+        "Le Nos Forums du Réseau pour le Partenariat Afrique Canada (RPAC) constitue une plateforme institutionnelle dédiée au dialogue et à la coopération. Le réseau organise des forums sur différentes thématiques en lien avec ses programmes, afin de favoriser l’échange d’expertise, la concertation entre parties prenantes et la formulation de solutions adaptées aux enjeux contemporains.",
         "Ces rencontres réunissent des représentants gouvernementaux, des acteurs économiques, des institutions académiques et des partenaires de la société civile autour de sujets stratégiques tels que le commerce, les investissements, l’innovation et la diplomatie économique.",
         "Par cette initiative, RPAC renforce la convergence des priorités africaines et canadiennes, tout en créant un espace structuré où les engagements se traduisent en projets concrets au service d’une prospérité partagée.",
       ],
@@ -96,10 +96,12 @@ const ProgramDetail = () => {
     return (
       <div className="bg-background">
         <section className="flex min-h-[60vh] flex-col items-center justify-center gap-6 text-center">
-          <h1 className="text-3xl font-semibold text-primary">Programme introuvable</h1>
+          <h1 className="text-3xl font-semibold text-primary">
+            Programme introuvable
+          </h1>
           <p className="max-w-xl text-muted-foreground">
-            Le programme recherché n’existe plus ou a été déplacé. Retournez vers la liste complète pour découvrir nos
-            initiatives.
+            Le programme recherché n’existe plus ou a été déplacé. Retournez
+            vers la liste complète pour découvrir nos initiatives.
           </p>
           <div className="flex gap-4">
             <Button onClick={() => navigate(-1)} variant="outline">
@@ -119,8 +121,14 @@ const ProgramDetail = () => {
     <div className="bg-background">
       <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 pb-24 md:pt-28">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 text-center md:text-left">
-          <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">{program.title}</h1>
-          <Button variant="secondary" className="self-center md:self-start w-fit" asChild>
+          <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+            {program.title}
+          </h1>
+          <Button
+            variant="secondary"
+            className="self-center md:self-start w-fit"
+            asChild
+          >
             <Link to="/programmes">
               <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />
               Retour aux programmes
@@ -133,9 +141,14 @@ const ProgramDetail = () => {
         <div className="mx-auto max-w-6xl space-y-14 px-6">
           <div className="grid gap-8">
             {extraProgramDetails[program.slug]?.map((card) => (
-              <Card key={card.title} className="border border-border/60 shadow-[var(--shadow-card)]">
+              <Card
+                key={card.title}
+                className="border border-border/60 shadow-[var(--shadow-card)]"
+              >
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">{card.title}</CardTitle>
+                  <CardTitle className="text-2xl text-primary">
+                    {card.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm leading-relaxed text-muted-foreground">
                   {card.paragraphs.map((paragraph) => (
@@ -158,13 +171,22 @@ const ProgramDetail = () => {
             {program.slug === "axe-diplomatique-economique" && (
               <Card className="border border-border/60 shadow-[var(--shadow-card)]">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">Axes d’alignement stratégique</CardTitle>
+                  <CardTitle className="text-2xl text-primary">
+                    Axes d’alignement stratégique
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-5 text-muted-foreground">
                   {diplomaticDetails.map((detail) => (
-                    <div key={detail.title} className="space-y-2 rounded-xl border border-border/60 bg-muted/30 p-5">
-                      <h3 className="text-lg font-semibold text-primary">{detail.title}</h3>
-                      <p className="text-sm leading-relaxed">{detail.description}</p>
+                    <div
+                      key={detail.title}
+                      className="space-y-2 rounded-xl border border-border/60 bg-muted/30 p-5"
+                    >
+                      <h3 className="text-lg font-semibold text-primary">
+                        {detail.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed">
+                        {detail.description}
+                      </p>
                     </div>
                   ))}
                 </CardContent>
