@@ -82,16 +82,22 @@ const Resources = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={80} className="grid gap-6 md:grid-cols-2">
-              {section.resources.map((resource) => (
-                <Card key={resource.title} className="border border-border/60 shadow-[var(--shadow-card)]">
+              {section.resources.map((resource, idx) => (
+                <Card
+                  key={resource.title}
+                  className="group border border-border/60 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#009BF2]/50 hover:shadow-[var(--shadow-hover)] bg-white hover:bg-[#f0f8ff]"
+                  style={{ transitionDelay: `${idx * 60}ms` }}
+                >
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">{resource.title}</CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground">
+                    <CardTitle className="text-lg text-primary transition-colors duration-300 group-hover:text-[#009BF2]">
+                      {resource.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-[#0d1f29]">
                       {resource.meta}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" asChild>
+                  <CardContent className="flex justify-between items-center">
+                    <Button variant="outline" className="border-[#009BF2] text-[#009BF2] hover:bg-[#009BF2]/10" asChild>
                       <a
                         href={resource.url}
                         target="_blank"
@@ -102,6 +108,9 @@ const Resources = () => {
                         Télécharger
                       </a>
                     </Button>
+                    <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground/70 group-hover:text-[#009BF2]">
+                      Télécharger
+                    </span>
                   </CardContent>
                 </Card>
               ))}

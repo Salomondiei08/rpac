@@ -118,7 +118,7 @@ const RecentEvents = () => {
         <div className="flex justify-center">
           <a
             href="/agenda"
-            className="inline-flex items-center gap-2 text-accent font-semibold"
+            className="inline-flex items-center gap-2 text-[#009BF2] font-semibold"
           >
             Consulter l’agenda complet
           </a>

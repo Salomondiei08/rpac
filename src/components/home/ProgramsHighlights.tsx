@@ -12,7 +12,7 @@ const ProgramsHighlights = () => {
     <section aria-labelledby="activities-heading" className="relative bg-background pt-12 pb-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <header className="space-y-4 text-center">
-          <p className="text-base sm:text-lg font-semibold uppercase tracking-[0.2em] text-accent">
+          <p className="text-base sm:text-lg font-semibold uppercase tracking-[0.2em] text-[#009BF2]">
             Nos programmes
           </p>
           <h1 id="activities-heading" className="text-3xl font-semibold text-primary sm:text-4xl">
