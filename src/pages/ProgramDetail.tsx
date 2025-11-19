@@ -146,11 +146,11 @@ const ProgramDetail = () => {
                 className="border border-border/60 shadow-[var(--shadow-card)]"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">
+                  <CardTitle className="text-3xl font-semibold text-primary">
                     {card.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <CardContent className="space-y-5 text-lg leading-relaxed text-muted-foreground">
                   {card.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -159,7 +159,7 @@ const ProgramDetail = () => {
                       href={card.link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center font-semibold text-primary underline-offset-4 hover:underline"
+                      className="inline-flex items-center font-semibold text-lg text-primary underline-offset-4 hover:underline"
                     >
                       {card.link.label}
                     </a>
@@ -171,20 +171,20 @@ const ProgramDetail = () => {
             {program.slug === "axe-diplomatique-economique" && (
               <Card className="border border-border/60 shadow-[var(--shadow-card)]">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">
+                  <CardTitle className="text-3xl font-semibold text-primary">
                     Axes d’alignement stratégique
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-5 text-muted-foreground">
+                <CardContent className="space-y-6 text-lg leading-relaxed text-muted-foreground">
                   {diplomaticDetails.map((detail) => (
                     <div
                       key={detail.title}
                       className="space-y-2 rounded-xl border border-border/60 bg-muted/30 p-5"
                     >
-                      <h3 className="text-lg font-semibold text-primary">
+                      <h3 className="text-xl font-semibold text-primary">
                         {detail.title}
                       </h3>
-                      <p className="text-sm leading-relaxed">
+                      <p className="text-lg leading-relaxed">
                         {detail.description}
                       </p>
                     </div>
