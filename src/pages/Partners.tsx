@@ -21,9 +21,12 @@ const Partners = () => {
           <AnimatedSection>
             <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {partners.map((partner) => (
-                <div
+                <a
                   key={partner.name}
-                  className="flex items-center justify-center rounded-2xl border border-border/60 bg-card p-6 shadow-sm"
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center rounded-2xl border border-border/60 bg-card p-6 shadow-sm transition transform hover:-translate-y-1 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   <img
                     src={partner.logo}
@@ -32,7 +35,7 @@ const Partners = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </AnimatedSection>

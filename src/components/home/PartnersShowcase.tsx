@@ -18,9 +18,12 @@ const PartnersShowcase = () => {
         <div className="absolute inset-y-0 right-0 w-24 pointer-events-none bg-gradient-to-l from-background to-transparent" aria-hidden="true" />
         <div className="flex min-w-max items-center gap-12 animate-marquee px-8">
           {marqueePartners.map((partner, index) => (
-            <div
+            <a
               key={`${partner.name}-${index}`}
-              className="flex min-w-[200px] flex-col items-center gap-3 text-center"
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-w-[200px] flex-col items-center gap-3 text-center transition-transform hover:-translate-y-1"
             >
               <img
                 src={partner.logo}
@@ -32,7 +35,7 @@ const PartnersShowcase = () => {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 {partner.name}
               </p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
