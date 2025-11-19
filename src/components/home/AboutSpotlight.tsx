@@ -17,14 +17,15 @@ const AboutSpotlight = () => {
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center">
         <div
           className={cn(
-            "relative h-[360px] overflow-hidden rounded-4xl bg-[#0d2a33] lg:w-1/2 transition-all duration-700 ease-out",
+            "relative h-[360px] overflow-hidden rounded-4xl bg-white lg:w-1/2 transition-all duration-700 ease-out flex items-center justify-center p-6",
             inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
           )}
         >
           <img
             src={impactImage}
             alt="Le RPAC en action"
-            className="h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out hover:scale-[1.04]"
+            className="h-full w-full object-contain opacity-95 transition-transform duration-700 ease-out hover:scale-[1.04]"
+            style={{ clipPath: "inset(0% 1.25%)" }}
           />
         </div>
 
