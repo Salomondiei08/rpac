@@ -41,39 +41,39 @@ const Programs = () => {
               return (
                 <Card
                   key={program.slug}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-accent/15 bg-white p-8 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[var(--shadow-hover)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-accent/15 bg-white p-8 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 hover:border-accent/40 hover:bg-[#0d1f29] hover:shadow-[var(--shadow-hover)]"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent transition-colors duration-300 group-hover:bg-white/15 group-hover:text-white">
                         <Icon className="h-7 w-7" aria-hidden="true" />
                       </div>
-                      <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground/70">
+                      <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors duration-300 group-hover:text-white/80">
                         Programme #{index + 1}
                       </span>
                     </div>
-                    <Badge variant="outline" className="border-accent/20 bg-accent/10 text-accent">
+                    <Badge variant="outline" className="border-accent/20 bg-accent/10 text-accent transition-colors duration-300 group-hover:border-white/40 group-hover:bg-white/15 group-hover:text-white">
                       RPAC
                     </Badge>
                   </div>
                   <CardHeader className="mt-6 space-y-3 p-0">
-                    <CardTitle className="text-2xl font-semibold text-primary">
+                    <CardTitle className="text-2xl font-semibold text-primary transition-colors duration-300 group-hover:text-white">
                       {program.title}
                     </CardTitle>
                     {program.subtitle && (
-                      <p className="text-sm font-medium text-accent">
+                      <p className="text-sm font-medium text-accent transition-colors duration-300 group-hover:text-accent/80">
                         {program.subtitle}
                       </p>
                     )}
                   </CardHeader>
-                  <CardContent className="flex-1 space-y-5 p-0 text-sm leading-relaxed text-muted-foreground">
+                  <CardContent className="flex-1 space-y-5 p-0 text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-white/80">
                     <p>{program.description}</p>
                     <ul className="flex flex-wrap gap-2">
                       {program.focus.map((item) => (
                         <li key={item}>
                           <Badge
                             variant="outline"
-                            className="border-accent/20 bg-accent/5 text-accent"
+                            className="border-accent/20 bg-accent/5 text-accent transition-colors duration-300 group-hover:border-white/40 group-hover:bg-white/10 group-hover:text-white/90"
                           >
                             {item}
                           </Badge>
@@ -84,14 +84,14 @@ const Programs = () => {
                   <div className="mt-6 flex items-center justify-between">
                     <Link
                       to={`/programmes/${program.slug}`}
-                      className="inline-flex items-center gap-2 text-accent font-semibold"
+                      className="inline-flex items-center gap-2 text-accent font-semibold transition-colors duration-300 group-hover:text-white"
                     >
                       Lire plus
                       <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                         →
                       </span>
                     </Link>
-                    <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-white group-hover:text-[#0d1f29]">
                       <Link to="/adhesion-contact">Nous rejoindre</Link>
                     </Button>
                   </div>
