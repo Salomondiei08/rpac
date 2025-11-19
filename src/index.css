@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --font-base: "Inter", "Helvetica Neue", "Arial", sans-serif;
+    --font-base: "Futura", "Futura PT", "Century Gothic", "Segoe UI", sans-serif;
     --font-brand: "Futura", "Futura PT", "Century Gothic", "Segoe UI", sans-serif;
     --background: 0 0% 100%;
     --foreground: 200 50% 10%;
@@ -85,12 +85,6 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-base);
-    font-weight: 400;
-    font-feature-settings: "liga";
-  }
-
-  .font-brand {
-    font-family: var(--font-brand);
     font-weight: 400;
     font-feature-settings: "liga";
   }
