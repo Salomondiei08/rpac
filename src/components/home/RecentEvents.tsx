@@ -26,7 +26,7 @@ const events = [
     title: "1er Forum annuel",
     date: "À venir",
     location: "Canada",
-    tag: "Innovation & santé",
+    tag: "Investisseurs et décideurs",
     description:
       "Dialogue entre experts canadiens et africains pour accélérer les partenariats en santé numérique.",
     image: rpacLogo,

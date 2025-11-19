@@ -31,7 +31,7 @@ export const programs: ProgramDetail[] = [
       "Le Réseau milite en faveur de la transformation des grandes ambitions de l’Agenda 2063 en dynamiques concrètes, portées par les talents, les idées et les alliances entre l’Afrique et le Canada.",
     description:
       "Le RPAC inscrit ses initiatives dans la vision portée par l’Agenda 2063 de l’Union africaine, feuille de route stratégique pour bâtir « l’Afrique que nous voulons ». En favorisant la coopération avec le Canada et en soutenant les priorités africaines en matière de développement durable, d’intégration régionale et de prospérité partagée, le réseau agit comme un catalyseur pour faire passer les engagements politiques à l’échelle opérationnelle.",
-    focus: ["Coalitions Canada–Afrique", "Suivi des objectifs 2063", "Talents et alliances"],
+    focus: ["Actions pour une Afrique prospère", "Suivi des objectifs 2063", "Diaspora africaine"],
     icon: LineChart,
     highlights: [
       {

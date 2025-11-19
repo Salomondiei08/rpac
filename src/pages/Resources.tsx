@@ -22,7 +22,7 @@ const sections = [
         url: "https://www.un.org/sites/un2.un.org/files/2023-05_sdg-progress-report_special_edition.pdf",
       },
       {
-        title: "Bilan diplomatie économique",
+        title: "Guides pour investisseurs canadiens",
         meta: "PDF • 3,1 Mo",
         url: "https://www.oecd.org/dev/EMnet/EMnet-Business-Insight-Investing-in-Africa-after-COVID-19.pdf",
       },
