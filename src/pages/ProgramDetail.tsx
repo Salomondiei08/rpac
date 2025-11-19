@@ -13,8 +13,23 @@ const diplomaticDetails = [
   },
   {
     title: "Convergence avec la Stratégie canadienne pour l’Afrique",
-    description:
-      "Lancée en 2025, cette stratégie vise un « partenariat pour une prospérité et une sécurité partagées ». Elle met l’accent sur la diversification des marchés, la résilience des chaînes d’approvisionnement, la paix et la sécurité, ainsi que la promotion des droits humains. RPAC se positionne comme un acteur de liaison, facilitant la mise en œuvre de cette stratégie par des initiatives concrètes de coopération économique et diplomatique.",
+    description: (
+      <>
+        Lancée en 2025, cette stratégie vise un « partenariat pour une prospérité et une sécurité partagées ». Elle met l’accent
+        sur la diversification des marchés, la résilience des chaînes d’approvisionnement, la paix et la sécurité, ainsi que la
+        promotion des droits humains. RPAC se positionne comme un acteur de liaison, facilitant la mise en œuvre de cette
+        stratégie par des initiatives concrètes de coopération économique et diplomatique.{" "}
+        <a
+          href="https://www.international.gc.ca/gac-amc/assets/pdfs/publications/africa-strategy-fr.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          Consulter la Stratégie canadienne pour l’Afrique
+        </a>
+        .
+      </>
+    )
   },
   {
     title: "Relations gouvernementales renforcées",
