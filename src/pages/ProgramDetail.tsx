@@ -44,6 +44,7 @@ const extraProgramDetails: Record<
     title: string;
     paragraphs: string[];
     link?: { href: string; label: string };
+    linkEn?: { href: string; label: string };
   }[]
 > = {
   "agenda-2063-en-action": [
@@ -57,6 +58,10 @@ const extraProgramDetails: Record<
       link: {
         href: "https://au.int/sites/default/files/documents/36204-doc-agenda2063_popular_version_fr.pdf",
         label: "Agenda 2063 – L’Afrique que nous voulons",
+      },
+      linkEn: {
+        href: "https://au.int/sites/default/files/documents/36204-doc-agenda2063_popular_version_en.pdf",
+        label: "Agenda 2063 – The Africa We Want",
       },
     },
   ],
@@ -169,16 +174,28 @@ const ProgramDetail = () => {
                   {card.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
-                  {card.link && (
-                    <a
-                      href={card.link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center font-semibold text-lg text-primary underline-offset-4 hover:underline"
-                    >
-                      {card.link.label}
-                    </a>
-                  )}
+                  <div className="flex flex-col gap-3">
+                    {card.link && (
+                      <a
+                        href={card.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center font-semibold text-lg text-primary underline-offset-4 hover:underline"
+                      >
+                        {card.link.label}
+                      </a>
+                    )}
+                    {card.linkEn && (
+                      <a
+                        href={card.linkEn.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center font-semibold text-lg text-accent underline-offset-4 hover:underline"
+                      >
+                        {card.linkEn.label}
+                      </a>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
