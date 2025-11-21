@@ -177,11 +177,8 @@ const Agenda = () => {
           <div className="space-y-4 md:p-2">
             <h2 className="text-2xl font-semibold text-primary">Calendrier interactif</h2>
             <p className="text-sm text-muted-foreground">
-              Synchronisez nos événements directement à votre agenda pour ne manquer aucun rendez-vous.
+              Parcourez les dates clés et enregistrez celles qui vous intéressent pour ne manquer aucun rendez-vous.
             </p>
-            <Button variant="outline" size="sm">
-              Synchroniser mon agenda
-            </Button>
           </div>
           <div className="md:px-2">
             <div className="mb-3 grid grid-cols-7 gap-2 text-center text-xs uppercase tracking-wide text-muted-foreground">

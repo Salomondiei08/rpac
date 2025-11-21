@@ -35,8 +35,8 @@ const ProfileCard = ({
   return (
     <Card
       className={cn(
-        "group h-full border border-border/40 bg-card/95 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-hover)]",
-        interactive && "cursor-pointer hover:bg-primary",
+        "group h-full border border-sky-200 bg-sky-50 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-hover)]",
+        interactive && "cursor-pointer hover:bg-sky-700",
         className,
       )}
     >

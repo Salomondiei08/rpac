@@ -31,7 +31,7 @@ const ProgramsHighlights = () => {
         </div>
 
         <div className="flex justify-center">
-          <Button asChild variant="outline" className="px-8 py-6 text-base font-semibold">
+          <Button asChild variant="outline" className="px-8 py-6 text-base font-semibold border-sky-500 text-sky-700 hover:bg-sky-700 hover:text-white">
             <Link to="/programmes">Voir tous nos programmes</Link>
           </Button>
         </div>
@@ -79,7 +79,10 @@ const ActivityCard = ({ program, index }: ActivityCardProps) => {
 
         <div className="flex flex-wrap gap-2">
           {program.focus.slice(0, 3).map((item) => (
-            <span key={item} className="rounded-full border border-border/70 px-3 py-1 text-xs uppercase tracking-wide text-muted-foreground transition-colors duration-500 group-hover:border-white/40 group-hover:text-white/80">
+            <span
+              key={item}
+              className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs uppercase tracking-wide text-emerald-700 transition-colors duration-500 group-hover:border-emerald-500 group-hover:bg-emerald-100 group-hover:text-emerald-900"
+            >
               {item}
             </span>
           ))}
@@ -89,7 +92,7 @@ const ActivityCard = ({ program, index }: ActivityCardProps) => {
       <div className="mt-6">
         <Button
           asChild
-          className="w-full justify-between bg-accent text-accent-foreground shadow-none transition-all duration-500 group-hover:bg-white group-hover:text-[#0d1f29]"
+          className="w-full justify-between bg-white text-sky-700 border border-sky-500 shadow-none transition-all duration-500 hover:bg-sky-700 hover:text-white"
         >
           <Link to={`/programmes/${program.slug}`}>
             Lire plus

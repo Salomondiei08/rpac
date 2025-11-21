@@ -259,7 +259,7 @@ const Teams = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-[#0d1f29] text-primary-foreground">
+      <section className="py-20 bg-sky-800 text-primary-foreground">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
           <div className="space-y-4 text-center md:text-left">
             <AnimatedSection className="space-y-3">
@@ -284,7 +284,7 @@ const Teams = () => {
                   title={person.role}
                   bio={person.bio}
                   image={person.image}
-                  className="bg-[#122736]/90 border-white/10 text-left"
+                  className="bg-white border-sky-100 text-left"
                   layout="vertical"
                 />
               </AnimatedSection>
