@@ -2,22 +2,32 @@ import { Helmet } from "react-helmet-async";
 
 // Global default SEO + JSON-LD schema
 const SEO = () => {
-  const siteName = "RPAC | Réseau des Partenariats Afrique-Canada";
-  const title = "RPAC | Accélérer les coopérations Canada-Afrique";
+  const siteName = "Réseau pour le Partenariat Afrique-Canada (RPAC)";
+  const baseUrl = (import.meta.env.VITE_SITE_URL as string | undefined) || "https://r-pac.ca";
+  const normalizedBaseUrl = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+  const canonical = `${normalizedBaseUrl}/`;
+  const logo = `${normalizedBaseUrl}/android-chrome-192x192.png`;
+  const socialImage = `${normalizedBaseUrl}/social-share.png`;
+  const imageAlt = "Le Réseau du Partenariat Afrique-Canada en réunion stratégique";
+  const title = "RPAC | Partenariats durables Afrique-Canada";
   const description =
-    "RPAC réunit gouvernements, entreprises et société civile afin de co-construire des projets durables reliant le Canada et l’ensemble du continent africain.";
-  const url = "https://www.rpac-international.org"; // Placeholder; replace with real domaine
-  const image =
-    "https://storage.googleapis.com/gpt-engineer-file-uploads/fWGee95WDThbZaV7NtGh9rbUFT03/social-images/social-1759892605022-D‚clinaison 1.png";
+    "Le Réseau pour le Partenariat Afrique-Canada (RPAC) fédère gouvernements, entreprises et société civile pour accélérer des coopérations durables entre le Canada et l’ensemble du continent africain.";
 
   const jsonLdOrg = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteName,
-    url,
-    logo: image,
-    sameAs: ["https://www.linkedin.com/", "https://twitter.com/"],
+    url: canonical,
+    logo,
     description,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "information",
+        email: "info@rpac.ca",
+        areaServed: ["CA", "AF"],
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressCountry: "CA",
@@ -37,13 +47,19 @@ const SEO = () => {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:url" content={url} />
+      <meta property="og:image" content={socialImage} />
+      <meta property="og:image:alt" content={imageAlt} />
+      <meta property="og:url" content={canonical} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      <link rel="canonical" href={url} />
+      <meta name="twitter:image" content={socialImage} />
+      <meta name="twitter:image:alt" content={imageAlt} />
+      <meta
+        name="robots"
+        content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+      />
+      <link rel="canonical" href={canonical} />
       <script type="application/ld+json">{JSON.stringify(jsonLdOrg)}</script>
     </Helmet>
   );
