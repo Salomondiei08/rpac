@@ -86,15 +86,15 @@ const About = () => {
               ))}
             </div>
             <div className="rounded-3xl border border-neutral-300 bg-neutral-50 p-8">
-              <h4 className="text-4xl font-semibold text-primary">
+              <h4 className="text-4xl font-semibold text-sky-800">
                 Enjeux prioritaires
               </h4>
               <div className="mt-10 grid gap-8 sm:grid-cols-2">
                 {[missionFocus.slice(0, Math.ceil(missionFocus.length / 2)), missionFocus.slice(Math.ceil(missionFocus.length / 2))].map((column, index) => (
                   <ul key={`mission-focus-column-${index}`} className="space-y-4">
                     {column.map((focus) => (
-                      <li key={focus} className="flex items-start gap-3 text-xl text-muted-foreground leading-snug">
-                        <span className="mt-2 h-3 w-3 rounded-full bg-accent" aria-hidden="true" />
+                      <li key={focus} className="flex items-start gap-3 text-xl leading-snug text-black">
+                        <span className="mt-2 h-3 w-3 rounded-full bg-sky-700" aria-hidden="true" />
                         <span>{focus}</span>
                       </li>
                     ))}

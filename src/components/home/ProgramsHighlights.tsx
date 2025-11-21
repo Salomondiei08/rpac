@@ -60,11 +60,11 @@ const ActivityCard = ({ program, index }: ActivityCardProps) => {
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div
-        className="absolute inset-x-0 bottom-0 h-1 rounded-full bg-accent/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="absolute inset-x-0 bottom-0 h-1 rounded-full bg-sky-400/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         aria-hidden="true"
       />
       <div
-        className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/15 text-accent transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white"
+        className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-100 text-sky-700 transition-colors duration-500 group-hover:bg-sky-700 group-hover:text-white"
       >
         <program.icon className="h-8 w-8" aria-hidden="true" />
       </div>

@@ -79,23 +79,23 @@ const ProfileCard = ({
           )}
         >
           <div className="space-y-1">
-                <h3
-                  className={cn(
-                    "text-xl font-semibold leading-tight transition-colors duration-300",
-                    interactive ? "text-primary group-hover:text-primary-foreground" : "text-primary",
-                  )}
-                >
-                  {name}
-                </h3>
-                <p
-                  className={cn(
-                    "text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground/80 transition-colors duration-300",
-                    interactive && "group-hover:text-primary-foreground/80",
-                  )}
-                >
-                  {title}
-                </p>
-              </div>
+            <h3
+              className={cn(
+                "text-xl font-semibold leading-tight transition-colors duration-300",
+                interactive ? "text-sky-800 group-hover:text-primary-foreground" : "text-sky-800",
+              )}
+            >
+              {name}
+            </h3>
+            <p
+              className={cn(
+                "text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground/80 transition-colors duration-300",
+                interactive && "group-hover:text-primary-foreground/80",
+              )}
+            >
+              {title}
+            </p>
+          </div>
           <p
             className={cn(
               "text-sm leading-relaxed flex-1 transition-colors duration-300",

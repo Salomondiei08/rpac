@@ -45,7 +45,7 @@ const Programs = () => {
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent transition-colors duration-300 group-hover:bg-white/15 group-hover:text-white">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-700 transition-colors duration-300 group-hover:bg-sky-700 group-hover:text-white">
                         <Icon className="h-7 w-7" aria-hidden="true" />
                       </div>
                       <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors duration-300 group-hover:text-white/80">
