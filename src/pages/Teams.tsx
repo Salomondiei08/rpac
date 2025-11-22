@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Facebook } from "lucide-react";
 import ProfileCard from "@/components/shared/ProfileCard";
 import {
   Dialog,
@@ -24,13 +24,13 @@ import {
 const defaultSocials = [
   {
     label: "Profil LinkedIn",
-    href: "https://www.linkedin.com",
+    href: "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/",
     icon: <Linkedin className="h-4 w-4" aria-hidden="true" />,
   },
   {
-    label: "Profil Twitter",
-    href: "https://twitter.com",
-    icon: <Twitter className="h-4 w-4" aria-hidden="true" />,
+    label: "Profil Facebook",
+    href: "https://www.facebook.com/RPACorg",
+    icon: <Facebook className="h-4 w-4" aria-hidden="true" />,
   },
 ];
 

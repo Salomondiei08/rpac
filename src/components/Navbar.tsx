@@ -75,9 +75,9 @@ const Navbar = () => {
                 key={Icon.displayName ?? index}
                 href={
                   Icon === Linkedin
-                    ? "https://linkedin.com"
-                    : Icon === Facebook
-                    ? "https://facebook.com"
+                    ? "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/"
+                  : Icon === Facebook
+                    ? "https://www.facebook.com/RPACorg"
                     : Icon === Instagram
                     ? "https://instagram.com"
                     : Icon === TwitterXIcon

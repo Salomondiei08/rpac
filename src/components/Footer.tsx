@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { Linkedin, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import rpacLogo from "@/assets/rpac-logo.png";
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
-  { label: "Twitter", href: "https://twitter.com", icon: Twitter },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/",
+    icon: Linkedin,
+  },
+  { label: "Facebook", href: "https://www.facebook.com/RPACorg", icon: Facebook },
   { label: "YouTube", href: "https://youtube.com", icon: Youtube },
 ];
 

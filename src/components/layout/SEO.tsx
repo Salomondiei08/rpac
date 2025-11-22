@@ -8,6 +8,9 @@ const SEO = () => {
   const canonical = `${normalizedBaseUrl}/`;
   const logo = `${normalizedBaseUrl}/android-chrome-192x192.png`;
   const socialImage = `${normalizedBaseUrl}/social-share.png`;
+  const linkedInUrl =
+    "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/";
+  const facebookUrl = "https://www.facebook.com/RPACorg";
   const imageAlt = "Le Réseau du Partenariat Afrique-Canada en réunion stratégique";
   const title = "RPAC | Partenariats durables Afrique-Canada";
   const description =
@@ -20,6 +23,7 @@ const SEO = () => {
     url: canonical,
     logo,
     description,
+    sameAs: [linkedInUrl, facebookUrl],
     contactPoint: [
       {
         "@type": "ContactPoint",
