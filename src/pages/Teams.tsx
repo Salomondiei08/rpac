@@ -1,297 +1,212 @@
-import { ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { Linkedin, Facebook } from "lucide-react";
-import ProfileCard from "@/components/shared/ProfileCard";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import AnimatedSection from "@/components/AnimatedSection";
 import ContactCoordinates from "@/components/ContactCoordinates";
-import useInView from "@/hooks/useInView";
-import { cn } from "@/lib/utils";
 import {
   boardMembers,
   honoraryMembers,
   regionalRepresentatives,
   followers,
 } from "@/data/team";
+import { Linkedin } from "lucide-react";
+import { useMemo } from "react";
 
-const defaultSocials = [
-  {
-    label: "Profil LinkedIn",
-    href: "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/",
-    icon: <Linkedin className="h-4 w-4" aria-hidden="true" />,
-  },
-  {
-    label: "Profil Facebook",
-    href: "https://www.facebook.com/RPACorg",
-    icon: <Facebook className="h-4 w-4" aria-hidden="true" />,
-  },
+type TeamMember = {
+  name: string;
+  title?: string;
+  role?: string;
+  region?: string;
+  image?: string;
+  email?: string;
+  phone?: string;
+};
+
+const linkedinUrl =
+  "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/";
+const fallbackEmail = "info@rpac.ca";
+const fallbackPhone = "+1 (819) 446-0661";
+const headshots = [
+  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1524504388940-b1c1722655e8?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1524504388940-b1c172265161?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1524504388940-b1c1722654b4?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1524504388940-b1c1722650a6?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1544723795-3fb272eaa88d?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1544723795-432537f3b087?auto=format&fit=crop&w=600&q=80",
 ];
 
-const AnimatedSection = ({
-  children,
-  delay = 0,
-  className,
+type Variant = "board" | "honorary" | "regional" | "active";
+
+const sectionBackground: Record<Variant, string> = {
+  board: "bg-white",
+  honorary: "bg-[#e6eefc]",
+  regional: "bg-[#e3f3ea]",
+  active: "bg-[#eeeeee]",
+};
+
+const cardBackground: Record<Variant, string> = {
+  board: "bg-white",
+  honorary: "bg-white",
+  regional: "bg-white",
+  active: "bg-white",
+};
+
+const TeamCard = ({
+  member,
+  label,
+  variant,
 }: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
+  member: TeamMember;
+  label?: string;
+  variant: Variant;
 }) => {
-  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.15 });
+  const title = member.title ?? member.role ?? member.region ?? "Membre du réseau";
+  const email = member.email ?? fallbackEmail;
+  const phone = member.phone ?? fallbackPhone;
+  const imageSrc = member.image || headshots[(Math.abs(member.name.length) + 1) % headshots.length];
+
   return (
     <div
-      ref={ref}
-      className={cn(
-        "transition-all duration-700 ease-out",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={`flex flex-col overflow-hidden rounded-lg border border-[#d1d5db] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${cardBackground[variant]}`}
     >
-      {children}
+      <div className="relative h-64 w-full bg-[#e5e7eb]">
+        <img
+          src={imageSrc}
+          alt={`Portrait de ${member.name}`}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <a
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b74b5] shadow-sm ring-1 ring-[#d1d5db]"
+          aria-label={`Profil LinkedIn de ${member.name}`}
+        >
+          <Linkedin className="h-4 w-4" aria-hidden="true" />
+        </a>
+      </div>
+      <div className="space-y-1 px-5 py-4 text-sm text-[#0f172a]">
+        <p className="font-semibold text-[#0b4f71] text-lg leading-tight">
+          {label ? `${label} :` : "Protégé :"} <span className="font-bold">{member.name}</span>
+        </p>
+        <p className="text-[#111827]">{title}</p>
+        {phone && <p className="text-[#111827]">{phone}</p>}
+        {email && <p className="text-[#0f172a]">{email}</p>}
+      </div>
     </div>
   );
 };
 
+const Section = ({
+  title,
+  subtitle,
+  children,
+  variant,
+}: {
+  title: string;
+  subtitle: string;
+  children: React.ReactNode;
+  variant: Variant;
+}) => (
+  <section className={`py-16 ${sectionBackground[variant]}`}>
+    <div className="mx-auto max-w-6xl px-6 space-y-8">
+      <AnimatedSection>
+        <h2 className="text-3xl font-bold text-[#0f172a]">{title}</h2>
+        <p className="mt-2 text-[#4b5563]">{subtitle}</p>
+      </AnimatedSection>
+      {children}
+    </div>
+  </section>
+);
+
 const Teams = () => {
+  const boardWithImages = useMemo(
+    () => boardMembers.map((member, idx) => ({ ...member, image: member.image || headshots[idx % headshots.length] })),
+    [],
+  );
+  const honoraryWithImages = useMemo(
+    () =>
+      honoraryMembers.map((member, idx) => ({ ...member, image: member.image || headshots[idx % headshots.length] })),
+    [],
+  );
+  const regionalWithImages = useMemo(
+    () =>
+      regionalRepresentatives.map((member, idx) => ({
+        ...member,
+        image: member.image || headshots[idx % headshots.length],
+      })),
+    [],
+  );
+  const activeWithImages = useMemo(
+    () => followers.map((member, idx) => ({ ...member, image: member.image || headshots[idx % headshots.length] })),
+    [],
+  );
+
   return (
-    <div className="bg-background">
+    <div className="bg-white">
       <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 md:pt-28 pb-24">
-        <AnimatedSection className="mx-auto max-w-5xl px-6 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            Nos équipes
-          </h1>
+        <AnimatedSection className="mx-auto max-w-6xl px-6 space-y-3">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight">Notre équipe</h1>
         </AnimatedSection>
       </section>
 
-      <section className="py-20 bg-background">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
-          <div id="board-heading" className="space-y-6">
-            <AnimatedSection className="max-w-3xl space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-                Conseil
-              </p>
-              <h2 className="text-3xl font-bold text-primary">
-                Conseil d’administration
-              </h2>
-              <p className="text-muted-foreground">
-                Il assure la gouvernance stratégique et la supervision des
-                programmes portés par le RPAC.
-              </p>
-            </AnimatedSection>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {boardMembers.map((member, index) => (
-                <AnimatedSection key={member.name} delay={index * 80}>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <ProfileCard
-                        {...member}
-                        socials={defaultSocials}
-                        interactive
-                        layout="vertical"
-                      />
-                    </DialogTrigger>
-                    <DialogContent className="max-w-xl space-y-4">
-                      <DialogHeader>
-                        <DialogTitle>{member.name}</DialogTitle>
-                        <DialogDescription className="uppercase tracking-[0.2em] text-xs text-muted-foreground">
-                          {member.title}
-                        </DialogDescription>
-                      </DialogHeader>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        {member.bio}
-                      </p>
-                      <div className="rounded-2xl bg-muted/40 p-4 text-sm text-muted-foreground">
-                        <p>
-                          Ce membre accompagne les coalitions du RPAC et peut
-                          être sollicité pour des interventions stratégiques.
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap gap-3">
-                        <Button asChild variant="outline">
-                          <Link to="/adhesion-contact">Prendre contact</Link>
-                        </Button>
-                        <Button asChild>
-                          <Link to="/programmes">Voir ses projets</Link>
-                        </Button>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#f8f4ef]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
-          <div id="honorary-heading" className="space-y-6">
-            <AnimatedSection className="max-w-3xl space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-                Influence
-              </p>
-              <h2 className="text-3xl font-bold text-primary">
-                Membres honoraires
-              </h2>
-              <p className="text-muted-foreground">
-                Ils appuient la mission du réseau par leur influence et leurs
-                réseaux bilatéraux.
-              </p>
-            </AnimatedSection>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {honoraryMembers.map((member, index) => (
-                <AnimatedSection key={member.name} delay={index * 90}>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <ProfileCard
-                        {...member}
-                        socials={defaultSocials}
-                        interactive
-                        layout="vertical"
-                      />
-                    </DialogTrigger>
-                    <DialogContent className="max-w-xl space-y-4">
-                      <DialogHeader>
-                        <DialogTitle>{member.name}</DialogTitle>
-                        <DialogDescription className="uppercase tracking-[0.2em] text-xs text-muted-foreground">
-                          {member.title}
-                        </DialogDescription>
-                      </DialogHeader>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        {member.bio}
-                      </p>
-                      <div className="rounded-2xl bg-muted/40 p-4 text-sm text-muted-foreground">
-                        <p>
-                          Ils facilitent l’ouverture de nouvelles alliances
-                          institutionnelles et soutiennent la portée mondiale du
-                          réseau.
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap gap-3">
-                        <Button asChild variant="outline">
-                          <Link to="/adhesion-contact">
-                            Inviter à un événement
-                          </Link>
-                        </Button>
-                        <Button asChild>
-                          <Link to="/ressources">
-                            Découvrir leurs publications
-                          </Link>
-                        </Button>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#e7f6f2]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
-          <div id="regional-heading" className="space-y-6">
-            <AnimatedSection className="max-w-3xl space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-                Terrain
-              </p>
-              <h2 className="text-3xl font-bold text-primary">
-                Représentants régionaux
-              </h2>
-              <p className="text-muted-foreground">
-                Présents sur le terrain, ils coordonnent les rencontres et
-                missions sur les cinq grandes régions africaines.
-              </p>
-            </AnimatedSection>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {regionalRepresentatives.map((representative, index) => (
-                <AnimatedSection key={representative.name} delay={index * 70}>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <ProfileCard
-                        name={representative.name}
-                        title={representative.region}
-                        bio={representative.bio}
-                        image={representative.image}
-                        socials={defaultSocials}
-                        interactive
-                        layout="vertical"
-                      />
-                    </DialogTrigger>
-                    <DialogContent className="max-w-xl space-y-4">
-                      <DialogHeader>
-                        <DialogTitle>{representative.name}</DialogTitle>
-                        <DialogDescription className="uppercase tracking-[0.2em] text-xs text-muted-foreground">
-                          {representative.region}
-                        </DialogDescription>
-                      </DialogHeader>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        {representative.bio}
-                      </p>
-                      <div className="rounded-2xl bg-muted/40 p-4 text-sm text-muted-foreground">
-                        <p>
-                          Disponible pour accompagner vos missions, faciliter
-                          les mises en relation et partager des retours
-                          d’expérience opérationnels.
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap gap-3">
-                        <Button asChild variant="outline">
-                          <Link to="/agenda">Planifier une rencontre</Link>
-                        </Button>
-                        <Button asChild>
-                          <Link to="/adhesion-contact">Contacter le RPAC</Link>
-                        </Button>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-sky-800 text-primary-foreground">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
-          <div className="space-y-4 text-center md:text-left">
-            <AnimatedSection className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
-                Communauté
-              </p>
-              <h2 className="text-3xl font-bold">Followers</h2>
-              <p className="text-white/80 text-base leading-relaxed">
-                Nos Followers incarnent l’esprit de partenariat qui anime le
-                RPAC. Professionnels, chercheurs et leaders issus des deux
-                régions, ils partagent leur expertise pour renforcer les ponts
-                entre l’Afrique et le Canada et soutenir les initiatives du
-                réseau.
-              </p>
-            </AnimatedSection>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {followers.map((person, index) => (
-              <AnimatedSection key={person.name} delay={index * 70}>
-                <ProfileCard
-                  name={person.name}
-                  title={person.role}
-                  bio={person.bio}
-                  image={person.image}
-                  className="bg-white border-sky-100 text-left"
-                  layout="vertical"
-                />
-              </AnimatedSection>
+      <Section
+        title="Conseil d’administration"
+        subtitle="Gouvernance stratégique et supervision des programmes portés par le RPAC."
+        variant="board"
+      >
+        <AnimatedSection delay={60}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {boardWithImages.map((member) => (
+              <TeamCard key={member.name} member={member} variant="board" />
             ))}
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      </Section>
+
+      <Section
+        title="Membres honoraires"
+        subtitle="Ambassadeurs qui apportent leur rayonnement et leurs réseaux bilatéraux."
+        variant="honorary"
+      >
+        <AnimatedSection delay={60}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {honoraryWithImages.map((member) => (
+              <TeamCard key={member.name} member={member} label="Membre honoraire" variant="honorary" />
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      <Section
+        title="Représentants régionaux"
+        subtitle="Présents sur le terrain, ils coordonnent rencontres et missions dans chaque région."
+        variant="regional"
+      >
+        <AnimatedSection delay={60}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {regionalWithImages.map((member) => (
+              <TeamCard key={member.name} member={member} label="Représentant" variant="regional" />
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      <Section
+        title="Membres actifs & partenaires"
+        subtitle="Praticiens et experts qui contribuent au quotidien à l’impact du réseau."
+        variant="active"
+      >
+        <AnimatedSection delay={60}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {activeWithImages.map((member) => (
+              <TeamCard key={member.name} member={member} label="Membre actif" variant="active" />
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
       <ContactCoordinates />
     </div>
   );
