@@ -1,25 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users } from "lucide-react";
-import heroImage from "@/assets/african-union.jpg";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
     <section
       id="accueil"
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden pt-12 md:pt-24 pb-24"
+      className="relative isolate overflow-hidden pt-12 md:pt-24 pb-24 bg-primary text-primary-foreground"
     >
-      <div className="absolute inset-0 -z-10">
-        <img
-          src={heroImage}
-          alt="Représentants du réseau réunis autour d'une table de travail"
-          className="h-full w-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d2a33]/85 via-[#13435a]/70 to-[#1d5c76]/55" />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#7f1d1d] via-[#b91c1c] to-[#7f1d1d]" />
 
       <div className="container mx-auto px-4">
         <div className="flex min-h-[60vh] md:min-h-[70vh] flex-col items-center justify-start md:justify-center gap-8 text-center text-primary-foreground animate-fade-up pt-6 md:pt-0">
