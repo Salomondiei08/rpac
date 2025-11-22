@@ -87,7 +87,7 @@ const TeamCard = ({
         </a>
       </div>
       <div className="space-y-1 px-5 py-4 text-sm text-[#0f172a]">
-        <p className="font-semibold text-[#0b4f71] text-lg leading-tight">
+        <p className="font-semibold text-[#b91c1c] text-lg leading-tight">
           {label ? `${label} :` : "Protégé :"} <span className="font-bold">{member.name}</span>
         </p>
         <p className="text-[#111827]">{title}</p>
@@ -112,7 +112,7 @@ const Section = ({
   <section className={`py-16 ${sectionBackground[variant]}`}>
     <div className="mx-auto max-w-6xl px-6 space-y-8">
       <AnimatedSection>
-        <h2 className="text-3xl font-bold text-[#0f172a]">{title}</h2>
+        <h2 className="text-3xl font-bold text-[#b91c1c]">{title}</h2>
         <p className="mt-2 text-[#4b5563]">{subtitle}</p>
       </AnimatedSection>
       {children}
@@ -153,7 +153,7 @@ const Teams = () => {
 
       <Section
         title="Conseil d’administration"
-        subtitle="Gouvernance stratégique et supervision des programmes portés par le RPAC."
+        subtitle="Il assure la gouvernance stratégique et la supervision des programmes portés par le RPAC."
         variant="board"
       >
         <AnimatedSection delay={60}>
@@ -167,7 +167,7 @@ const Teams = () => {
 
       <Section
         title="Membres honoraires"
-        subtitle="Ambassadeurs qui apportent leur rayonnement et leurs réseaux bilatéraux."
+        subtitle="Ils appuient la mission du réseau par leur influence et leurs réseaux bilatéraux."
         variant="honorary"
       >
         <AnimatedSection delay={60}>
@@ -181,7 +181,7 @@ const Teams = () => {
 
       <Section
         title="Représentants régionaux"
-        subtitle="Présents sur le terrain, ils coordonnent rencontres et missions dans chaque région."
+        subtitle="Présents sur le terrain, ils coordonnent les rencontres et missions sur les cinq grandes régions africaines."
         variant="regional"
       >
         <AnimatedSection delay={60}>
@@ -195,7 +195,7 @@ const Teams = () => {
 
       <Section
         title="Membres actifs & partenaires"
-        subtitle="Praticiens et experts qui contribuent au quotidien à l’impact du réseau."
+        subtitle="Nos Followers incarnent l’esprit de partenariat qui anime le RPAC. Professionnels, chercheurs et leaders issus des deux régions, ils partagent leur expertise pour renforcer les ponts entre l’Afrique et le Canada et soutenir les initiatives du réseau."
         variant="active"
       >
         <AnimatedSection delay={60}>
