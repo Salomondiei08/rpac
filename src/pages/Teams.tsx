@@ -194,7 +194,7 @@ const Teams = () => {
       </Section>
 
       <Section
-        title="Membres actifs & partenaires"
+        title="Nos followers"
         subtitle="Nos Followers incarnent l’esprit de partenariat qui anime le RPAC. Professionnels, chercheurs et leaders issus des deux régions, ils partagent leur expertise pour renforcer les ponts entre l’Afrique et le Canada et soutenir les initiatives du réseau."
         variant="active"
       >
