@@ -21,8 +21,6 @@ type TeamMember = {
 
 const linkedinUrl =
   "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/";
-const fallbackEmail = "info@rpac.ca";
-const fallbackPhone = "+1 (819) 446-0661";
 const headshots = [
   "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
   "https://images.unsplash.com/photo-1524504388940-b1c1722655e8?auto=format&fit=crop&w=600&q=80",
@@ -60,8 +58,6 @@ const TeamCard = ({
   variant: Variant;
 }) => {
   const title = member.title ?? member.role ?? member.region ?? "Membre du réseau";
-  const email = member.email ?? fallbackEmail;
-  const phone = member.phone ?? fallbackPhone;
   const imageSrc = member.image || headshots[(Math.abs(member.name.length) + 1) % headshots.length];
 
   return (
@@ -88,11 +84,9 @@ const TeamCard = ({
       </div>
       <div className="space-y-1 px-5 py-4 text-sm text-[#0f172a]">
         <p className="font-semibold text-[#b91c1c] text-lg leading-tight">
-          {label ? `${label} :` : "Protégé :"} <span className="font-bold">{member.name}</span>
+          <span className="font-bold">{member.name}</span>
         </p>
-        <p className="text-[#111827]">{title}</p>
-        {phone && <p className="text-[#111827]">{phone}</p>}
-        {email && <p className="text-[#0f172a]">{email}</p>}
+        <p className="text-[#111827] text-base font-semibold">{title}</p>
       </div>
     </div>
   );

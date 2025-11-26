@@ -1,21 +1,21 @@
 export const boardMembers = [
   {
     name: "Dr. Awa Deschênes",
-    title: "Présidente du conseil",
+    title: "Fondateur et Président",
     image:
       "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?auto=format&fit=crop&w=300&q=80",
     bio: "Spécialiste des politiques publiques et de la coopération internationale, elle dirige les partenariats institutionnels du réseau.",
   },
   {
     name: "Jean-Philippe Akande",
-    title: "Vice-président exécutif",
+    title: "Fondateur et Vice-Président",
     image:
       "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
     bio: "Entrepreneur en diplomatie économique, il coordonne les initiatives d’investissement et de commerce durable.",
   },
   {
     name: "Fatou Ndiaye",
-    title: "Administratrice, Gouvernance et inclusion",
+    title: "Secrétaire du Conseil",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80",
     bio: "Experte en genre et inclusion sociale, elle pilote les programmes dédiés aux droits et à la gouvernance citoyenne.",
@@ -29,35 +29,35 @@ export const boardMembers = [
   },
   {
     name: "Louise Morin",
-    title: "Administratrice, Innovation sociale",
+    title: "Responsable des relations publiques et partenariats institutionnels",
     image:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80",
     bio: "Sociologue montréalaise, elle supervise les laboratoires d’innovation sociale et les collaborations universitaires.",
   },
   {
     name: "Pr. Samuel Koulibaly",
-    title: "Responsable scientifique",
+    title: "Responsable pôle académique et recherche",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
     bio: "Professeur à l’Université d’Abidjan, il coordonne les comités scientifiques et le partage de connaissances.",
   },
   {
     name: "Olivia Tremblay",
-    title: "Directrice des partenariats privés",
+    title: "Responsable chargé des relations avec la diaspora africaine",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c17226508f?auto=format&fit=crop&w=300&q=80",
     bio: "Spécialiste des relations entreprises, elle structure les coalitions entre incubateurs et investisseurs.",
   },
   {
     name: "Michel Ngoma",
-    title: "Administrateur, Infrastructures",
+    title: "Responsable relations avec le secteur privé et l’entrepreneuriat",
     image:
       "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?auto=format&fit=crop&w=300&q=80",
     bio: "Ingénieur basé à Libreville, il pilote les projets d’infrastructures vertes et de mobilité durable.",
   },
   {
     name: "Amina Ben Salem",
-    title: "Administratrice, Diplomatie culturelle",
+    title: "Responsable chargé(e) de l’alignement Afrique–Canada",
     image:
       "https://images.unsplash.com/photo-1544723795-432537f3b087?auto=format&fit=crop&w=300&q=80",
     bio: "Diplomate tunisienne, elle anime les échanges culturels et académiques Canada–Afrique.",
