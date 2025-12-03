@@ -8,7 +8,11 @@ const socialLinks = [
     href: "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/",
     icon: Linkedin,
   },
-  { label: "Facebook", href: "https://www.facebook.com/RPACorg", icon: Facebook },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/RPACorg",
+    icon: Facebook,
+  },
   { label: "YouTube", href: "https://youtube.com", icon: Youtube },
 ];
 
@@ -98,7 +102,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-1" aria-hidden="true" />
-                info@rpac.ca
+                contact@r-pac.ca
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-1" aria-hidden="true" />

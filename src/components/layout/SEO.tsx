@@ -3,15 +3,19 @@ import { Helmet } from "react-helmet-async";
 // Global default SEO + JSON-LD schema
 const SEO = () => {
   const siteName = "Réseau pour le Partenariat Afrique-Canada (RPAC)";
-  const baseUrl = (import.meta.env.VITE_SITE_URL as string | undefined) || "https://r-pac.ca";
-  const normalizedBaseUrl = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+  const baseUrl =
+    (import.meta.env.VITE_SITE_URL as string | undefined) || "https://r-pac.ca";
+  const normalizedBaseUrl = baseUrl.endsWith("/")
+    ? baseUrl.slice(0, -1)
+    : baseUrl;
   const canonical = `${normalizedBaseUrl}/`;
   const logo = `${normalizedBaseUrl}/android-chrome-192x192.png`;
   const socialImage = `${normalizedBaseUrl}/social-share.png`;
   const linkedInUrl =
     "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/";
   const facebookUrl = "https://www.facebook.com/RPACorg";
-  const imageAlt = "Le Réseau du Partenariat Afrique-Canada en réunion stratégique";
+  const imageAlt =
+    "Le Réseau du Partenariat Afrique-Canada en réunion stratégique";
   const title = "RPAC | Partenariats durables Afrique-Canada";
   const description =
     "Le Réseau pour le Partenariat Afrique-Canada (RPAC) fédère gouvernements, entreprises et société civile pour accélérer des coopérations durables entre le Canada et l’ensemble du continent africain.";
@@ -28,7 +32,7 @@ const SEO = () => {
       {
         "@type": "ContactPoint",
         contactType: "information",
-        email: "info@rpac.ca",
+        email: "contact@r-pac.ca",
         areaServed: ["CA", "AF"],
       },
     ],

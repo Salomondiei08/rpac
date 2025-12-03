@@ -7,8 +7,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Courriel",
-    value: "info@rpac.ca",
-    href: "mailto:info@rpac.ca",
+    value: "contact@r-pac.ca",
+    href: "mailto:contact@r-pac.ca",
   },
   {
     icon: Phone,

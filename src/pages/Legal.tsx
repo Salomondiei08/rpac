@@ -31,10 +31,10 @@ const Legal = () => {
             <p>
               Conseil d’administration du réseau PCA. Contact :{" "}
               <a
-                href="mailto:info@rpac.ca"
+                href="mailto:contact@r-pac.ca"
                 className="text-accent hover:underline"
               >
-                info@rpac.ca
+                contact@r-pac.ca
               </a>
               .
             </p>
@@ -81,10 +81,10 @@ const Legal = () => {
               Pour toute question relative aux mentions légales, veuillez nous
               écrire à{" "}
               <a
-                href="mailto:info@rpac.ca"
+                href="mailto:contact@r-pac.ca"
                 className="text-accent hover:underline"
               >
-                info@rpac.ca
+                contact@r-pac.ca
               </a>
               .
             </p>

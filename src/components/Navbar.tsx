@@ -12,7 +12,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
-import rpacLogo from "@\/assets/rpac-actu.png";
+import rpacLogo from "@/assets/rpac-actu.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -70,33 +70,45 @@ const Navbar = () => {
       <div className="bg-[#1CC47B] text-white">
         <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
           <div className="flex items-center gap-3">
-            {[Linkedin, Facebook, Instagram, TwitterXIcon, Youtube].map((Icon, index) => (
-              <a
-                key={Icon.displayName ?? index}
-                href={
-                  Icon === Linkedin
-                    ? "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/"
-                  : Icon === Facebook
-                    ? "https://www.facebook.com/RPACorg"
-                    : Icon === Instagram
-                    ? "https://instagram.com"
-                    : Icon === TwitterXIcon
-                    ? "https://twitter.com"
-                    : "https://youtube.com"
-                }
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/25 hover:bg-white/15 transition-colors"
-                aria-label={Icon === TwitterXIcon ? "X (Twitter)" : Icon.displayName ?? "réseau social"}
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" />
-              </a>
-            ))}
+            {[Linkedin, Facebook, Instagram, TwitterXIcon, Youtube].map(
+              (Icon, index) => (
+                <a
+                  key={Icon.displayName ?? index}
+                  href={
+                    Icon === Linkedin
+                      ? "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/"
+                      : Icon === Facebook
+                      ? "https://www.facebook.com/RPACorg"
+                      : Icon === Instagram
+                      ? "https://instagram.com"
+                      : Icon === TwitterXIcon
+                      ? "https://twitter.com"
+                      : "https://youtube.com"
+                  }
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/25 hover:bg-white/15 transition-colors"
+                  aria-label={
+                    Icon === TwitterXIcon
+                      ? "X (Twitter)"
+                      : Icon.displayName ?? "réseau social"
+                  }
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )
+            )}
           </div>
           <div className="hidden md:flex flex-wrap items-center gap-4 text-white/90">
-            <a href="mailto:info@rpac.ca" className="inline-flex items-center gap-2 hover:text-white">
+            <a
+              href="mailto:contact@r-pac.ca"
+              className="inline-flex items-center gap-2 hover:text-white"
+            >
               <Mail className="h-4 w-4" aria-hidden="true" />
-              info@rpac.ca
+              contact@r-pac.ca
             </a>
-            <a href="tel:+18194460661" className="inline-flex items-center gap-2 hover:text-white">
+            <a
+              href="tel:+18194460661"
+              className="inline-flex items-center gap-2 hover:text-white"
+            >
               <Phone className="h-4 w-4" aria-hidden="true" />
               +1 (819) 446-0661
             </a>
@@ -135,7 +147,11 @@ const Navbar = () => {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start" className="w-56">
                       {item.children.map((child) => (
-                        <DropdownMenuItem key={child.to} asChild className="p-0">
+                        <DropdownMenuItem
+                          key={child.to}
+                          asChild
+                          className="p-0"
+                        >
                           <NavLink
                             to={child.to}
                             className={({ isActive }) =>
@@ -219,7 +235,9 @@ const Navbar = () => {
                         to={child.to}
                         className={({ isActive }) =>
                           `block text-sm font-medium rounded-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                            isActive ? "text-[#1CC47B]" : "text-muted-foreground hover:text-[#1CC47B]"
+                            isActive
+                              ? "text-[#1CC47B]"
+                              : "text-muted-foreground hover:text-[#1CC47B]"
                           }`
                         }
                         onClick={() => setIsMobileMenuOpen(false)}
