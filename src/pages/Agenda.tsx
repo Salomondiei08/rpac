@@ -7,41 +7,21 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const agendaEvents = [
   {
-    title: "Lancement officiel",
-    date: "À venir",
-    location: "Canada",
-    type: "Séminaire",
-    program: "Innovation",
-    region: "Nord",
+    title: "Lancement officiel du RPAC",
+    date: "20 février 2026",
+    location: "Montréal, Canada",
+    type: "Lancement",
+    program: "Institutionnel",
+    region: "Canada",
     description:
-      "Lancement officiel du RPAC pour renforcer les échanges, les collaborations et les partenariats Afrique–Canada.",
-  },
-  {
-    title: "Rencontre des partenaires",
-    date: "À venir",
-    location: "Canada",
-    type: "Forum",
-    program: "Gouvernance",
-    region: "Est",
-    description:
-      "Partage de solutions innovantes pour renforcer les institutions publiques et l’accès aux services essentiels.",
-  },
-  {
-    title: "1er Forum annuel",
-    date: "À venir",
-    location: "Canada",
-    type: "Rencontre",
-    program: "Commerce",
-    region: "Sud",
-    description:
-      "Dialogue entre experts canadiens et africains pour accélérer les partenariats en santé numérique.",
+      "Cérémonie de lancement et présentation des ambitions 2026 pour le Réseau pour le Partenariat Afrique-Canada.",
   },
 ];
 
 const filters = {
-  type: ["Forum", "Rencontre", "Séminaire", "Sommet"],
-  program: ["Commerce", "Innovation", "Gouvernance", "Partenariats"],
-  region: ["Nord", "Ouest", "Centre", "Est", "Sud"],
+  type: ["Lancement"],
+  program: ["Institutionnel"],
+  region: ["Canada"],
 };
 
 const Agenda = () => {
@@ -198,7 +178,7 @@ const Agenda = () => {
               {Array.from({ length: 35 }, (_, index) => {
                 const dayNumber = index - 3;
                 const isCurrentMonth = dayNumber > 0 && dayNumber <= 31;
-                const isEventDay = [5, 12, 18, 21].includes(dayNumber);
+                const isEventDay = [20].includes(dayNumber);
                 return (
                   <div
                     key={index}

@@ -19,8 +19,8 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Adresse",
-    value: "Maison des réseaus, 125 rue Sherbrooke Ouest, Montréal, QC",
-    href: "https://maps.app.goo.gl/réseau",
+    value: "2001 Boulevard Robert-Bourassa, Montréal QC H3A 2A6, Suite 1700",
+    href: "https://www.google.com/maps/search/?api=1&query=2001%20Boulevard%20Robert-Bourassa%2C%20Montr%C3%A9al%20QC%20H3A%202A6%2C%20Suite%201700",
   },
 ];
 
@@ -67,7 +67,7 @@ const ContactCoordinates = ({ className }: ContactCoordinatesProps) => {
         <div className="h-[360px] rounded-3xl border border-border/60 bg-background shadow-[var(--shadow-card)]">
           <iframe
             title="Localisation du réseau"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.661341770618!2d-73.5765724226917!3d45.50704313169984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a45c8df0adf%3A0x99f8fef0e0fe8070!2sSherbrooke%20St%20W%2C%20Montreal%2C%20QC!5e0!3m2!1sen!2sca!4v1717276800000!5m2!1sen!2sca"
+            src="https://www.google.com/maps?q=2001%20Boulevard%20Robert-Bourassa%2C%20Montr%C3%A9al%20QC%20H3A%202A6%20Suite%201700&output=embed"
             className="h-full w-full rounded-3xl"
             loading="lazy"
             allowFullScreen

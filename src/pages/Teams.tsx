@@ -1,13 +1,8 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactCoordinates from "@/components/ContactCoordinates";
-import {
-  boardMembers,
-  honoraryMembers,
-  regionalRepresentatives,
-  followers,
-} from "@/data/team";
+import { boardMembers } from "@/data/team";
 import { Linkedin } from "lucide-react";
-import { useMemo } from "react";
+import rpacLogo from "@/assets/rpac-logo.png";
 
 type TeamMember = {
   name: string;
@@ -21,44 +16,20 @@ type TeamMember = {
 
 const linkedinUrl =
   "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/";
-const headshots = [
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722655e8?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c172265161?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722654b4?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722650a6?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1544723795-3fb272eaa88d?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1544723795-432537f3b087?auto=format&fit=crop&w=600&q=80",
-];
 
-type Variant = "board" | "honorary" | "regional" | "active";
+type Variant = "board";
 
 const sectionBackground: Record<Variant, string> = {
   board: "bg-white",
-  honorary: "bg-[#e6eefc]",
-  regional: "bg-[#e3f3ea]",
-  active: "bg-[#eeeeee]",
 };
 
 const cardBackground: Record<Variant, string> = {
   board: "bg-white",
-  honorary: "bg-white",
-  regional: "bg-white",
-  active: "bg-white",
 };
 
-const TeamCard = ({
-  member,
-  label,
-  variant,
-}: {
-  member: TeamMember;
-  label?: string;
-  variant: Variant;
-}) => {
+const TeamCard = ({ member, variant }: { member: TeamMember; variant: Variant }) => {
   const title = member.title ?? member.role ?? member.region ?? "Membre du réseau";
-  const imageSrc = member.image || headshots[(Math.abs(member.name.length) + 1) % headshots.length];
+  const imageSrc = member.image || rpacLogo;
 
   return (
     <div
@@ -115,27 +86,7 @@ const Section = ({
 );
 
 const Teams = () => {
-  const boardWithImages = useMemo(
-    () => boardMembers.map((member, idx) => ({ ...member, image: member.image || headshots[idx % headshots.length] })),
-    [],
-  );
-  const honoraryWithImages = useMemo(
-    () =>
-      honoraryMembers.map((member, idx) => ({ ...member, image: member.image || headshots[idx % headshots.length] })),
-    [],
-  );
-  const regionalWithImages = useMemo(
-    () =>
-      regionalRepresentatives.map((member, idx) => ({
-        ...member,
-        image: member.image || headshots[idx % headshots.length],
-      })),
-    [],
-  );
-  const activeWithImages = useMemo(
-    () => followers.map((member, idx) => ({ ...member, image: member.image || headshots[idx % headshots.length] })),
-    [],
-  );
+  const boardWithImages = boardMembers.map((member) => ({ ...member, image: member.image || rpacLogo }));
 
   return (
     <div className="bg-white">
@@ -154,48 +105,6 @@ const Teams = () => {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {boardWithImages.map((member) => (
               <TeamCard key={member.name} member={member} variant="board" />
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      <Section
-        title="Membres honoraires"
-        subtitle="Ils appuient la mission du réseau par leur influence et leurs réseaux bilatéraux."
-        variant="honorary"
-      >
-        <AnimatedSection delay={60}>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {honoraryWithImages.map((member) => (
-              <TeamCard key={member.name} member={member} label="Membre honoraire" variant="honorary" />
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      <Section
-        title="Représentants régionaux"
-        subtitle="Présents sur le terrain, ils coordonnent les rencontres et missions sur les cinq grandes régions africaines."
-        variant="regional"
-      >
-        <AnimatedSection delay={60}>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {regionalWithImages.map((member) => (
-              <TeamCard key={member.name} member={member} label="Représentant" variant="regional" />
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      <Section
-        title="Nos followers"
-        subtitle="Nos Followers incarnent l’esprit de partenariat qui anime le RPAC. Professionnels, chercheurs et leaders issus des deux régions, ils partagent leur expertise pour renforcer les ponts entre l’Afrique et le Canada et soutenir les initiatives du réseau."
-        variant="active"
-      >
-        <AnimatedSection delay={60}>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {activeWithImages.map((member) => (
-              <TeamCard key={member.name} member={member} label="Membre actif" variant="active" />
             ))}
           </div>
         </AnimatedSection>

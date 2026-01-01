@@ -19,8 +19,8 @@ const Legal = () => {
             </h2>
             <p>
               Réseau des Partenariats Canada-Afrique (PCA) — Organisation à but
-              non lucratif, enregistrée au Québec, Canada. Siège social : Maison
-              des réseaus, 125 rue Sherbrooke Ouest, Montréal, QC.
+              non lucratif, enregistrée au Québec, Canada. Siège social : 2001
+              Boulevard Robert-Bourassa, Montréal QC H3A 2A6, Suite 1700.
             </p>
           </section>
 

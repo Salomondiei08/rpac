@@ -13,7 +13,11 @@ const socialLinks = [
     href: "https://www.facebook.com/RPACorg",
     icon: Facebook,
   },
-  { label: "YouTube", href: "https://youtube.com", icon: Youtube },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/channel/UCkgGFfBCCFPfWtmL3Pc2Zwg",
+    icon: Youtube,
+  },
 ];
 
 const Footer = () => {
@@ -110,7 +114,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-1" aria-hidden="true" />
-                Maison des réseaus, 125 rue Sherbrooke Ouest, Montréal, QC
+                2001 Boulevard Robert-Bourassa, Montréal QC H3A 2A6, Suite 1700
               </li>
             </ul>
           </div>

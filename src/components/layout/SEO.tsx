@@ -48,7 +48,8 @@ const SEO = () => {
       "@type": "PostalAddress",
       addressCountry: "CA",
       addressLocality: "Montréal",
-      streetAddress: "125 rue Sherbrooke Ouest",
+      streetAddress: "2001 Boulevard Robert-Bourassa, Suite 1700",
+      postalCode: "H3A 2A6",
     },
   };
 

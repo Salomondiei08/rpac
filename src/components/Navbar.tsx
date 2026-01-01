@@ -83,7 +83,7 @@ const Navbar = () => {
                       ? "https://instagram.com"
                       : Icon === TwitterXIcon
                       ? "https://twitter.com"
-                      : "https://youtube.com"
+                      : "https://www.youtube.com/channel/UCkgGFfBCCFPfWtmL3Pc2Zwg"
                   }
                   className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/25 hover:bg-white/15 transition-colors"
                   aria-label={

@@ -5,30 +5,12 @@ import rpacLogo from "@/assets/rpac-actu.png";
 
 const events = [
   {
-    title: "Lancement officiel",
-    date: "À venir",
-    location: "Canada",
-    tag: "Diplomatie économique",
+    title: "Lancement officiel du RPAC",
+    date: "20 février 2026",
+    location: "Montréal, Canada",
+    tag: "Lancement officiel",
     description:
-      "Lancement officiel du RPAC pour renforcer les échanges, les collaborations et les partenariats Afrique–Canada.",
-    image: rpacLogo,
-  },
-  {
-    title: "Rencontre des partenaires",
-    date: "À venir",
-    location: "Canada",
-    tag: "Gouvernance inclusive",
-    description:
-      "Partage de solutions innovantes pour renforcer les institutions publiques et l’accès aux services essentiels.",
-    image: rpacLogo,
-  },
-  {
-    title: "1er Forum annuel",
-    date: "À venir",
-    location: "Canada",
-    tag: "Investisseurs et décideurs",
-    description:
-      "Dialogue entre experts canadiens et africains pour accélérer les partenariats en santé numérique.",
+      "Cérémonie inaugurale et présentation de la feuille de route du Réseau pour le Partenariat Afrique-Canada.",
     image: rpacLogo,
   },
 ];
@@ -48,19 +30,19 @@ const RecentEvents = () => {
             id="events-heading"
             className="text-3xl md:text-4xl font-bold text-primary"
           >
-            Événements récents
+            Événements à venir
           </h2>
           <p className="text-muted-foreground text-lg">
-            Des rencontres institutionnelles pour renforcer les synergies entre
-            les écosystèmes africains et canadiens. Découvrez les rendez-vous
-            qui ont marqué notre agenda.
+            Les prochaines étapes clés du réseau pour renforcer les synergies
+            entre les écosystèmes africains et canadiens.
           </p>
         </div>
 
         <div
           ref={ref}
           className={cn(
-            "grid gap-6 lg:grid-cols-3 transition-all duration-700",
+            "grid gap-6 transition-all duration-700",
+            events.length > 1 ? "md:grid-cols-2 lg:grid-cols-3" : "max-w-xl mx-auto",
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
@@ -106,7 +88,7 @@ const RecentEvents = () => {
                     href="/agenda"
                     className="inline-flex items-center gap-2 text-accent font-semibold tracking-normal"
                   >
-                    Voir le compte-rendu
+                    Découvrir l’agenda
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>

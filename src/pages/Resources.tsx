@@ -18,13 +18,11 @@ const sections = [
     resources: [
       {
         title: "Rapport d’impact 2023",
-        meta: "PDF • 4,2 Mo",
-        url: "https://www.un.org/sites/un2.un.org/files/2023-05_sdg-progress-report_special_edition.pdf",
+        meta: "PDF • 4,2 Mo (bientôt disponible)",
       },
       {
         title: "Guides pour investisseurs canadiens",
-        meta: "PDF • 3,1 Mo",
-        url: "https://www.oecd.org/dev/EMnet/EMnet-Business-Insight-Investing-in-Africa-after-COVID-19.pdf",
+        meta: "PDF • 3,1 Mo (bientôt disponible)",
       },
     ],
   },
@@ -35,13 +33,11 @@ const sections = [
     resources: [
       {
         title: "Guide d’adhésion des membres",
-        meta: "PDF • 1,6 Mo",
-        url: "https://www.afdb.org/sites/default/files/documents/publications/aeb_volume_12_issue_4.pdf",
+        meta: "PDF • 1,6 Mo (bientôt disponible)",
       },
       {
         title: "Kit de gouvernance partagée",
-        meta: "PDF • 3,4 Mo",
-        url: "https://www.undp.org/sites/g/files/zskgke326/files/publications/UNDP-Governance-Toolkit.pdf",
+        meta: "PDF • 3,4 Mo (bientôt disponible)",
       },
     ],
   },
@@ -52,13 +48,11 @@ const sections = [
     resources: [
       {
         title: "Communiqué de lancement",
-        meta: "PDF • 1,2 Mo",
-        url: "https://rpac.org/communique-lancement.pdf",
+        meta: "PDF • 1,2 Mo (bientôt disponible)",
       },
       {
         title: "Annonce partenaires",
-        meta: "PDF • 1,8 Mo",
-        url: "https://rpac.org/annonce-partenaires.pdf",
+        meta: "PDF • 1,8 Mo (bientôt disponible)",
       },
     ],
   },
@@ -97,19 +91,16 @@ const Resources = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex justify-between items-center">
-                    <Button variant="outline" className="border-[#009BF2] text-[#009BF2] hover:bg-[#009BF2]/10" asChild>
-                      <a
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2"
-                      >
-                        <Download className="h-4 w-4" />
-                        Télécharger
-                      </a>
+                    <Button
+                      variant="outline"
+                      className="border-[#009BF2] text-[#009BF2] hover:bg-[#009BF2]/10"
+                      disabled
+                    >
+                      <Download className="h-4 w-4" />
+                      Bientôt disponible
                     </Button>
                     <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground/70 group-hover:text-[#009BF2]">
-                      Télécharger
+                      Publication en cours
                     </span>
                   </CardContent>
                 </Card>
@@ -123,14 +114,9 @@ const Resources = () => {
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <p className="rounded-3xl border border-border/60 bg-card p-8 text-center text-muted-foreground shadow-[var(--shadow-card)]">
-              Pour en savoir plus sur l’Agenda 2063, consultez le document officiel de l’Union africaine&nbsp;:
-              <a
-                href="https://au.int/sites/default/files/documents/36204-doc-agenda2063_popular_version_en.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-2 font-semibold text-primary"
-              >
-                Agenda 2063 – L’Afrique que nous voulons
+              Les ressources seront mises en ligne dès que nos travaux seront finalisés. Pour recevoir les documents dès leur publication, écrivez-nous à{" "}
+              <a href="mailto:contact@r-pac.ca" className="font-semibold text-primary">
+                contact@r-pac.ca
               </a>
               .
             </p>
