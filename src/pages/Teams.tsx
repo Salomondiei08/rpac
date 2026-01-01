@@ -1,7 +1,6 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactCoordinates from "@/components/ContactCoordinates";
 import { boardMembers } from "@/data/team";
-import { Linkedin } from "lucide-react";
 import rpacLogo from "@/assets/rpac-logo.png";
 
 type TeamMember = {
@@ -43,15 +42,6 @@ const TeamCard = ({ member, variant }: { member: TeamMember; variant: Variant })
           loading="lazy"
           decoding="async"
         />
-        <a
-          href={linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0b74b5] shadow-sm ring-1 ring-[#d1d5db]"
-          aria-label={`Profil LinkedIn de ${member.name}`}
-        >
-          <Linkedin className="h-4 w-4" aria-hidden="true" />
-        </a>
       </div>
       <div className="space-y-1 px-5 py-4 text-sm text-[#0f172a]">
         <p className="font-semibold text-[#b91c1c] text-lg leading-tight">

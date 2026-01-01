@@ -30,7 +30,7 @@ const Gallery = () => {
           <AnimatedSection className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {galleryItems.length === 0 ? (
               <div className="sm:col-span-2 lg:col-span-3 xl:col-span-4 rounded-3xl border border-border/60 bg-muted/20 px-6 py-10 text-center text-muted-foreground">
-                Les photos officielles seront publiées prochainement. La galerie est temporairement désactivée pour retirer les visuels fictifs.
+                Les photos officielles seront publiées prochainement.
               </div>
             ) : (
               galleryItems.map((item) => (
