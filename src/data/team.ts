@@ -11,6 +11,7 @@ export const boardMembers = [
     name: "N’Faly Kourouma",
     title: "Président-fondateur",
     image: portrait1,
+    imagePosition: "center top",
   },
   {
     name: "Ibrahima Doumbia",
@@ -21,6 +22,7 @@ export const boardMembers = [
     name: "Hugues Kemadjou Djiomba",
     title: "Trésorier",
     image: portrait3,
+    imagePosition: "center top",
   },
   {
     name: "Yonli Paramanga Jean Bertrand Aristide",

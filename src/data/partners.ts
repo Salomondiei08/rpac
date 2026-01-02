@@ -1,4 +1,4 @@
-import observatoireLogo from "@/assets/observatoire-logo.png";
+import observatoireLogo from "@/assets/observatoire.png";
 import nmadvisoryLogo from "@/assets/nmadvisory-logo.jpg";
 
 interface Partner {
@@ -14,7 +14,7 @@ export const partners: Partner[] = [
     url: "https://observatoireagenda2030.uqam.ca/",
   },
   {
-    name: "Cabinet NM Advisory (Mussampa)",
+    name: "Cabinet Mussampa",
     logo: nmadvisoryLogo,
     url: "https://www.nmadvisory.ca/",
   },

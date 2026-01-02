@@ -9,6 +9,7 @@ type TeamMember = {
   role?: string;
   region?: string;
   image?: string;
+  imagePosition?: string;
   email?: string;
   phone?: string;
 };
@@ -41,6 +42,7 @@ const TeamCard = ({ member, variant }: { member: TeamMember; variant: Variant })
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
           decoding="async"
+          style={{ objectPosition: member.imagePosition || "center center" }}
         />
       </div>
       <div className="space-y-1 px-5 py-4 text-sm text-[#0f172a]">
