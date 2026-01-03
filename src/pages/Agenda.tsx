@@ -1,14 +1,29 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarDays, Filter } from "lucide-react";
+import {
+  addMonths,
+  eachDayOfInterval,
+  endOfMonth,
+  endOfWeek,
+  format,
+  isSameDay,
+  isSameMonth,
+  parseISO,
+  startOfMonth,
+  startOfWeek,
+  subMonths,
+} from "date-fns";
+import { fr } from "date-fns/locale";
+import { CalendarDays, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const agendaEvents = [
   {
     title: "Lancement officiel du RPAC",
-    date: "20 février 2026",
+    date: "2026-02-20",
     location: "Montréal, Canada",
     type: "Lancement",
     program: "Institutionnel",
@@ -16,7 +31,10 @@ const agendaEvents = [
     description:
       "Cérémonie de lancement et présentation des ambitions 2026 pour le Réseau pour le Partenariat Afrique-Canada.",
   },
-];
+].map((event) => ({
+  ...event,
+  dateValue: parseISO(event.date),
+}));
 
 const filters = {
   type: ["Lancement"],
@@ -24,10 +42,25 @@ const filters = {
   region: ["Canada"],
 };
 
+const eventDates = agendaEvents.map((event) => event.dateValue);
+const defaultMonth = startOfMonth(
+  eventDates.length
+    ? eventDates.reduce((earliest, current) => (current < earliest ? current : earliest))
+    : new Date(),
+);
+
 const Agenda = () => {
   const [activeType, setActiveType] = useState<string | null>(null);
   const [activeProgram, setActiveProgram] = useState<string | null>(null);
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
+  const [currentMonth, setCurrentMonth] = useState<Date>(defaultMonth);
+
+  const today = new Date();
+  const calendarDays = eachDayOfInterval({
+    start: startOfWeek(startOfMonth(currentMonth), { weekStartsOn: 1 }),
+    end: endOfWeek(endOfMonth(currentMonth), { weekStartsOn: 1 }),
+  });
+  const monthLabel = format(currentMonth, "LLLL yyyy", { locale: fr });
 
   const toggleFilter = (
     current: string | null,
@@ -43,6 +76,10 @@ const Agenda = () => {
     const regionMatch = activeRegion ? event.region === activeRegion : true;
     return typeMatch && programMatch && regionMatch;
   });
+
+  const handleMonthChange = (direction: "previous" | "next") => {
+    setCurrentMonth((prev) => (direction === "next" ? addMonths(prev, 1) : subMonths(prev, 1)));
+  };
 
   return (
     <div className="bg-background">
@@ -131,7 +168,7 @@ const Agenda = () => {
                     {event.title}
                   </CardTitle>
                   <p className="flex flex-wrap gap-2 text-sm text-muted-foreground/80">
-                    <span>{event.date}</span>
+                    <span>{format(event.dateValue, "d MMMM yyyy", { locale: fr })}</span>
                     <span aria-hidden="true">•</span>
                     <span>{event.location}</span>
                   </p>
@@ -161,6 +198,43 @@ const Agenda = () => {
             </p>
           </div>
           <div className="md:px-2">
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Mois affiché</p>
+                <p className="flex items-center gap-2 text-lg font-semibold text-primary">
+                  <CalendarDays className="h-5 w-5" aria-hidden="true" />
+                  {monthLabel}
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Button
+                  type="button"
+                  size="icon"
+                  variant="outline"
+                  onClick={() => handleMonthChange("previous")}
+                  aria-label="Mois précédent"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  type="button"
+                  size="icon"
+                  variant="outline"
+                  onClick={() => handleMonthChange("next")}
+                  aria-label="Mois suivant"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => setCurrentMonth(startOfMonth(today))}
+                >
+                  Aujourd’hui
+                </Button>
+              </div>
+            </div>
             <div className="mb-3 grid grid-cols-7 gap-2 text-center text-xs uppercase tracking-wide text-muted-foreground">
               {[
                 "Lun",
@@ -175,25 +249,35 @@ const Agenda = () => {
               ))}
             </div>
             <div className="grid grid-cols-7 gap-2 text-sm">
-              {Array.from({ length: 35 }, (_, index) => {
-                const dayNumber = index - 3;
-                const isCurrentMonth = dayNumber > 0 && dayNumber <= 31;
-                const isEventDay = [20].includes(dayNumber);
+              {calendarDays.map((day) => {
+                const isInCurrentMonth = isSameMonth(day, currentMonth);
+                const isEventDay = agendaEvents.some((event) => isSameDay(event.dateValue, day));
+                const isToday = isSameDay(day, today);
+
                 return (
-                  <div
-                    key={index}
-                    className={`aspect-square rounded-xl border ${
-                      isCurrentMonth
-                        ? "flex items-center justify-center border-border/60"
-                        : "border-transparent opacity-40"
-                    } ${
-                      isEventDay
-                        ? "bg-accent/20 text-accent font-semibold"
-                        : ""
-                    }`}
+                  <button
+                    key={day.toISOString()}
+                    type="button"
+                    onClick={() => {
+                      if (!isInCurrentMonth) {
+                        setCurrentMonth(startOfMonth(day));
+                      }
+                    }}
+                    className={cn(
+                      "relative aspect-square rounded-xl border text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      isInCurrentMonth
+                        ? "border-border/60 bg-background hover:border-primary/60"
+                        : "border-dashed border-border/40 bg-muted/40 text-muted-foreground",
+                      isEventDay && "bg-accent/20 text-accent font-semibold",
+                      isToday && "ring-2 ring-primary/70",
+                    )}
+                    aria-label={`${format(day, "d MMMM yyyy", { locale: fr })}${isEventDay ? " - événement" : ""}`}
                   >
-                    {isCurrentMonth ? dayNumber : ""}
-                  </div>
+                    <span>{format(day, "d")}</span>
+                    {isEventDay ? (
+                      <span className="absolute bottom-2 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-primary" />
+                    ) : null}
+                  </button>
                 );
               })}
             </div>
