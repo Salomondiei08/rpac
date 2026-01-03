@@ -14,7 +14,7 @@ export const partners: Partner[] = [
     url: "https://observatoireagenda2030.uqam.ca/",
   },
   {
-    name: "Cabinet Mussampa",
+    name: "NIM ADVISORY Mussampa",
     logo: nmadvisoryLogo,
     url: "https://www.nmadvisory.ca/",
   },
