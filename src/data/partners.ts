@@ -1,21 +1,14 @@
-import observatoireLogo from "@/assets/observatoire.png";
-import nmadvisoryLogo from "@/assets/nmadvisory-logo.jpg";
+import partnersData from "@/content/partners.json";
 
-interface Partner {
+export interface Partner {
   name: string;
   logo: string;
   url: string;
 }
 
-export const partners: Partner[] = [
-  {
-    name: "Observatoire de l’agenda 2030",
-    logo: observatoireLogo,
-    url: "https://observatoireagenda2030.uqam.ca/",
-  },
-  {
-    name: "NIM ADVISORY",
-    logo: nmadvisoryLogo,
-    url: "https://www.nmadvisory.ca/",
-  },
-];
+const partnerList: Partner[] = (partnersData as { partners?: Partner[] }).partners ?? [];
+
+export const partners: Partner[] = partnerList.map((partner) => ({
+  ...partner,
+  logo: partner.logo || "/placeholder.svg",
+}));

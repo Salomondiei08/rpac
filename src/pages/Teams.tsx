@@ -1,39 +1,59 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactCoordinates from "@/components/ContactCoordinates";
-import { boardMembers } from "@/data/team";
+import { teamSections, TeamMember, Variant } from "@/data/team";
 import rpacLogo from "@/assets/rpac-logo.png";
 
-type TeamMember = {
-  name: string;
-  title?: string;
-  role?: string;
-  region?: string;
-  image?: string;
-  imagePosition?: string;
-  email?: string;
-  phone?: string;
+type SectionTheme = {
+  background: string;
+  cardBackground: string;
+  accent: string;
+  border: string;
 };
 
-const linkedinUrl =
-  "https://www.linkedin.com/company/r%C3%A9seau-pour-le-partenariat-afrique-canada-rpac/";
-
-type Variant = "board";
-
-const sectionBackground: Record<Variant, string> = {
-  board: "bg-white",
+const variantThemes: Record<Variant, SectionTheme> = {
+  board: {
+    background: "bg-white",
+    cardBackground: "bg-white",
+    accent: "text-[#b91c1c]",
+    border: "border-[#d1d5db]",
+  },
+  honorary: {
+    background: "bg-[#fbf4ee]",
+    cardBackground: "bg-white",
+    accent: "text-[#7c2d12]",
+    border: "border-[#e5d3c4]",
+  },
+  regional: {
+    background: "bg-[#f3f6ff]",
+    cardBackground: "bg-white",
+    accent: "text-[#1d4ed8]",
+    border: "border-[#c7d2fe]",
+  },
+  active: {
+    background: "bg-[#f0faf5]",
+    cardBackground: "bg-white",
+    accent: "text-[#15803d]",
+    border: "border-[#bbf7d0]",
+  },
 };
 
-const cardBackground: Record<Variant, string> = {
-  board: "bg-white",
+const defaultTheme: SectionTheme = {
+  background: "bg-white",
+  cardBackground: "bg-white",
+  accent: "text-foreground",
+  border: "border-border",
 };
 
-const TeamCard = ({ member, variant }: { member: TeamMember; variant: Variant }) => {
+const getTheme = (variant: Variant): SectionTheme => variantThemes[variant] ?? defaultTheme;
+
+const TeamCard = ({ member, theme }: { member: TeamMember; theme: SectionTheme }) => {
   const title = member.title ?? member.role ?? member.region ?? "Membre du réseau";
   const imageSrc = member.image || rpacLogo;
+  const imagePosition = member.imagePosition || "center center";
 
   return (
     <div
-      className={`flex flex-col overflow-hidden rounded-lg border border-[#d1d5db] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${cardBackground[variant]}`}
+      className={`flex flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${theme.cardBackground} ${theme.border}`}
     >
       <div className="relative h-64 w-full bg-[#e5e7eb]">
         <img
@@ -42,12 +62,12 @@ const TeamCard = ({ member, variant }: { member: TeamMember; variant: Variant })
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
           decoding="async"
-          style={{ objectPosition: member.imagePosition || "center center" }}
+          style={{ objectPosition: imagePosition }}
         />
       </div>
       <div className="space-y-1 px-5 py-4 text-sm text-[#0f172a]">
-        <p className="font-semibold text-[#b91c1c] text-lg leading-tight">
-          <span className="font-bold">{member.name}</span>
+        <p className={`font-semibold text-lg leading-tight ${theme.accent}`}>
+          {member.name}
         </p>
         <p className="text-[#111827] text-base font-semibold">{title}</p>
       </div>
@@ -59,17 +79,17 @@ const Section = ({
   title,
   subtitle,
   children,
-  variant,
+  theme,
 }: {
   title: string;
   subtitle: string;
   children: React.ReactNode;
-  variant: Variant;
+  theme: SectionTheme;
 }) => (
-  <section className={`py-16 ${sectionBackground[variant]}`}>
+  <section className={`py-16 ${theme.background}`}>
     <div className="mx-auto max-w-6xl px-6 space-y-8">
       <AnimatedSection>
-        <h2 className="text-3xl font-bold text-[#b91c1c]">{title}</h2>
+        <h2 className={`text-3xl font-bold ${theme.accent}`}>{title}</h2>
         <p className="mt-2 text-[#4b5563]">{subtitle}</p>
       </AnimatedSection>
       {children}
@@ -78,8 +98,6 @@ const Section = ({
 );
 
 const Teams = () => {
-  const boardWithImages = boardMembers.map((member) => ({ ...member, image: member.image || rpacLogo }));
-
   return (
     <div className="bg-white">
       <section className="relative overflow-hidden bg-primary text-primary-foreground pt-24 md:pt-28 pb-24">
@@ -88,19 +106,30 @@ const Teams = () => {
         </AnimatedSection>
       </section>
 
-      <Section
-        title="Conseil d’administration"
-        subtitle="Il assure la gouvernance stratégique et la supervision des programmes portés par le RPAC."
-        variant="board"
-      >
-        <AnimatedSection delay={60}>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {boardWithImages.map((member) => (
-              <TeamCard key={member.name} member={member} variant="board" />
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
+      {teamSections.map((section) => {
+        if (!section.members.length) return null;
+        const theme = getTheme(section.variant);
+        return (
+          <Section
+            key={section.id}
+            title={section.title}
+            subtitle={section.subtitle}
+            theme={theme}
+          >
+            <AnimatedSection delay={60}>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {section.members.map((member) => (
+                  <TeamCard
+                    key={`${section.id}-${member.name}`}
+                    member={member}
+                    theme={theme}
+                  />
+                ))}
+              </div>
+            </AnimatedSection>
+          </Section>
+        );
+      })}
 
       <ContactCoordinates />
     </div>

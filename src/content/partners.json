@@ -1,0 +1,14 @@
+{
+  "partners": [
+    {
+      "name": "Observatoire de l’agenda 2030",
+      "logo": "/uploads/observatoire.png",
+      "url": "https://observatoireagenda2030.uqam.ca/"
+    },
+    {
+      "name": "NIM ADVISORY",
+      "logo": "/uploads/nmadvisory-logo.jpg",
+      "url": "https://www.nmadvisory.ca/"
+    }
+  ]
+}

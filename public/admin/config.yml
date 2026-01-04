@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: "<owner>/<repo>"
+  branch: main
+  base_url: "https://<votre-proxy-oauth>"
+  auth_scope: repo
+
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: partners
+    label: Partenaires
+    label_singular: Partenaire
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: partners
+        label: Liste des partenaires
+        file: src/content/partners.json
+        fields:
+          - label: Partenaires
+            name: partners
+            widget: list
+            label_singular: Partenaire
+            summary: "{{fields.name}} · {{fields.url}}"
+            collapsed: false
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Site web", name: "url", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", allow_multiple: false, hint: "PNG/JPG/SVG. Saisir une URL ou uploader un fichier." }
+
+  - name: team
+    label: Équipe
+    label_singular: Section
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: team_sections
+        label: Sections d'équipe
+        file: src/content/teamSections.json
+        fields:
+          - label: Sections
+            name: sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}} · {{fields.cardLabel}}"
+            collapsed: true
+            fields:
+              - { label: "Identifiant (slug)", name: "id", widget: "string", hint: "ex: board, honorary, regional, active" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Sous-titre", name: "subtitle", widget: "text" }
+              - label: Style
+                name: variant
+                widget: select
+                options:
+                  - { label: "Conseil d’administration", value: "board" }
+                  - { label: "Membres honoraires", value: "honorary" }
+                  - { label: "Représentants régionaux", value: "regional" }
+                  - { label: "Membres actifs", value: "active" }
+                default: board
+              - { label: "Label sur la carte", name: "cardLabel", widget: "string", required: false }
+              - label: Membres
+                name: members
+                widget: list
+                label_singular: Membre
+                summary: "{{fields.name}} — {{fields.title || fields.role || fields.region}}"
+                collapsed: true
+                fields:
+                  - { label: "Nom", name: "name", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string", required: false }
+                  - { label: "Rôle", name: "role", widget: "string", required: false }
+                  - { label: "Région", name: "region", widget: "string", required: false }
+                  - { label: "Bio", name: "bio", widget: "text", required: false }
+                  - { label: "Photo", name: "image", widget: "image", allow_multiple: false, hint: "PNG/JPG/SVG. Uploader ou coller une URL." }
+                  - { label: "Position de l'image", name: "imagePosition", widget: "string", required: false, hint: "Ex: center top, 50% 20%" }
+                  - { label: "Email", name: "email", widget: "string", required: false }
+                  - { label: "Téléphone", name: "phone", widget: "string", required: false }

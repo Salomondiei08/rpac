@@ -1,0 +1,74 @@
+{
+  "sections": [
+    {
+      "id": "board",
+      "title": "Conseil d’administration",
+      "subtitle": "Il assure la gouvernance stratégique et la supervision des programmes portés par le RPAC.",
+      "variant": "board",
+      "cardLabel": "Administrateur",
+      "members": [
+        {
+          "name": "N’Faly Kourouma",
+          "title": "Président-fondateur",
+          "image": "/uploads/portrait-1.jpg",
+          "imagePosition": "center top"
+        },
+        {
+          "name": "Ibrahima Doumbia",
+          "title": "Vice-président-fondateur",
+          "image": "/uploads/portrait-2.jpg"
+        },
+        {
+          "name": "Hugues Kemadjou Djiomba",
+          "title": "Trésorier",
+          "image": "/uploads/portrait-3.jpg",
+          "imagePosition": "center top"
+        },
+        {
+          "name": "Yonli Paramanga Jean Bertrand Aristide",
+          "title": "Responsable des relations publiques et partenariats institutionnels",
+          "image": "/uploads/portrait-4.jpg"
+        },
+        {
+          "name": "Dr Moulay Hicham El Amrani",
+          "title": "Responsable pôle académique et recherche",
+          "image": "/uploads/portrait-5.jpg"
+        },
+        {
+          "name": "Kofi Nagno M’BEOU",
+          "title": "Responsable chargé de l’alignement Afrique–Canada",
+          "image": "/uploads/portrait-6.jpg"
+        },
+        {
+          "name": "Dre Fatma NDIAYE",
+          "title": "Responsable chargée des relations avec la diaspora africaine",
+          "image": "/uploads/portrait-7.jpg"
+        }
+      ]
+    },
+    {
+      "id": "honorary",
+      "title": "Membres honoraires",
+      "subtitle": "Ambassadeurs qui apportent leur rayonnement et leurs réseaux bilatéraux.",
+      "variant": "honorary",
+      "cardLabel": "Membre honoraire",
+      "members": []
+    },
+    {
+      "id": "regional",
+      "title": "Représentants régionaux",
+      "subtitle": "Présents sur le terrain, ils coordonnent rencontres et missions dans chaque région.",
+      "variant": "regional",
+      "cardLabel": "Représentant",
+      "members": []
+    },
+    {
+      "id": "active",
+      "title": "Membres actifs & partenaires",
+      "subtitle": "Praticiens et experts qui contribuent au quotidien à l’impact du réseau.",
+      "variant": "active",
+      "cardLabel": "Membre actif",
+      "members": []
+    }
+  ]
+}

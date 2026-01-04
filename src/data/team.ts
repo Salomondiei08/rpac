@@ -1,52 +1,50 @@
-import portrait1 from "@/assets/portrait-1.jpg";
-import portrait2 from "@/assets/portrait-2.jpg";
-import portrait3 from "@/assets/portrait-3.jpg";
-import portrait4 from "@/assets/portrait-4.jpg";
-import portrait5 from "@/assets/portrait-5.jpg";
-import portrait6 from "@/assets/portrait-6.jpg";
-import portrait7 from "@/assets/portrait-7.jpg";
+import teamSectionsRaw from "@/content/teamSections.json";
 
-export const boardMembers = [
-  {
-    name: "N’Faly Kourouma",
-    title: "Président-fondateur",
-    image: portrait1,
-    imagePosition: "center top",
-  },
-  {
-    name: "Ibrahima Doumbia",
-    title: "Vice-président-fondateur",
-    image: portrait2,
-  },
-  {
-    name: "Hugues Kemadjou Djiomba",
-    title: "Trésorier",
-    image: portrait3,
-    imagePosition: "center top",
-  },
-  {
-    name: "Yonli Paramanga Jean Bertrand Aristide",
-    title: "Responsable des relations publiques et partenariats institutionnels",
-    image: portrait4,
-  },
-  {
-    name: "Dr Moulay Hicham El Amrani",
-    title: "Responsable pôle académique et recherche",
-    image: portrait5,
-  },
-  {
-    name: "Kofi Nagno M’BEOU",
-    title: "Responsable chargé de l’alignement Afrique–Canada",
-    image: portrait6,
-  },
-  {
-    name: "Dre Fatma NDIAYE",
-    title: "Responsable chargée des relations avec la diaspora africaine",
-    image: portrait7,
-  },
-];
+export type Variant = "board" | "honorary" | "regional" | "active";
 
-// Sections temporairement masquées
-export const honoraryMembers: { name: string; title?: string; image?: string }[] = [];
-export const regionalRepresentatives: { name: string; region?: string; image?: string }[] = [];
-export const followers: { name: string; role?: string; image?: string }[] = [];
+export type TeamMember = {
+  name: string;
+  title?: string;
+  role?: string;
+  region?: string;
+  image?: string;
+  imagePosition?: string;
+  bio?: string;
+  email?: string;
+  phone?: string;
+};
+
+export type TeamSection = {
+  id: string;
+  title: string;
+  subtitle: string;
+  variant: Variant;
+  cardLabel?: string;
+  members: TeamMember[];
+};
+
+type RawTeamSection = Omit<TeamSection, "variant"> & { variant?: string };
+
+const isVariant = (value: string | undefined): value is Variant =>
+  value === "board" || value === "honorary" || value === "regional" || value === "active";
+
+const rawSections: RawTeamSection[] =
+  (teamSectionsRaw as { sections?: RawTeamSection[] }).sections ?? [];
+
+export const teamSections: TeamSection[] = rawSections.map((section) => ({
+  ...section,
+  variant: isVariant(section.variant) ? section.variant : "board",
+  members: section.members ?? [],
+}));
+
+export const boardMembers: TeamMember[] =
+  teamSections.find((section) => section.id === "board")?.members ?? [];
+
+export const honoraryMembers: TeamMember[] =
+  teamSections.find((section) => section.id === "honorary")?.members ?? [];
+
+export const regionalRepresentatives: TeamMember[] =
+  teamSections.find((section) => section.id === "regional")?.members ?? [];
+
+export const followers: TeamMember[] =
+  teamSections.find((section) => section.id === "active")?.members ?? [];
