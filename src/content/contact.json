@@ -1,0 +1,27 @@
+{
+  "title": "Nos coordonnées",
+  "description": "Notre équipe est disponible du lundi au vendredi de 9h à 17h (heure de Montréal).",
+  "items": [
+    {
+      "icon": "Mail",
+      "label": "Courriel",
+      "value": "contact@r-pac.ca",
+      "href": "mailto:contact@r-pac.ca"
+    },
+    {
+      "icon": "Phone",
+      "label": "Téléphone",
+      "value": "+1 (819) 446-0661",
+      "href": "tel:+18194460661"
+    },
+    {
+      "icon": "MapPin",
+      "label": "Adresse",
+      "value": "2001 Boulevard Robert-Bourassa, Montréal QC H3A 2A6, Suite 1700",
+      "href": "https://www.google.com/maps/search/?api=1&query=2001%20Boulevard%20Robert-Bourassa%2C%20Montr%C3%A9al%20QC%20H3A%202A6%2C%20Suite%201700"
+    }
+  ],
+  "mapEmbed": "https://www.google.com/maps?q=2001%20Boulevard%20Robert-Bourassa%2C%20Montr%C3%A9al%20QC%20H3A%202A6%20Suite%201700&output=embed",
+  "ctaLabel": "Devenir membre",
+  "ctaHref": "/adhesion-contact"
+}

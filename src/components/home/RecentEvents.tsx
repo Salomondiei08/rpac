@@ -1,22 +1,12 @@
 import { CalendarDays, MapPin, ArrowUpRight } from "lucide-react";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import eventsData from "@/content/events.json";
 import rpacLogo from "@/assets/rpac-actu.png";
-
-const events = [
-  {
-    title: "Lancement officiel du RPAC",
-    date: "20 février 2026",
-    location: "Montréal, Canada",
-    tag: "Lancement officiel",
-    description:
-      "Cérémonie inaugurale et présentation de la feuille de route du Réseau pour le Partenariat Afrique-Canada.",
-    image: rpacLogo,
-  },
-];
 
 const RecentEvents = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
+  const events = eventsData.events ?? [];
 
   return (
     <section
@@ -55,7 +45,7 @@ const RecentEvents = () => {
               <div className="space-y-6">
                 <div className="flex justify-center">
                   <img
-                    src={event.image}
+                    src={event.image || rpacLogo}
                     alt={event.title}
                     className="h-16 w-auto object-contain"
                     loading="lazy"
@@ -85,7 +75,7 @@ const RecentEvents = () => {
                     {event.location.toUpperCase()}
                   </span>
                   <a
-                    href="/agenda"
+                    href={event.href || "/agenda"}
                     className="inline-flex items-center gap-2 text-accent font-semibold tracking-normal"
                   >
                     Découvrir l’agenda

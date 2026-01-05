@@ -2,10 +2,18 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
-import impactImage from "@/assets/rpac-actu.png";
+import aboutSpotlight from "@/content/aboutSpotlight.json";
+import impactFallback from "@/assets/rpac-actu.png";
 
 const AboutSpotlight = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
+  const image = aboutSpotlight.image || impactFallback;
+  const paragraphs = (aboutSpotlight.paragraphs || []).map((p: string | { paragraph?: string }) =>
+    typeof p === "string" ? p : p?.paragraph || ""
+  );
+  const bullets = (aboutSpotlight.bullets || []).map((b: string | { bullet?: string }) =>
+    typeof b === "string" ? b : b?.bullet || ""
+  );
 
   return (
     <section
@@ -22,8 +30,8 @@ const AboutSpotlight = () => {
           )}
         >
           <img
-            src={impactImage}
-            alt="Le RPAC en action"
+            src={image}
+            alt={aboutSpotlight.imageAlt || "Le RPAC en action"}
             className="h-full w-full object-contain opacity-95 transition-transform duration-700 ease-out hover:scale-[1.04]"
             style={{ clipPath: "inset(0% 1.25%)" }}
           />
@@ -36,70 +44,40 @@ const AboutSpotlight = () => {
           )}
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Qui sommes-nous ?
+            {aboutSpotlight.label}
           </span>
           <div className="space-y-4">
             <h2
               id="about-spotlight-heading"
               className="text-3xl font-semibold text-primary sm:text-4xl"
             >
-              Le RPAC, catalyseur des partenariats Afrique–Canada
+              {aboutSpotlight.title}
             </h2>
             <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
-              <p>
-                Organisation à but non lucratif, le RPAC renforce les liens
-                stratégiques entre le Canada et l’Afrique en accompagnant
-                gouvernements, entreprises et communautés sur des projets
-                d’investissement, d’entrepreneuriat, d’éducation et de
-                coopération institutionnelle.
-              </p>
-              <p>
-                Aligné sur l’Agenda 2063 et la Stratégie canadienne pour
-                l’Afrique, le réseau catalyse des partenariats transformateurs
-                qui promeuvent des investissements responsables, du commerce
-                durable et la création de valeurs partagées entre les deux
-                continents.
-              </p>
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-3">
-              <span
-                className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
-                aria-hidden="true"
-              />
-              <span>
-                Accompagnement sur-mesure des gouvernements, entreprises et
-                organisations communautaires des deux continents.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span
-                className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
-                aria-hidden="true"
-              />
-              <span>
-                Promotion d’investissements responsables et de collaborations
-                alignées sur les principes de la RSE.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span
-                className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
-                aria-hidden="true"
-              />
-              <span>
-                Programmes alignés sur l’Agenda 2063 et la Stratégie canadienne
-                pour l’Afrique pour créer des valeurs partagées.
-              </span>
-            </li>
+            {bullets.map((bullet) => (
+              <li key={bullet} className="flex items-start gap-3">
+                <span
+                  className="mt-1 h-1.5 w-1.5 rounded-full bg-accent"
+                  aria-hidden="true"
+                />
+                <span>{bullet}</span>
+              </li>
+            ))}
           </ul>
           <Button
             asChild
             size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
-            <Link to="/a-propos">Découvrir le réseau</Link>
+            <Link to={aboutSpotlight.ctaHref || "/a-propos"}>
+              {aboutSpotlight.ctaLabel || "Découvrir le réseau"}
+            </Link>
           </Button>
         </div>
       </div>

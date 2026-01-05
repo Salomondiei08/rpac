@@ -1,0 +1,30 @@
+{
+  "heroTitle": "Mentions légales",
+  "heroDescription": "Ces mentions légales décrivent l’identité du réseau, les conditions d’utilisation du site et les responsabilités légales applicables.",
+  "sections": [
+    {
+      "title": "Éditeur du site",
+      "body": "Réseau des Partenariats Canada-Afrique (PCA) — Organisation à but non lucratif, enregistrée au Québec, Canada. Siège social : 2001 Boulevard Robert-Bourassa, Montréal QC H3A 2A6, Suite 1700."
+    },
+    {
+      "title": "Directeur de la publication",
+      "body": "Conseil d’administration du réseau PCA. Contact : contact@r-pac.ca."
+    },
+    {
+      "title": "Hébergement",
+      "body": "Le site est hébergé par un prestataire conforme aux normes canadiennes et internationales de protection des données. Les infrastructures sont situées au Canada."
+    },
+    {
+      "title": "Propriété intellectuelle",
+      "body": "L’ensemble des contenus (textes, images, vidéos, documents) présentés sur ce site est la propriété exclusive du réseau PCA ou de ses partenaires. Toute reproduction ou diffusion sans autorisation préalable est interdite."
+    },
+    {
+      "title": "Liens hypertextes",
+      "body": "Les liens externes présents sur le site sont fournis à titre informatif. Le réseau ne peut être tenu responsable du contenu de ces sites tiers. Les liens vers notre site sont autorisés sous réserve d’en informer préalablement le réseau PCA."
+    },
+    {
+      "title": "Contact",
+      "body": "Pour toute question relative aux mentions légales, écrivez à contact@r-pac.ca."
+    }
+  ]
+}

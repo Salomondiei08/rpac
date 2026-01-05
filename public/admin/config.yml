@@ -11,6 +11,89 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: hero
+    label: Accueil · Hero
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: hero
+        label: Bloc Hero
+        file: src/content/hero.json
+        fields:
+          - { label: "Badge", name: "badge", widget: "string" }
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Texte mis en avant", name: "highlight", widget: "string" }
+          - { label: "Bouton (libellé)", name: "ctaLabel", widget: "string" }
+          - { label: "Bouton (lien)", name: "ctaHref", widget: "string" }
+          - { label: "Image de fond", name: "backgroundImage", widget: "image", allow_multiple: false, hint: "Uploader une image ou coller une URL" }
+          - { label: "Description courte", name: "description", widget: "text", required: false }
+
+  - name: about_spotlight
+    label: Accueil · À propos
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: about_spotlight
+        label: Bloc À propos
+        file: src/content/aboutSpotlight.json
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Paragraphes", name: "paragraphs", widget: "list", field: { label: "Paragraphe", name: "paragraph", widget: "text" } }
+          - { label: "Points clés", name: "bullets", widget: "list", field: { label: "Point", name: "bullet", widget: "string" } }
+          - { label: "CTA (libellé)", name: "ctaLabel", widget: "string" }
+          - { label: "CTA (lien)", name: "ctaHref", widget: "string" }
+          - { label: "Image", name: "image", widget: "image", allow_multiple: false }
+          - { label: "Texte alternatif", name: "imageAlt", widget: "string", required: false }
+
+  - name: events
+    label: Accueil · Événements
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: events_list
+        label: Événements
+        file: src/content/events.json
+        fields:
+          - label: Événements
+            name: events
+            widget: list
+            label_singular: Événement
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Lieu", name: "location", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Lien", name: "href", widget: "string", required: false }
+              - { label: "Visuel", name: "image", widget: "image", allow_multiple: false, required: false }
+
+  - name: news
+    label: Accueil · Actualités
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: news_list
+        label: Actualités
+        file: src/content/news.json
+        fields:
+          - label: Actualités
+            name: news
+            widget: list
+            label_singular: Actualité
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Résumé", name: "excerpt", widget: "text" }
+              - { label: "Lien", name: "href", widget: "string" }
+              - { label: "Visuel", name: "image", widget: "image", allow_multiple: false }
+
   - name: partners
     label: Partenaires
     label_singular: Partenaire
@@ -32,6 +115,38 @@ collections:
               - { label: "Nom", name: "name", widget: "string" }
               - { label: "Site web", name: "url", widget: "string" }
               - { label: "Logo", name: "logo", widget: "image", allow_multiple: false, hint: "PNG/JPG/SVG. Saisir une URL ou uploader un fichier." }
+
+  - name: programs
+    label: Programmes
+    label_singular: Programme
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: programs
+        label: Liste des programmes
+        file: src/content/programs.json
+        fields:
+          - label: Programmes
+            name: programs
+            widget: list
+            label_singular: Programme
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Sous-titre", name: "subtitle", widget: "string", required: false }
+              - { label: "Extrait", name: "excerpt", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icône", name: "icon", widget: "select", options: ["LineChart", "Landmark", "Rocket", "Globe2", "Building2", "ShieldCheck"], default: "Globe2", hint: "Nom d’icône Lucide prédéfini" }
+              - { label: "Focus (tags)", name: "focus", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+              - label: "Points clés"
+                name: "highlights"
+                widget: "list"
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              - { label: "Résultats (outcomes)", name: "outcomes", widget: "list", field: { label: "Résultat", name: "outcome", widget: "string" } }
 
   - name: team
     label: Équipe
@@ -80,3 +195,68 @@ collections:
                   - { label: "Position de l'image", name: "imagePosition", widget: "string", required: false, hint: "Ex: center top, 50% 20%" }
                   - { label: "Email", name: "email", widget: "string", required: false }
                   - { label: "Téléphone", name: "phone", widget: "string", required: false }
+
+  - name: contact
+    label: Contact
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: contact_details
+        label: Coordonnées
+        file: src/content/contact.json
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - label: "Contacts"
+            name: "items"
+            widget: "list"
+            label_singular: "Contact"
+            fields:
+              - { label: "Libellé", name: "label", widget: "string" }
+              - { label: "Valeur", name: "value", widget: "string" }
+              - { label: "Lien (href)", name: "href", widget: "string" }
+              - { label: "Icône", name: "icon", widget: "select", options: ["Mail", "Phone", "MapPin"], default: "Mail" }
+          - { label: "Carte (embed URL)", name: "mapEmbed", widget: "string", required: false }
+          - { label: "CTA (libellé)", name: "ctaLabel", widget: "string", required: false }
+          - { label: "CTA (lien)", name: "ctaHref", widget: "string", required: false }
+
+  - name: legal
+    label: Mentions légales
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: legal_content
+        label: Texte mentions légales
+        file: src/content/legal.json
+        fields:
+          - { label: "Titre de page", name: "heroTitle", widget: "string" }
+          - { label: "Description courte", name: "heroDescription", widget: "text" }
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            label_singular: "Section"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Texte", name: "body", widget: "text" }
+
+  - name: privacy
+    label: Confidentialité
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: privacy_content
+        label: Politique de confidentialité
+        file: src/content/privacy.json
+        fields:
+          - { label: "Titre de page", name: "heroTitle", widget: "string" }
+          - { label: "Description courte", name: "heroDescription", widget: "text" }
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            label_singular: "Section"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Texte", name: "body", widget: "text" }

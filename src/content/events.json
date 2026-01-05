@@ -1,0 +1,13 @@
+{
+  "events": [
+    {
+      "title": "Lancement officiel du RPAC",
+      "date": "20 février 2026",
+      "location": "Montréal, Canada",
+      "tag": "Lancement officiel",
+      "description": "Cérémonie inaugurale et présentation de la feuille de route du Réseau pour le Partenariat Afrique-Canada.",
+      "image": "/uploads/rpac-actu.png",
+      "href": "/agenda"
+    }
+  ]
+}

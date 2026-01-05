@@ -1,37 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import useInView from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import newsData from "@/content/news.json";
 import rpacNews from "@/assets/rpac-actu.png";
-
-const news = [
-  {
-    title: "Activité RPAC",
-    date: "À venir",
-    excerpt:
-      "Le RPAC œuvre à renforcer les collaborations entre l’Afrique et le Canada, en facilitant les initiatives, les partenariats et les projets visant un développement durable et inclusif.",
-    href: "/galerie",
-    image: rpacNews,
-  },
-  {
-    title: "Activité RPAC",
-    date: "À venir",
-    excerpt:
-      "Le RPAC œuvre à renforcer les collaborations entre l’Afrique et le Canada, en facilitant les initiatives, les partenariats et les projets visant un développement durable et inclusif.",
-    href: "/galerie",
-    image: rpacNews,
-  },
-  {
-    title: "Activité RPAC",
-    date: "À venir",
-    excerpt:
-      "Le RPAC œuvre à renforcer les collaborations entre l’Afrique et le Canada, en facilitant les initiatives, les partenariats et les projets visant un développement durable et inclusif.",
-    href: "/galerie",
-    image: rpacNews,
-  },
-];
 
 const NewsHighlights = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
+  const news = newsData.news ?? [];
 
   return (
     <section id="actualites" aria-labelledby="news-heading" className="bg-muted/20 py-24">

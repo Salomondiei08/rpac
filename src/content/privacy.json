@@ -1,0 +1,34 @@
+{
+  "heroTitle": "Politique de confidentialité",
+  "heroDescription": "Cette politique précise la façon dont le Réseau des Partenariats Canada-Afrique collecte, utilise et protège vos données personnelles.",
+  "sections": [
+    {
+      "title": "Principes généraux",
+      "body": "Nous traitons vos informations personnelles de manière responsable, conformément aux lois canadiennes, québécoises et aux meilleures pratiques internationales (RGPD, PIPEDA)."
+    },
+    {
+      "title": "Données collectées",
+      "body": "Nous recueillons les données communiquées via les formulaires du site (nom, organisation, fonction, courriel, téléphone, intérêts) ainsi que les informations techniques nécessaires à l’amélioration de l’expérience utilisateur (analyse d’audience, cookies fonctionnels)."
+    },
+    {
+      "title": "Utilisation des données",
+      "body": "Les informations sont utilisées pour gérer les adhésions, répondre aux demandes, envoyer des communications ciblées et analyser l’impact de nos programmes. Aucun partage commercial n’est réalisé sans consentement explicite."
+    },
+    {
+      "title": "Durée de conservation",
+      "body": "Les données sont conservées pendant la durée nécessaire à la gestion de la relation avec le réseau et supprimées au plus tard 3 ans après la dernière interaction documentée."
+    },
+    {
+      "title": "Vos droits",
+      "body": "Vous pouvez accéder, corriger ou supprimer vos données, limiter leur traitement et retirer votre consentement à tout moment en écrivant à privacy@partenariatsca.org."
+    },
+    {
+      "title": "Sécurité",
+      "body": "Nous mettons en œuvre des mesures techniques et organisationnelles afin de protéger les données contre tout accès non autorisé, utilisation abusive ou divulgation non autorisée."
+    },
+    {
+      "title": "Mise à jour",
+      "body": "Cette politique peut être mise à jour. La date de la dernière révision est précisée ici : 15 février 2024. Toute modification substantielle sera communiquée aux membres et visiteurs concernés."
+    }
+  ]
+}

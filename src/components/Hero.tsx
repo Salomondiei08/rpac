@@ -1,8 +1,34 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users } from "lucide-react";
-import heroImage from "@/assets/african-union.jpg";
+import { ArrowRight } from "lucide-react";
+import heroContent from "@/content/hero.json";
+import heroImageFallback from "@/assets/african-union.jpg";
 
 const Hero = () => {
+  const badge = heroContent.badge || "Réseau pour le Partenariat Afrique-Canada";
+  const title = heroContent.title || "Bâtir des partenariats transformateurs";
+  const highlight = heroContent.highlight || "partenariats transformateurs";
+  const ctaLabel = heroContent.ctaLabel || "Explorer nos initiatives";
+  const ctaHref = heroContent.ctaHref || "/programmes";
+  const backgroundImage = heroContent.backgroundImage || heroImageFallback;
+
+  const renderTitle = () => {
+    if (highlight && title.includes(highlight)) {
+      const parts = title.split(highlight);
+      return (
+        <>
+          {parts[0]}
+          <span className="text-accent">{highlight}</span>
+          {parts.slice(1).join(highlight)}
+        </>
+      );
+    }
+    return (
+      <>
+        {title} <span className="text-accent">{highlight}</span>
+      </>
+    );
+  };
+
   return (
     <section
       id="accueil"
@@ -11,7 +37,7 @@ const Hero = () => {
     >
       <div className="absolute inset-0 -z-10">
         <img
-          src={heroImage}
+          src={backgroundImage}
           alt="Représentants du réseau réunis autour d'une table de travail"
           className="h-full w-full object-cover"
           loading="eager"
@@ -25,15 +51,14 @@ const Hero = () => {
         <div className="flex min-h-[60vh] md:min-h-[70vh] flex-col items-center justify-start md:justify-center gap-8 text-center text-primary-foreground animate-fade-up pt-6 md:pt-0">
           <div className="inline-flex items-center gap-3 rounded-full bg-white/15 px-6 py-2.5 text-lg md:text-xl font-semibold text-white/90 backdrop-blur">
             <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
-            Réseau pour le Partenariat Afrique-Canada
+            {badge}
           </div>
           <div className="space-y-6 max-w-4xl">
             <h1
               id="hero-heading"
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
             >
-              Bâtir des{" "}
-              <span className="text-accent">partenariats transformateurs</span>
+              {renderTitle()}
             </h1>
           </div>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
@@ -42,8 +67,8 @@ const Hero = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 group"
               asChild
             >
-              <a href="/programmes">
-                Explorer nos initiatives
+              <a href={ctaHref}>
+                {ctaLabel}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
