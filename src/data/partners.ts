@@ -14,7 +14,7 @@ export const partners: Partner[] = [
     url: "https://observatoireagenda2030.uqam.ca/",
   },
   {
-    name: "NIM ADVISORY",
+    name: "NM Advisory",
     logo: nmadvisoryLogo,
     url: "https://www.nmadvisory.ca/",
   },
